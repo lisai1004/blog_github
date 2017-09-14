@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>socket</title>
+	<meta name='Generator' content='Zim 0.67'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		span.zim-tag {
+			color: #ce5c00;
+		}
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		.migrated-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB+AKHREFA8vJSnkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAC1klEQVRIx+2VT0hUURTGf/e958w4Tc3TYowMw1GyEgwr1MqsFmbZIrIWQZsWJUjbdoHQpl3Qps0swnCRECQFYkR/TC1iKkqmfzAKTo2Vf8hoRsfR995tkRMT87RRWkUHHhy495zvnvvu933wP/75EKkkEAjIYDCIaZpIKRFCZN0kfX9xcTGtra2/irVUEolECIfDlJeXo+s6hmFkDaCqKoZhEAqFSCaTv60pqcSyLAoLC/F4PEtqDmCaJkIIKisrMybX0sdUVRWA5ubmPzdNjjI1cpXkZC/O1fV03PXgdDqRUtpPIITAsqxsDz0Z/3CZQv8uqo4N4C8/Tp2/DdM0MiZQlvk41OTkI/LW1SGtCVb5drD3eCc71wcA+VcAHA5vDd8+3UGakxiJV7i9pdQevU5T1R35pJ3MV5QW1pf+0kWBheJ2SWua8EQXZXsu4fVVYEz1sEKvof5EuxjoPvzpcRvrdp9C2gGMx6cpOHBmbImMesds7BZubwMVDTfXDnQ3vQfK7AC8wLfExMX5whyQc3q2OEnjGm5vE76SQxsfBLr77a7CNf+n0r/l6sSMtsBSnurckiIILCobAtVZhpF4gZF4jubaymj4Ch/fd380LE7bAnjc0NPxk2yqpmEuwGxF0ag+0k5uTpzZeBeaazvj0We8fXojainsb2xh2BZgbe0gSIllzSIUh63wfQ6dZ/O2fbjcKlOj58jJ3cVENESw5yErc9nf2MLQ4jwQAkV1Lqiq37/cZ9WaahJjF9AcmxiPDhLs7ePe23oOnmUwg2hSShQle96tKDjA2HAniusgo9FxnvY9Jxw7RWzGYy92QghM00x5g53qp9sHmtB58/o2umOI2NwGolMnMYUHIb7aAyiKwsjICLqu2/qBEIKUUAohMaSHSLyBSMoPTINQ6CX5+fn2AEVFRZSUlBCPx4nFYhl3L4RESjF/GEgX3pSj+Xw+/H7/b3U/AEOZFnp7O5+5AAAAAElFTkSuQmCC)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
+	</style>
+</head>
+<body>
+
+<!-- Wiki content -->
+
+	<h1>socket</h1>
+
+<p>
+Created Sunday 10 September 2017
+</p>
+
+<p>
+1.介绍<br>
+1）在网间网内部，每一个Socket用一个<b>半相关描述</b>：（协议，本地地址，本地端口）<br>
+2）一个完整的Socket有一个本地唯一的Socket号，由操作系统分配。<br>
+3）Socket是面向客户/服务器模型而设计的，针对客户和服务器程序提供不同的Socket系统调用<br>
+4）客户随机申请一个Socket，系统为之分配一个Socket号；<br>
+5）服务器拥有全局公认的Socket（<b>半相关</b>），任何客户都可以向它发出连接请求和信息请求<br>
+6）Socket实质上提供了进程通信的端点。进程通信之前，双方首先必须各自创建一个端点，否则是没有办法建立联系并相互通信的
+</p>
+
+<p>
+2.创建方法
+</p>
+
+<p>
+2.1套接字之间的连接过程可以分为三个步骤：服务器监听，客户端请求，连接确认。<br>
+1）服务器监听：<br>
+是服务器端套接字并不定位具体的客户端套接字，而是处于等待连接的状态，实时监控网络状态。<br>
+2）客户端请求：<br>
+是指由客户端的套接字提出连接请求，要连接的目标是服务器端的套接字。为此，客户端的套接字必须首先描述它要连接的服务器的套接字，指出服务器端套接字的地址和端口号，然后就向服务器端套接字提出连接请求。<br>
+3）连接确认：<br>
+是指当服务器端套接字监听到或者说接收到客户端套接字的连接请求，它就响应客户端套接字的请求，建立一个新的线程，把服务器端套接字的描述发给客户端，一旦客户端确认了此描述，连接就建立好了。而服务器端套接字继续处于监听状态，继续接收其他客户端套接字的连接请求。<br>
+<img src="file:///home/demon/Downloads/a2cc7cd98d1001e92d5e43efbd0e7bec55e797eb.jpg">
+</p>
+
+<p>
+3.使用方法<br>
+int socket(int domain, int type, int protocol);<br>
+int bind(SOCKET socket, const struct sockaddr* address, socklen_t address_len);<br>
+int recv(SOCKET socket, char FAR* buf, int len, int flags);<br>
+ssize_t recvfrom(int sockfd, void buf, int len, unsigned int flags, struct socketaddr* from, socket_t* fromlen);<br>
+int sendto( SOCKET s, const char FAR* buf, int size, int flags, const struct sockaddr FAR* to, int tolen);<br>
+int accept(SOCKET socket, struct socketaddr* addr, socklen_t* len);<br>
+int close(SOCKET socket);
+</p>
+
+<p>
+参考：<br>
+<a href="https://baike.baidu.com/item/socket/281150?fr=aladdin#6" title="https://baike.baidu.com/item/socket/281150?fr=aladdin#6" class="https">https://baike.baidu.com/item/socket/281150?fr=aladdin#6</a>
+</p>
+
+<p>
+4.常见疑问<br>
+4.1长连接和短连接
+</p>
+
+<br>
+
+<p>
+5.sample<br>
+<a href="http://blog.csdn.net/sight_/article/details/8138802" title="http://blog.csdn.net/sight_/article/details/8138802" class="http">http://blog.csdn.net/sight_/article/details/8138802</a>
+</p>
+
+<p>
+1.关于PF_INET和AF_INET的区别 <br>
+在写网络程序的时候，建立TCP socket：<br>
+   sock = socket(PF_INET, SOCK_STREAM, 0);<br>
+然后在绑定本地地址或连接远程地址时需要初始化sockaddr_in结构，其中指定address family时一般设置为AF_INET，即使用IP。
+</p>
+
+<p>
+相关头文件中的定义：AF = Address Family<br>
+<div style='padding-left: 150pt'>
+PF = Protocol Family<br>
+AF_INET = PF_INET
+</div>
+</p>
+
+<p>
+在windows中的Winsock2.h中，
+</p>
+
+<p>
+<div style='padding-left: 150pt'>
+#define AF_INET 0<br>
+#define PF_INET AF_INET
+</div>
+</p>
+
+<p>
+所以在windows中AF_INET与PF_INET完全一样. 
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+而在Unix/Linux系统中，在不同的版本中这两者有微小差别.对于BSD,是AF,对于POSIX是PF.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+理论上建立socket时是指定协议，应该用PF_xxxx，设置地址时应该用AF_xxxx。当然AF_INET和PF_INET的值是相同的，混用也不会有太大的问题。也就是说你socket时候用PF_xxxx，设置的时候用AF_xxxx也是没关系的，这点随便找个TCPIP例子就可以验证出来了。如下，不论是AF_INET还是PF_INET都是可行的，只不过这样子的话，有点不符合规范。
+</div>
+</p>
+
+<p>
+[cpp] view plain copy<br>
+<div style='padding-left: 30pt'>
+/* 服务器端开始建立socket描述符 */  <br>
+/ if((sockfd=socket(AF_INET,SOCK_STREAM,0))==-1)   <br>
+if((sockfd=socket(PF_INET,SOCK_STREAM,0))==-1)   <br>
+{  <br>
+fprintf(stderr,"Socket error:%s\n\a",strerror(errno));  <br>
+exit(1);  <br>
+}  
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+/* 服务器端填充 sockaddr结构 */   <br>
+bzero(&amp;server_addr,sizeof(struct sockaddr_in));  <br>
+server_addr.sin_family=AF_INET;  <br>
+//server_addr.sin_family=PF_INET;  <br>
+server_addr.sin_addr.s_addr=htonl(INADDR_ANY);  <br>
+server_addr.sin_port=htons(portnumber);  
+</div>
+</p>
+
+<p>
+ 在函数socketpair与socket的domain参数中有AF_UNIX,AF_LOCAL,AF_INET,PF_UNIX,PF_LOCAL,PF_INET.<br>
+ 这几个参数有AF_UNIX=AF_LOCAL, PF_UNIX=PF_LOCAL, AF_LOCAL=PF_LOCAL, AF_INET=PF_INET.<br>
+ 但是对于socketpair与socket的domain参数,使用PF_LOCAL系列,<br>
+ 而在初始化套接口地址结构时,则使用AF_LOCAL.<br>
+ 例如:<br>
+<div style='padding-left: 30pt'>
+ z = socket(PF_LOCAL, SOCK_STREAM, 0);<br>
+ adr_unix.sin_family = AF_LOCAL;
+</div>
+原文出处：<a href="http://blog.csdn.net/xiongmaojiayou/article/details/7584211" title="http://blog.csdn.net/xiongmaojiayou/article/details/7584211" class="http">http://blog.csdn.net/xiongmaojiayou/article/details/7584211</a>
+</p>
+
+
+<!-- End wiki content -->
+
+</body>
+
+</html>
