@@ -9,10 +9,9 @@ title: My Blog
 
 <ul>
     {% for post in site.posts %}
+	<p>{{ site.baseurl | post.url }}</p>
     <li>
         {{ post.date | date_to_string }} 
-        {{ site.baseurl }}
-		{{ post.url }}
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
     </li>
 
