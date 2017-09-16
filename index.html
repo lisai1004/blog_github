@@ -9,7 +9,8 @@ title: My Blog
 
 <ul>
     {% for post in site.posts %}
-	<p>{{ site.baseurl | post.url }}</p>
+	<p>{{ site.baseurl}}</p>
+	<p>{{ post.url }}</p>
     <li>
         {{ post.date | date_to_string }} 
         <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
