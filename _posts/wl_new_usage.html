@@ -1,0 +1,6922 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>wl new usage</title>
+	<meta name='Generator' content='Zim 0.67'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		span.zim-tag {
+			color: #ce5c00;
+		}
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		.migrated-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB+AKHREFA8vJSnkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAC1klEQVRIx+2VT0hUURTGf/e958w4Tc3TYowMw1GyEgwr1MqsFmbZIrIWQZsWJUjbdoHQpl3Qps0swnCRECQFYkR/TC1iKkqmfzAKTo2Vf8hoRsfR995tkRMT87RRWkUHHhy495zvnvvu933wP/75EKkkEAjIYDCIaZpIKRFCZN0kfX9xcTGtra2/irVUEolECIfDlJeXo+s6hmFkDaCqKoZhEAqFSCaTv60pqcSyLAoLC/F4PEtqDmCaJkIIKisrMybX0sdUVRWA5ubmPzdNjjI1cpXkZC/O1fV03PXgdDqRUtpPIITAsqxsDz0Z/3CZQv8uqo4N4C8/Tp2/DdM0MiZQlvk41OTkI/LW1SGtCVb5drD3eCc71wcA+VcAHA5vDd8+3UGakxiJV7i9pdQevU5T1R35pJ3MV5QW1pf+0kWBheJ2SWua8EQXZXsu4fVVYEz1sEKvof5EuxjoPvzpcRvrdp9C2gGMx6cpOHBmbImMesds7BZubwMVDTfXDnQ3vQfK7AC8wLfExMX5whyQc3q2OEnjGm5vE76SQxsfBLr77a7CNf+n0r/l6sSMtsBSnurckiIILCobAtVZhpF4gZF4jubaymj4Ch/fd380LE7bAnjc0NPxk2yqpmEuwGxF0ag+0k5uTpzZeBeaazvj0We8fXojainsb2xh2BZgbe0gSIllzSIUh63wfQ6dZ/O2fbjcKlOj58jJ3cVENESw5yErc9nf2MLQ4jwQAkV1Lqiq37/cZ9WaahJjF9AcmxiPDhLs7ePe23oOnmUwg2hSShQle96tKDjA2HAniusgo9FxnvY9Jxw7RWzGYy92QghM00x5g53qp9sHmtB58/o2umOI2NwGolMnMYUHIb7aAyiKwsjICLqu2/qBEIKUUAohMaSHSLyBSMoPTINQ6CX5+fn2AEVFRZSUlBCPx4nFYhl3L4RESjF/GEgX3pSj+Xw+/H7/b3U/AEOZFnp7O5+5AAAAAElFTkSuQmCC)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
+	</style>
+</head>
+<body>
+
+<!-- Wiki content -->
+
+	<p>
+Usage: wl [-a|i &lt;adapter&gt;] [-h] [-d|u|x] [-w|--wlc &lt;index&gt;] &lt;command&gt; [arguments]
+</p>
+
+<p>
+  -h        this message and command descriptions<br>
+  -h [cmd]  command description for cmd<br>
+  -a, -i    adapter name or number<br>
+  -d        output format signed integer<br>
+  -u        output format unsigned integer<br>
+  -x        output format hexdecimal<br>
+  -w &lt;idx&gt;  index of WLC for RSDB only
+</p>
+
+<p>
+ver	get version information
+</p>
+
+<p>
+cmds	generate a short list of available commands
+</p>
+
+<p>
+up	reinitialize and mark adapter up (operational)
+</p>
+
+<p>
+down	reset and mark adapter down (disabled)
+</p>
+
+<p>
+out	mark adapter down but do not reset hardware(disabled)<br>
+<div style='padding-left: 30pt'>
+On dualband cards, cards must be bandlocked before use.
+</div>
+</p>
+
+<p>
+clk	set board clock state. return error for set_clk attempt if the driver is not down<br>
+<div style='padding-left: 30pt'>
+0: clock off<br>
+1: clock on
+</div>
+</p>
+
+<p>
+reboot	Reboot platform
+</p>
+
+<p>
+radio	Set the radio on or off.<br>
+<div style='padding-left: 30pt'>
+"on" or "off"
+</div>
+</p>
+
+<p>
+dump	Give suboption "list" to list various suboptions
+</p>
+
+<p>
+srclear	Clears first 'len' bytes of the srom, len in decimal or hex<br>
+<div style='padding-left: 30pt'>
+Usage: srclear &lt;len&gt;
+</div>
+</p>
+
+<p>
+srdump	print contents of SPROM to stdout
+</p>
+
+<p>
+srwrite	Write the srom: srwrite byteoffset value
+</p>
+
+<p>
+ciswrite<br>
+<div style='padding-left: 30pt'>
+Write specified &lt;file&gt; to the SDIO/PCIe CIS source (either SROM or OTP)	Usage: ciswrite [-p|--pciecis] &lt;file&gt;<br>
+-p|--pciecis -- Write OTP for PCIe full-dongle
+</div>
+</p>
+
+<p>
+cisupdate<br>
+<div style='padding-left: 30pt'>
+Write a hex byte stream to specified byte offset to the CIS source (either SROM or OTP)
+</div>
+--preview option allows you to review the update without committing it<br>
+<div style='padding-left: 30pt'>
+&lt;byte offset&gt; &lt;hex byte stream&gt; [--preview]
+</div>
+</p>
+
+<p>
+cisdump	Display the content of the SDIO CIS source<br>
+<div style='padding-left: 30pt'>
+-b &lt;file&gt; -- also write raw bytes to &lt;file&gt;<br>
+&lt;len&gt; -- optional count of bytes to display (must be even)
+</div>
+</p>
+
+<p>
+cisconvert<br>
+<div style='padding-left: 30pt'>
+Print CIS tuple for given name=value pair
+</div>
+</p>
+
+<p>
+rdvar	Read a named variable to the srom
+</p>
+
+<p>
+wrvar	Write a named variable to the srom
+</p>
+
+<p>
+nvram_dump<br>
+<div style='padding-left: 30pt'>
+print nvram variables to stdout
+</div>
+</p>
+
+<p>
+nvset	set an nvram variable<br>
+<div style='padding-left: 30pt'>
+name=value (no spaces around '=')
+</div>
+</p>
+
+<p>
+nvget	get the value of an nvram variable
+</p>
+
+<p>
+nvram_get<br>
+<div style='padding-left: 30pt'>
+get the value of an nvram variable
+</div>
+</p>
+
+<p>
+revinfo	get hardware revision information
+</p>
+
+<p>
+msglevel<br>
+<div style='padding-left: 30pt'>
+set driver console debugging message bitvector<br>
+type 'wl msglevel ?' for values
+</div>
+</p>
+
+<p>
+PM	set driver power management mode:<br>
+<div style='padding-left: 30pt'>
+0: CAM (constantly awake)<br>
+1: PS  (power-save)<br>
+2: FAST PS mode
+</div>
+</p>
+
+<p>
+wake	set driver power-save mode sleep state:<br>
+<div style='padding-left: 30pt'>
+0: core-managed<br>
+1: awake
+</div>
+</p>
+
+<p>
+promisc	set promiscuous mode ethernet address reception<br>
+<div style='padding-left: 30pt'>
+0 - disable<br>
+1 - enable
+</div>
+</p>
+
+<p>
+monitor	set monitor mode<br>
+<div style='padding-left: 30pt'>
+0 - disable<br>
+1 - enable active monitor mode (interface still operates)
+</div>
+</p>
+
+<p>
+frag	Deprecated. Use fragthresh.
+</p>
+
+<p>
+rts	Deprecated. Use rtsthresh.
+</p>
+
+<p>
+cwmin	Set the cwmin.  (integer [1, 255])
+</p>
+
+<p>
+cwmax	Set the cwmax.  (integer [256, 2047])
+</p>
+
+<p>
+srl	Set the short retry limit.  (integer [1, 255])
+</p>
+
+<p>
+lrl	Set the long retry limit.  (integer [1, 255])
+</p>
+
+<p>
+rate	force a fixed rate:<br>
+<div style='padding-left: 30pt'>
+valid values for 802.11a are (6, 9, 12, 18, 24, 36, 48, 54)<br>
+valid values for 802.11b are (1, 2, 5.5, 11)<br>
+valid values for 802.11g are (1, 2, 5.5, 6, 9, 11, 12, 18, 24, 36, 48, 54)<br>
+-1 (default) means automatically determine the best rate
+</div>
+</p>
+
+<p>
+mrate	force a fixed multicast rate:<br>
+<div style='padding-left: 30pt'>
+valid values for 802.11a are (6, 9, 12, 18, 24, 36, 48, 54)<br>
+valid values for 802.11b are (1, 2, 5.5, 11)<br>
+valid values for 802.11g are (1, 2, 5.5, 6, 9, 11, 12, 18, 24, 36, 48, 54)<br>
+-1 (default) means automatically determine the best rate
+</div>
+</p>
+
+<p>
+a_rate	force a fixed rate for the A PHY:<br>
+<div style='padding-left: 30pt'>
+valid values for 802.11a are (6, 9, 12, 18, 24, 36, 48, 54)<br>
+-1 (default) means automatically determine the best rate
+</div>
+</p>
+
+<p>
+a_mrate	force a fixed multicast rate for the A PHY:<br>
+<div style='padding-left: 30pt'>
+valid values for 802.11a are (6, 9, 12, 18, 24, 36, 48, 54)<br>
+-1 (default) means automatically determine the best rate
+</div>
+</p>
+
+<p>
+bg_rate	force a fixed rate for the B/G PHY:<br>
+<div style='padding-left: 30pt'>
+valid values for 802.11b are (1, 2, 5.5, 11)<br>
+valid values for 802.11g are (1, 2, 5.5, 6, 9, 11, 12, 18, 24, 36, 48, 54)<br>
+-1 (default) means automatically determine the best rate
+</div>
+</p>
+
+<p>
+bg_mrate<br>
+<div style='padding-left: 30pt'>
+force a fixed multicast rate for the B/G PHY:<br>
+valid values for 802.11b are (1, 2, 5.5, 11)<br>
+valid values for 802.11g are (1, 2, 5.5, 6, 9, 11, 12, 18, 24, 36, 48, 54)<br>
+-1 (default) means automatically determine the best rate
+</div>
+</p>
+
+<p>
+2g_rate	Force a fixed rate for data frames in the 2.4G band:
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Either "auto", or a simple CCK/DSSS/OFDM rate value:<br>
+1 2 5.5 11 6 9 12 18 24 36 48 54
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Or options to specify legacy, HT, or VHT rate:<br>
+-r R, --rate=R        : legacy rate (CCK, DSSS, OFDM)<br>
+-h M, --ht=M          : HT MCS index [0-23]<br>
+-v M[xS], --vht=M[xS] : VHT MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. 5x2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-c cM[sS]             : VHT (c notation) MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. c5s2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-s S, --ss=S          : VHT Nss [1-8], number of spatial streams, default 1.
+</div>
+<div style='padding-left: 180pt'>
+  : Only used with -v/--vht when MxS format is not used
+</div>
+<div style='padding-left: 30pt'>
+-x T, --exp=T         : Tx Expansion, number of tx chains (NTx) beyond the minimum
+</div>
+<div style='padding-left: 180pt'>
+  : required for the space-time-streams, exp = NTx - Nsts
+</div>
+<div style='padding-left: 30pt'>
+--stbc                : Use STBC expansion, otherwise no STBC<br>
+-l, --ldpc            : Use LDPC encoding, otherwise no LDPC<br>
+-g, --sgi             : SGI, Short Guard Interval, otherwise standard GI<br>
+-b, --bandwidth       : transmit bandwidth MHz; 2.5, 5, 10, 20, 40, 80, 160
+</div>
+</p>
+
+<p>
+2g_mrate<br>
+<div style='padding-left: 30pt'>
+Force a fixed rate for mulitcast/broadcast data frames in the 2.4G band:
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Either "auto", or a simple CCK/DSSS/OFDM rate value:<br>
+1 2 5.5 11 6 9 12 18 24 36 48 54
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Or options to specify legacy, HT, or VHT rate:<br>
+-r R, --rate=R        : legacy rate (CCK, DSSS, OFDM)<br>
+-h M, --ht=M          : HT MCS index [0-23]<br>
+-v M[xS], --vht=M[xS] : VHT MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. 5x2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-c cM[sS]             : VHT (c notation) MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. c5s2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-s S, --ss=S          : VHT Nss [1-8], number of spatial streams, default 1.
+</div>
+<div style='padding-left: 180pt'>
+  : Only used with -v/--vht when MxS format is not used
+</div>
+<div style='padding-left: 30pt'>
+-x T, --exp=T         : Tx Expansion, number of tx chains (NTx) beyond the minimum
+</div>
+<div style='padding-left: 180pt'>
+  : required for the space-time-streams, exp = NTx - Nsts
+</div>
+<div style='padding-left: 30pt'>
+--stbc                : Use STBC expansion, otherwise no STBC<br>
+-l, --ldpc            : Use LDPC encoding, otherwise no LDPC<br>
+-g, --sgi             : SGI, Short Guard Interval, otherwise standard GI<br>
+-b, --bandwidth       : transmit bandwidth MHz; 2.5, 5, 10, 20, 40, 80, 160
+</div>
+</p>
+
+<p>
+5g_rate	Force a fixed rate for data frames in the 5G band:
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Either "auto", or a simple OFDM rate value:<br>
+6 9 12 18 24 36 48 54
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Or options to specify legacy OFDM, HT, or VHT rate:<br>
+-r R, --rate=R        : legacy OFDM rate<br>
+-h M, --ht=M          : HT MCS index [0-23]<br>
+-v M[xS], --vht=M[xS] : VHT MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. 5x2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-c cM[sS]             : VHT (c notation) MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. c5s2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-s S, --ss=S          : VHT Nss [1-8], number of spatial streams, default 1.
+</div>
+<div style='padding-left: 180pt'>
+  : Only used with -v/--vht when MxS format is not used
+</div>
+<div style='padding-left: 30pt'>
+-x T, --exp=T         : Tx Expansion, number of tx chains (NTx) beyond the minimum
+</div>
+<div style='padding-left: 180pt'>
+  : required for the space-time-streams, exp = NTx - Nsts
+</div>
+<div style='padding-left: 30pt'>
+--stbc                : Use STBC expansion, otherwise no STBC<br>
+-l, --ldpc            : Use LDPC encoding, otherwise no LDPC<br>
+-g, --sgi             : SGI, Short Guard Interval, otherwise standard GI<br>
+-b, --bandwidth       : transmit bandwidth MHz; 2.5, 5, 10, 20, 40, 80, 160
+</div>
+</p>
+
+<p>
+5g_mrate<br>
+<div style='padding-left: 30pt'>
+Force a fixed rate for mulitcast/broadcast data frames in the 5G band:
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Either "auto", or a simple OFDM rate value:<br>
+6 9 12 18 24 36 48 54
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Or options to specify legacy OFDM, HT, or VHT rate:<br>
+-r R, --rate=R        : legacy OFDM rate<br>
+-h M, --ht=M          : HT MCS index [0-23]<br>
+-v M[xS], --vht=M[xS] : VHT MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. 5x2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-c cM[sS]             : VHT (c notation) MCS index M [0-9],
+</div>
+<div style='padding-left: 180pt'>
+  : and optionally Nss S [1-8], eg. c5s2 is MCS=5, Nss=2
+</div>
+<div style='padding-left: 30pt'>
+-s S, --ss=S          : VHT Nss [1-8], number of spatial streams, default 1.
+</div>
+<div style='padding-left: 180pt'>
+  : Only used with -v/--vht when MxS format is not used
+</div>
+<div style='padding-left: 30pt'>
+-x T, --exp=T         : Tx Expansion, number of tx chains (NTx) beyond the minimum
+</div>
+<div style='padding-left: 180pt'>
+  : required for the space-time-streams, exp = NTx - Nsts
+</div>
+<div style='padding-left: 30pt'>
+--stbc                : Use STBC expansion, otherwise no STBC<br>
+-l, --ldpc            : Use LDPC encoding, otherwise no LDPC<br>
+-g, --sgi             : SGI, Short Guard Interval, otherwise standard GI<br>
+-b, --bandwidth       : transmit bandwidth MHz; 2.5, 5, 10, 20, 40, 80, 160
+</div>
+</p>
+
+<p>
+infra	Set Infrastructure mode: 0 (IBSS) or 1 (Infra BSS)
+</p>
+
+<p>
+bssid	Set or get the BSS ID value//<br>
+<div style='padding-left: 30pt'>
+(mac address, e.g. 00:11:20:11:33:33, colons optional)
+</div>
+</p>
+
+<p>
+bssmax	get number of BSSes 
+</p>
+
+<p>
+channel	Set the channel://<br>
+<div style='padding-left: 30pt'>
+valid channels for 802.11b/g (2.4GHz band) are 1 through 14<br>
+valid channels for 802.11a  (5 GHz band) are:
+</div>
+<div style='padding-left: 60pt'>
+36, 40, 44, 48, 52, 56, 60, 64,<br>
+100, 104, 108, 112, 116,120, 124, 128, 132, 136, 140, 144,<br>
+149, 153, 157, 161,<br>
+184, 188, 192, 196, 200, 204, 208, 212, 216
+</div>
+</p>
+
+<p>
+clmver	Get version information for CLM data and tools
+</p>
+
+<p>
+roam_channels_in_cache<br>
+<div style='padding-left: 30pt'>
+Get a list of channels in roam cache
+</div>
+</p>
+
+<p>
+roam_channels_in_hotlist<br>
+<div style='padding-left: 30pt'>
+Get a list of channels in roam hot channel list
+</div>
+</p>
+
+<p>
+chanspecs<br>
+<div style='padding-left: 30pt'>
+Get all the valid chanspecs (default: all within current locale):<br>
+-b band (5(a) or 2(b/g))<br>
+-w bandwidth, 20, 40 or 80<br>
+[-c country_abbrev]
+</div>
+</p>
+
+<p>
+chanspecs_defset<br>
+<div style='padding-left: 30pt'>
+Get default chanspecs for current driver settings (default: all within current locale)
+</div>
+</p>
+
+<p>
+chanspec//channel<br>
+<div style='padding-left: 30pt'>
+Set current or configured channel:<br>
+20MHz : [2g|5g]&lt;channel&gt;[/20]<br>
+40MHz : [2g|5g]&lt;channel&gt;/40[u,l]<br>
+80MHz :    [5g]&lt;channel&gt;/80<br>
+optional band 2g or 5g, default to 2g if channel &lt;= 14<br>
+channel number (0-200)<br>
+bandwidth, 2.5, 5, 10, 20, 40, or 80, default 20<br>
+primary sideband for 40MHz on 2g, l=lower, u=upper
+</div>
+OR Set channel with legacy format:<br>
+<div style='padding-left: 30pt'>
+-c channel number (0-224)<br>
+-b band (5(a) or 2(b/g))<br>
+-w bandwidth 20 or 40<br>
+-s ctl sideband, -1=lower, 0=none, 1=upper
+</div>
+</p>
+
+<p>
+sc_chan	Set current or configured channel:<br>
+<div style='padding-left: 30pt'>
+20MHz : [2g|5g]&lt;channel&gt;[/20]<br>
+40MHz : [2g|5g]&lt;channel&gt;/40[u,l]<br>
+80MHz :    [5g]&lt;channel&gt;/80<br>
+optional band 2g or 5g, default to 2g if channel &lt;= 14<br>
+channel number (0-200)<br>
+bandwidth, 2.5, 5, 10, 20, 40, or 80, default 20<br>
+primary sideband for 40MHz on 2g, l=lower, u=upper
+</div>
+OR Set channel with legacy format:<br>
+<div style='padding-left: 30pt'>
+-c channel number (0-224)<br>
+-b band (5(a) or 2(b/g))<br>
+-w bandwidth 20 or 40<br>
+-s ctl sideband, -1=lower, 0=none, 1=upper
+</div>
+</p>
+
+<p>
+rclass	Get operation class:<br>
+<div style='padding-left: 30pt'>
+ chanspec 
+</div>
+</p>
+
+<br>
+
+<p>
+dfs_channel_forced<br>
+<div style='padding-left: 30pt'>
+Set &lt;channel&gt;[a,b][n][u,l]<br>
+channel number (0-224)<br>
+band a=5G, b=2G, default to 2G if channel &lt;= 14<br>
+bandwidth, n=10, non for 20 &amp; 40<br>
+ctl sideband, l=lower, u=upper
+</div>
+Set channel list using -l option <br>
+<div style='padding-left: 30pt'>
+wl dfs_channel_forced {-l &lt;chanspec list&gt; | 0}<br>
+20MHz : &lt;channel&gt;[/20]<br>
+40MHz : &lt;channel&gt;{{l|u}|/40}<br>
+80MHz : &lt;channel&gt;/80<br>
+Channels specified using '-l' option should be
+</div>
+seperated by ','/' ' and should be prefixed with '+'/'-'<br>
+Deletes existing configuration when '0' specified
+</p>
+
+<p>
+txpwr	Set tx power in milliwatts.  Range [1, 84].//
+</p>
+
+<p>
+txpwr1	Set tx power in in various units. Choose one of (default: dBm): //<br>
+<div style='padding-left: 30pt'>
+-d dBm units (range: -32 - 31)<br>
+-q quarter dBm units (range: -128 - 127)<br>
+-m milliwatt units
+</div>
+Can be combined with:<br>
+<div style='padding-left: 30pt'>
+-o turn on override to disable regulatory and other limitations
+</div>
+Use wl txpwr -1 to restore defaults
+</p>
+
+<p>
+txpwrlimit<br>
+<div style='padding-left: 30pt'>
+Return current tx power limit
+</div>
+</p>
+
+<p>
+ucflags	Get/Set ucode flags 1, 2, 3(16 bits each)<br>
+<div style='padding-left: 30pt'>
+offset [ value ] [ band ]
+</div>
+</p>
+
+<p>
+shmem	Get/Set a shared memory location:<br>
+<div style='padding-left: 30pt'>
+offset [ value ] [band ]
+</div>
+</p>
+
+<p>
+macreg	Get/Set any mac registers(include IHR and SB):<br>
+<div style='padding-left: 30pt'>
+macreg offset size[2,4] [ value ] [ band ]
+</div>
+</p>
+
+<p>
+shmemx	Get/Set a shared memory location of PSMX:<br>
+<div style='padding-left: 30pt'>
+offset [ value ] [band ]
+</div>
+</p>
+
+<p>
+macregx	Get/Set any mac registers(include IHR and SB) of PSMX:<br>
+<div style='padding-left: 30pt'>
+macreg offset size[2,4] [ value ] [ band ]
+</div>
+</p>
+
+<p>
+ucantdiv<br>
+<div style='padding-left: 30pt'>
+Enable/disable ucode antenna diversity (1/0 or on/off)
+</div>
+</p>
+
+<p>
+help	List commands by category
+</p>
+
+<p>
+iov	Get information on driver IOVARs
+</p>
+
+<p>
+iovars	Get information on driver IOVARs
+</p>
+
+<p>
+shownetworks<br>
+<div style='padding-left: 30pt'>
+Pretty-print the BSSID list
+</div>
+</p>
+
+<p>
+loop	enable mac-level or mii-level loopback
+</p>
+
+<p>
+piomode	Get/Set piomode
+</p>
+
+<p>
+shmem_dump<br>
+<div style='padding-left: 30pt'>
+Deprecated. Folded under 'wl dump shmem'
+</div>
+</p>
+
+<p>
+pcieregdump<br>
+<div style='padding-left: 30pt'>
+Deprecated.Folded under 'wl dump pcieregs'
+</div>
+</p>
+
+<p>
+gpiodump<br>
+<div style='padding-left: 30pt'>
+Deprecated. Folded under 'wl dump gpio'
+</div>
+</p>
+
+<p>
+tsf_dump<br>
+<div style='padding-left: 30pt'>
+Deprecated. Folded under 'wl dump tsf'
+</div>
+</p>
+
+<p>
+ampdu_dump<br>
+<div style='padding-left: 30pt'>
+Deprecated. Folded under 'wl dump ampdu'
+</div>
+</p>
+
+<p>
+amsdu_dump<br>
+<div style='padding-left: 30pt'>
+Deprecated. Folded under 'wl dump amsdu'
+</div>
+</p>
+
+<p>
+amsdu_clear_counters<br>
+<div style='padding-left: 30pt'>
+clear amsdu counters
+</div>
+</p>
+
+<p>
+fixrate	get/set the fixrate per scb/ac:<br>
+To get: wl fixrate xx:xx:xx:xx:xx:xx (the remote mac addr).<br>
+To set: wl fixrate xx:xx:xx:xx:xx:xx &lt;ac&gt; &lt;rateid&gt;, <br>
+<div style='padding-left: 30pt'>
+where &lt;ac&gt; = -1 means for all ACs, and <br>
+&lt;rateid&gt; is the index to the rate set, -1 means auto.
+</div>
+</p>
+
+<p>
+ratedump<br>
+<div style='padding-left: 30pt'>
+Print driver rate selection tunables and per-scb state to stdout<br>
+based on remote station mac address[xx:xx:xx:xx:xx:xx]
+</div>
+</p>
+
+<p>
+bpind	&lt;high addr&gt; &lt;low addr&gt; [value] <br>
+<div style='padding-left: 30pt'>
+MSB bit in high addr has to be set to access host addr<br>
+sample: wl bpind 0x80000000 0x0001e040
+</div>
+</p>
+
+<br>
+
+<p>
+n_bw	get/set mimo channel bandwidth (10=10MHz, 20=20Mhz, 40=40Mhz), will cause phy to reset
+</p>
+
+<p>
+mimo_ofdm<br>
+<div style='padding-left: 30pt'>
+get/set stf mode for legacy ofdm frame (0=SISO, 1=CDD)
+</div>
+</p>
+
+<p>
+hwkeys	Dump all keys in h/w
+</p>
+
+<p>
+actframe<br>
+<div style='padding-left: 30pt'>
+Send a Vendor specific Action frame to a channel<br>
+usage: wl actframe &lt;Dest Mac Addr&gt; &lt;data&gt; channel dwell-time &lt;BSSID&gt;
+</div>
+</p>
+
+<p>
+antdiv	Set antenna diversity for rx<br>
+<div style='padding-left: 30pt'>
+0 - force use of antenna 0<br>
+1 - force use of antenna 1<br>
+3 - automatic selection of antenna diversity
+</div>
+</p>
+
+<p>
+txant	Set the transmit antenna<br>
+<div style='padding-left: 30pt'>
+0 - force use of antenna 0<br>
+1 - force use of antenna 1<br>
+3 - use the RX antenna selection that was in force during
+</div>
+<div style='padding-left: 60pt'>
+the most recently received good PLCP header
+</div>
+</p>
+
+<p>
+plcphdr	Set the plcp header.<br>
+<div style='padding-left: 30pt'>
+"long" or "auto" or "debug"
+</div>
+</p>
+
+<p>
+phytype	Get phy type
+</p>
+
+<p>
+rateparam<br>
+<div style='padding-left: 30pt'>
+set driver rate selection tunables<br>
+arg 1: tunable id<br>
+arg 2: tunable value
+</div>
+</p>
+
+<p>
+wsec_restrict<br>
+<div style='padding-left: 30pt'>
+Drop unencrypted packets if WSEC is enabled<br>
+0 - disable<br>
+1 - enable
+</div>
+</p>
+
+<p>
+eap	restrict traffic to 802.1X packets until 802.1X authorization succeeds<br>
+<div style='padding-left: 30pt'>
+0 - disable<br>
+1 - enable
+</div>
+</p>
+
+<p>
+cur_etheraddr<br>
+<div style='padding-left: 30pt'>
+Get/set the current hw address
+</div>
+</p>
+
+<p>
+perm_etheraddr<br>
+<div style='padding-left: 30pt'>
+Get the permanent address from NVRAM
+</div>
+</p>
+
+<p>
+authorize<br>
+<div style='padding-left: 30pt'>
+restrict traffic to 802.1X packets until 802.1X authorization succeeds
+</div>
+</p>
+
+<p>
+deauthorize<br>
+<div style='padding-left: 30pt'>
+do not restrict traffic to 802.1X packets until 802.1X authorization succeeds
+</div>
+</p>
+
+<p>
+deauthenticate<br>
+<div style='padding-left: 30pt'>
+deauthenticate a STA from the AP with optional reason code (AP ONLY)
+</div>
+</p>
+
+<p>
+wsec	wireless security bit vector//<br>
+<div style='padding-left: 30pt'>
+1 - WEP enabled<br>
+2 - TKIP enabled<br>
+4 - AES enabled<br>
+8 - WSEC in software<br>
+0x80 - FIPS enabled<br>
+0x100 - WAPI enabled
+</div>
+</p>
+
+<p>
+auth	set/get 802.11 authentication type. 0 = OpenSystem, 1= SharedKey, 3=Open/Shared
+</p>
+
+<p>
+wpa_auth//<br>
+<div style='padding-left: 30pt'>
+Bitvector of WPA authorization modes:<br>
+1	WPA-NONE<br>
+2	WPA-802.1X/WPA-Professional<br>
+4	WPA-PSK/WPA-Personal<br>
+64	WPA2-802.1X/WPA2-Professional<br>
+128	WPA2-PSK/WPA2-Personal<br>
+0	disable WPA
+</div>
+</p>
+
+<p>
+wpa_cap	set/get 802.11i RSN capabilities
+</p>
+
+<p>
+set_pmk	Set passphrase for PMK in driver-resident supplicant.
+</p>
+
+<p>
+sendprb	Send a probe request.<br>
+<div style='padding-left: 30pt'>
+-s S, --ssid=S		SSIDs to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address, xx:xx:xx:xx:xx:xx<br>
+-d MAC, --da=MAC	Destnation Address
+</div>
+</p>
+
+<p>
+send_frame<br>
+<div style='padding-left: 30pt'>
+send the ethernet frame provided in hex
+</div>
+</p>
+
+<p>
+scan	Initiate a scan.<br>
+<div style='padding-left: 30pt'>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+roamscan_parms<br>
+<div style='padding-left: 30pt'>
+set/get roam scan parameters
+</div>
+Use standard scan params syntax below,but only active/passive/home times, nprobes, type,and channels are used.<br>
+All other values are silently discarded.<br>
+<div style='padding-left: 30pt'>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+roam_prof<br>
+<div style='padding-left: 30pt'>
+get/set roaming profiles (need to specify band)<br>
+Usage: wl roam_prof_2g a|b|2g|5g flags rssi_upper rssi_lower delta, boost_thresh boot_delta nfscan fullperiod initperiod backoff maxperiod
+</div>
+</p>
+
+<br>
+
+<p>
+iscan_s	Initiate an incremental scan.<br>
+<div style='padding-left: 30pt'>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+iscan_c	Continue an incremental scan.<br>
+<div style='padding-left: 30pt'>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+escan	Start an escan.<br>
+<div style='padding-left: 30pt'>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+escanabort<br>
+<div style='padding-left: 30pt'>
+Abort an escan.<br>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+regulatory<br>
+<div style='padding-left: 30pt'>
+Get/Set regulatory domain mode (802.11d). Driver must be down.
+</div>
+</p>
+
+<p>
+spect//<br>
+<div style='padding-left: 30pt'>
+Get/Set 802.11h Spectrum Management mode.<br>
+0 - Off<br>
+1 - Loose interpretation of 11h spec - may join non-11h APs<br>
+2 - Strict interpretation of 11h spec - may not join non-11h APs<br>
+3 - Disable 11h and enable 11d<br>
+4 - Loose interpretation of 11h+d spec - may join non-11h APs
+</div>
+</p>
+
+<p>
+scanabort<br>
+<div style='padding-left: 30pt'>
+Abort a scan.
+</div>
+</p>
+
+<p>
+scanresults<br>
+<div style='padding-left: 30pt'>
+Return results from last scan.
+</div>
+</p>
+
+<p>
+iscanresults<br>
+<div style='padding-left: 30pt'>
+Return results from last iscan. Specify a buflen (max 8188)<br>
+to artificially limit the size of the results buffer.<br>
+iscanresults [buflen]
+</div>
+</p>
+
+<p>
+assoc	Print information about current network association.<br>
+<div style='padding-left: 30pt'>
+(also known as "
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+status")
+</div>
+</p>
+
+<p>
+status	Print information about current network association.//<br>
+<div style='padding-left: 30pt'>
+(also known as "assoc")
+</div>
+</p>
+
+<p>
+disassoc<br>
+<div style='padding-left: 30pt'>
+Disassociate from the current BSS/IBSS.
+</div>
+</p>
+
+<p>
+chanlist<br>
+<div style='padding-left: 30pt'>
+Deprecated. Use channels.
+</div>
+</p>
+
+<p>
+channels<br>
+<div style='padding-left: 30pt'>
+Return valid channels for the current settings.
+</div>
+</p>
+
+<p>
+channels_in_country<br>
+<div style='padding-left: 30pt'>
+Return valid channels for the country specified.<br>
+Arg 1 is the country abbreviation<br>
+Arg 2 is the band(a or b)
+</div>
+</p>
+
+<p>
+curpower<br>
+<div style='padding-left: 30pt'>
+Return current tx power settings.<br>
+-v, --verbose: display the power settings for every rate even when every rate in a rate group has the same power.
+</div>
+</p>
+
+<p>
+txpwr_target_max<br>
+<div style='padding-left: 30pt'>
+Return current max tx target power settings.
+</div>
+</p>
+
+<br>
+
+<p>
+chanspec_txpwr_max<br>
+<div style='padding-left: 30pt'>
+Return valid chanspecs with max tx power settings.<br>
+-b band (5(a) or 2(b/g))<br>
+-w bandwidth, 20, 40, 80, 160 or 8080
+</div>
+</p>
+
+<br>
+
+<p>
+rateset	Returns or sets the supported and basic rateset, (b) indicates basic<br>
+<div style='padding-left: 30pt'>
+With no args, returns the rateset. Args are<br>
+rateset "default" | "all" | &lt;arbitrary rateset&gt; [-m|-v &lt;list of mcs masks&gt;]
+</div>
+<div style='padding-left: 60pt'>
+default - driver defaults<br>
+all - all rates are basic rates<br>
+arbitrary rateset - list of rates
+</div>
+<div style='padding-left: 30pt'>
+List of rates are in Mbps and each rate is optionally followed<br>
+by "(b)" or "b" for a Basic rate. Example: 1(b) 2b 5.5 11<br>
+At least one rate must be Basic for a legal rateset.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+-m  sets HT rates (bitmasks, 00-ff). Least significant bit is MCS0.
+</div>
+<div style='padding-left: 60pt'>
+example: 'rateset -m 0x3f 0x01' limits rates to MCS0-MCS5 and MCS8
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+-v  sets VHT MCS values for each supported count of spatial streams.
+</div>
+<div style='padding-left: 60pt'>
+example: 'rateset -v 3ff 1ff ff' limits vht rates to MCS 0-9 for 1 stream,
+</div>
+<div style='padding-left: 240pt'>
+ MCS 0-8 for 2 streams, and MCS 0-7 for 3 streams.
+</div>
+</p>
+
+<p>
+txbf_rateset<br>
+<div style='padding-left: 30pt'>
+Get rateset consisting of OFDM, HT and VHT rates, and Broadcom-to-Broadcom<br>
+group of OFDM, HT and VHT rates by issuing command with no arguments.<br>
+OFDM rates printed are in Mbps, and each Basic rate in OFDM list is marked<br>
+by (b) behind it.  Example: full list of OFDM rates:
+</div>
+<div style='padding-left: 60pt'>
+6(b) 9 12(b) 18 24(b) 36 48 54
+</div>
+<div style='padding-left: 30pt'>
+where 6, 12 and 24 are Basic rates.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Set synopsis:
+</div>
+<div style='padding-left: 60pt'>
+wl txbf_rateset &lt; [ofdm_rate_list] [options ...] &gt;
+</div>
+<div style='padding-left: 30pt'>
+OFDM rate specification does not need to mark Basic rates because Basic<br>
+rates are automatically recognized.<br>
+Options are processed in order; thus redundant instances of an option will<br>
+result in only the last instance taking effect for that option.<br>
+Options:<br>
+-m &lt;MCS_bitmask&gt; ...
+</div>
+<div style='padding-left: 60pt'>
+Set HT rates by bitmask bytes, each ranges from 00 through ff, where<br>
+the least significant bit is MCS0.<br>
+Example: '-m 3f 01' specifies HT rates MCS0 - MCS5 and MCS8.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+-v &lt;VHT_bitmask&gt; ...
+</div>
+<div style='padding-left: 60pt'>
+Set VHT rates for each supported count of spatial streams.<br>
+Example: '-v 3ff 1ff ff' specifies VHT rates: MCS0 - MCS9 for 1 stream,<br>
+MCS0 - MCS8 for 2 streams, and MCS0 - MCS7 for 3 streams.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+-b
+</div>
+<div style='padding-left: 60pt'>
+Set for Broadcom-to-Broadcom group of rates.  Otherwise without<br>
+the -b option, the standard group of rates are set accordingly.
+</div>
+</p>
+
+<br>
+
+<p>
+default_rateset<br>
+<div style='padding-left: 30pt'>
+Returns supported rateset of given phy.<br>
+You have to insert following Args
+</div>
+<div style='padding-left: 60pt'>
+Arg 1. Phy Type: have to be one of the following: [a, b, g, n, lp, ssn, ht, lcn, lcn40, ac]<br>
+Arg 2. Band Type: 2 for 2.4G or 5 for 5G<br>
+Arg 3. CCK Only: 1 for CCK Only or 0 for CCK and OFDM rates<br>
+Arg 4. Basic Rates: 1 for all rates WITH basic rates or 0 for all rates WITHOUT basic rates<br>
+Arg 5. MCS Rates: 1 for all rates WITH MCS rates or 0 for all rates WITHOUT MCS rates<br>
+Arg 6. Bandwidth: have to be one of the following: [10, 20, 40, 80, 160]<br>
+Arg 7. TX/RX Stream: "tx" for TX streams or "rx" for RX streams<br>
+Example: PHY: AC, Band 2.4G, CCK rates only, With Basec rates, WithOut MCS rates, BW: 40 and TX streams<br>
+Input: default_rateset ac 2 0 1 0 40 tx
+</div>
+</p>
+
+<br>
+
+<p>
+roam_trigger<br>
+<div style='padding-left: 30pt'>
+Get or Set the roam trigger RSSI threshold:<br>
+Get: roam_trigger [a|b]<br>
+Set: roam_trigger &lt;integer&gt; [a|b|all]<br>
+integer -   0: default
+</div>
+<div style='padding-left: 120pt'>
+1: optimize bandwidth<br>
+2: optimize distance
+</div>
+<div style='padding-left: 60pt'>
+[-1, -99]: dBm trigger value
+</div>
+</p>
+
+<p>
+roam_delta<br>
+<div style='padding-left: 30pt'>
+Set the roam candidate qualification delta. roam_delta [integer [, a/b]]
+</div>
+</p>
+
+<p>
+roam_scan_period<br>
+<div style='padding-left: 30pt'>
+Set the roam candidate qualification delta.  (integer)
+</div>
+</p>
+
+<p>
+suprates<br>
+<div style='padding-left: 30pt'>
+Returns or sets the 11g override for the supported rateset<br>
+With no args, returns the rateset. Args are a list of rates,<br>
+or 0 or -1 to specify an empty rateset to clear the override.<br>
+List of rates are in Mbps, example: 1 2 5.5 11
+</div>
+</p>
+
+<p>
+prb_resp_timeout<br>
+<div style='padding-left: 30pt'>
+Get/Set probe response timeout
+</div>
+</p>
+
+<p>
+channel_qa<br>
+<div style='padding-left: 30pt'>
+Get last channel quality measurment
+</div>
+</p>
+
+<p>
+channel_qa_start<br>
+<div style='padding-left: 30pt'>
+Start a channel quality measurment
+</div>
+</p>
+
+<p>
+country	Select Country Code for driver operational region<br>
+<div style='padding-left: 30pt'>
+For simple country setting: wl country &lt;country&gt;<br>
+Where &lt;country&gt; is either a long name or country code from ISO 3166; for example "Germany" or "DE"
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+For a specific built-in country definition: wl country &lt;built-in&gt; [&lt;advertised-country&gt;]<br>
+Where &lt;built-in&gt; is a country country code followed by '/' and regulatory revision number.<br>
+For example, "US/3".<br>
+And where &lt;advertised-country&gt; is either a long name or country code from ISO 3166.<br>
+If &lt;advertised-country&gt; is omitted, it will be the same as the built-in country code.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Use 'wl country list [band(a or b)]' for the list of supported countries
+</div>
+</p>
+
+<p>
+country_ie_override<br>
+<div style='padding-left: 30pt'>
+To set/get country ie
+</div>
+</p>
+
+<p>
+autocountry_default<br>
+<div style='padding-left: 30pt'>
+Select Country Code for use with Auto Contry Discovery
+</div>
+</p>
+
+<p>
+join	Join a specified network SSID.<br>
+<div style='padding-left: 30pt'>
+Usage: join &lt;ssid&gt; [key &lt;0-3&gt;:xxxxx] [imode bss|ibss] [amode open|shared|openshared|wpa|wpapsk|wpa2|wpa2psk|wpanone|ftpsk] [options]<br>
+Options:<br>
+-b MAC, --bssid=MAC 	BSSID (xx:xx:xx:xx:xx:xx) to scan and join<br>
+-c CL, --chanspecs=CL 	chanspecs (comma or space separated list)<br>
+prescanned 	uses channel and bssid list from scanresults<br>
+-p, -passive: force passive assoc scan (useful for P2P)
+</div>
+</p>
+
+<p>
+ssid	Set or get a configuration's SSID.//<br>
+<div style='padding-left: 30pt'>
+wl ssid [-C num]|[--cfg=num] [&lt;ssid&gt;]<br>
+If the configuration index 'num' is not given, configuraion #0 is assumed and<br>
+setting will initiate an assoication attempt if in infrastructure mode,<br>
+or join/creation of an IBSS if in IBSS mode,<br>
+or creation of a BSS if in AP mode.
+</div>
+</p>
+
+<p>
+mac	Set or get the list of source MAC address matches.//<br>
+<div style='padding-left: 30pt'>
+wl mac xx:xx:xx:xx:xx:xx [xx:xx:xx:xx:xx:xx ...]<br>
+To Clear the list: wl mac none
+</div>
+</p>
+
+<p>
+macmode	Set the mode of the MAC list.<br>
+<div style='padding-left: 30pt'>
+0 - Disable MAC address matching.<br>
+1 - Deny association to stations on the MAC list.<br>
+2 - Allow association to stations on the MAC list.
+</div>
+</p>
+
+<p>
+band	Returns or sets the current band//<br>
+<div style='padding-left: 30pt'>
+auto - auto switch between available bands (default)<br>
+a - force use of 802.11a band<br>
+b - force use of 802.11b band
+</div>
+</p>
+
+<p>
+bands	Return the list of available 802.11 bands
+</p>
+
+<p>
+phylist	Return the list of available phytypes
+</p>
+
+<p>
+shortslot<br>
+<div style='padding-left: 30pt'>
+Get current 11g Short Slot Timing mode. (0=long, 1=short)
+</div>
+</p>
+
+<p>
+shortslot_override<br>
+<div style='padding-left: 30pt'>
+Get/Set 11g Short Slot Timing mode override. (-1=auto, 0=long, 1=short)
+</div>
+</p>
+
+<p>
+pktcnt	Get the summary of good and bad packets.
+</p>
+
+<p>
+upgrade	Upgrade the firmware on an embedded device
+</p>
+
+<p>
+gmode	Set the 54g Mode (LegacyB|Auto||GOnly|BDeferred|Performance|LRS)
+</p>
+
+<p>
+gmode_protection<br>
+<div style='padding-left: 30pt'>
+Get G protection mode. (0=disabled, 1=enabled)
+</div>
+</p>
+
+<p>
+gmode_protection_control<br>
+<div style='padding-left: 30pt'>
+Get/Set 11g protection mode control alg.(0=always off, 1=monitor local association, 2=monitor overlapping BSS)
+</div>
+</p>
+
+<p>
+gmode_protection_override<br>
+<div style='padding-left: 30pt'>
+Get/Set 11g protection mode override. (-1=auto, 0=disable, 1=enable)
+</div>
+</p>
+
+<p>
+protection_control<br>
+<div style='padding-left: 30pt'>
+Get/Set protection mode control alg.(0=always off, 1=monitor local association, 2=monitor overlapping BSS)
+</div>
+</p>
+
+<p>
+legacy_erp<br>
+<div style='padding-left: 30pt'>
+Get/Set 11g legacy ERP inclusion (0=disable, 1=enable)
+</div>
+</p>
+
+<p>
+isup	Get driver operational state (0=down, 1=up)
+</p>
+
+<p>
+rssi	Get the current RSSI val, for an AP you must specify the mac addr of the STA
+</p>
+
+<p>
+fasttimer<br>
+<div style='padding-left: 30pt'>
+Deprecated. Use fast_timer.
+</div>
+</p>
+
+<p>
+slowtimer<br>
+<div style='padding-left: 30pt'>
+Deprecated. Use slow_timer.
+</div>
+</p>
+
+<p>
+glacialtimer<br>
+<div style='padding-left: 30pt'>
+Deprecated. Use glacial_timer.
+</div>
+</p>
+
+<p>
+dfs_status<br>
+<div style='padding-left: 30pt'>
+Get dfs status
+</div>
+</p>
+
+<p>
+dfs_status_all<br>
+<div style='padding-left: 30pt'>
+Get dfs status of multiple cores or parallel radar scans
+</div>
+</p>
+
+<p>
+radar_status<br>
+<div style='padding-left: 30pt'>
+Get radar detection status
+</div>
+</p>
+
+<p>
+clear_radar_status<br>
+<div style='padding-left: 30pt'>
+Clear radar detection status
+</div>
+</p>
+
+<p>
+pwr_percent<br>
+<div style='padding-left: 30pt'>
+Get/Set power output percentage
+</div>
+</p>
+
+<p>
+toe	Enable/Disable tcpip offload feature
+</p>
+
+<p>
+arpoe	Enable/Disable arp agent offload feature
+</p>
+
+<p>
+wet	Get/Set wireless ethernet bridging mode
+</p>
+
+<p>
+bi	Get/Set the beacon period (bi=beacon interval)
+</p>
+
+<p>
+dtim	Get/Set DTIM
+</p>
+
+<p>
+measure_req<br>
+<div style='padding-left: 30pt'>
+Send an 802.11h measurement request.<br>
+Usage: wl measure_req &lt;type&gt; &lt;target MAC addr&gt;<br>
+Measurement types are: TPC, Basic, CCA, RPI<br>
+Target MAC addr format is xx:xx:xx:xx:xx:xx
+</div>
+</p>
+
+<p>
+quiet	Send an 802.11h quiet command.<br>
+<div style='padding-left: 30pt'>
+Usage: wl quiet &lt;TBTTs until start&gt;, &lt;duration (in TUs)&gt;, &lt;offset (in TUs)&gt;
+</div>
+</p>
+
+<p>
+pm_mute_tx<br>
+<div style='padding-left: 30pt'>
+Sets parameters for power save mode with muted transmission path. Usage:<br>
+wl pm_mute_tx 1 &lt;deadline&gt;	: attempts to enable mode as soon as
+</div>
+<div style='padding-left: 90pt'>
+  timer of &lt;deadline&gt; (milliseconds) expires.
+</div>
+<div style='padding-left: 30pt'>
+wl pm_mute_tx 0	: disables mode
+</div>
+</p>
+
+<br>
+
+<p>
+csa	Send an 802.11h channel switch anouncement with chanspec:<br>
+<div style='padding-left: 30pt'>
+&lt;mode&gt; &lt;count&gt; &lt;channel&gt;[a,b][n][u,l][frame type]<br>
+mode (0 or 1)<br>
+count (0-254)<br>
+channel format:<br>
+20MHz : [2g|5g]&lt;channel&gt;[/20]<br>
+40MHz : [2g|5g]&lt;channel&gt;/40[u,l]<br>
+80MHz :    [5g]&lt;channel&gt;/80<br>
+optional band 2g or 5g, default to 2g if channel &lt;= 14<br>
+channel number (0-200)<br>
+bandwidth, 20, 40, or 80, default 20<br>
+primary sideband for 40MHz on 2g, l=lower, u=upper<br>
+csa frame type(optional), default is broadcast if not specified, u=unicast
+</div>
+</p>
+
+<p>
+constraint<br>
+<div style='padding-left: 30pt'>
+Send an 802.11h Power Constraint IE<br>
+Usage: wl constraint 1-255 db
+</div>
+</p>
+
+<p>
+rm_req	Request a radio measurement of type basic, cca, or rpi<br>
+<div style='padding-left: 30pt'>
+specify a series of measurement types each followed by options.<br>
+example: wl rm_req cca -c 1 -d 50 cca -c 6 cca -c 11<br>
+Options:<br>
+-t n  numeric token id for measurement set or measurement<br>
+-c n  channel<br>
+-d n  duration in TUs (1024 us)<br>
+-p    parallel flag, measurement starts at the same time as previous
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Each measurement specified uses the same channel and duration as the<br>
+previous unless a new channel or duration is specified.
+</div>
+</p>
+
+<p>
+rm_rep	Get current radio measurement report
+</p>
+
+<p>
+join_pref<br>
+<div style='padding-left: 30pt'>
+Set/Get join target preferences.
+</div>
+</p>
+
+<p>
+assoc_pref<br>
+<div style='padding-left: 30pt'>
+Set/Get association preference.
+</div>
+Usage: wl assoc_pref [auto|a|b|g]
+</p>
+
+<p>
+wme	Set WME (Wireless Multimedia Extensions) mode (0=off, 1=on, -1=auto)
+</p>
+
+<p>
+wme_ac	wl wme_ac ap|sta [be|bk|vi|vo [ecwmax|ecwmin|txop|aifsn|acm &lt;value&gt;] ...]
+</p>
+
+<p>
+wme_apsd<br>
+<div style='padding-left: 30pt'>
+Set APSD (Automatic Power Save Delivery) mode on AP (0=off, 1=on)
+</div>
+</p>
+
+<p>
+wme_apsd_sta<br>
+<div style='padding-left: 30pt'>
+Set APSD parameters on STA. Driver must be down.
+</div>
+Usage: wl wme_apsd_sta &lt;max_sp_len&gt; &lt;be&gt; &lt;bk&gt; &lt;vi&gt; &lt;vo&gt;<br>
+   &lt;max_sp_len&gt;: number of frames per USP: 0 (all), 2, 4, or 6<br>
+   &lt;xx&gt;: value 0 to disable, 1 to enable U-APSD per AC
+</p>
+
+<p>
+wme_dp	Set AC queue discard policy.<br>
+Usage: wl wme_dp &lt;be&gt; &lt;bk&gt; &lt;vi&gt; &lt;vo&gt;<br>
+   &lt;xx&gt;: value 0 for newest-first, 1 for oldest-first
+</p>
+
+<p>
+wme_counters<br>
+<div style='padding-left: 30pt'>
+print WMM stats
+</div>
+</p>
+
+<p>
+wme_clear_counters<br>
+<div style='padding-left: 30pt'>
+clear WMM counters
+</div>
+</p>
+
+<p>
+wme_tx_params<br>
+<div style='padding-left: 30pt'>
+wl wme_tx_params [be|bk|vi|vo [short|sfb|long|lfb|max_rate &lt;value&gt;] ...]
+</div>
+</p>
+
+<p>
+wme_maxbw_params<br>
+<div style='padding-left: 30pt'>
+wl wme_maxbw_params [be|bk|vi|vo &lt;value&gt; ....]
+</div>
+</p>
+
+<p>
+lifetime<br>
+<div style='padding-left: 30pt'>
+Set Lifetime parameter (milliseconds) for each ac.
+</div>
+wl lifetime be|bk|vi|vo [&lt;value&gt;]
+</p>
+
+<p>
+reinit	Reinitialize device
+</p>
+
+<p>
+sta_info//<br>
+<div style='padding-left: 30pt'>
+wl sta_info &lt;xx:xx:xx:xx:xx:xx&gt;
+</div>
+</p>
+
+<p>
+staprio	Set/Get sta priority <br>
+Usage: wl staprio &lt;xx:xx:xx:xx:xx:xx&gt; &lt;prio&gt; <br>
+&lt;prio&gt;: 0~3
+</p>
+
+<p>
+pktq_stats<br>
+<div style='padding-left: 30pt'>
+Dumps packet queue log info for [C] common, [A] AMPDU, [N] NAR or [P] power save queues
+</div>
+A:, N: or P: are used to prefix a MAC address (a colon : separator is necessary),<br>
+or else C: is used alone. The '+' option after the colon gives more details.<br>
+Up to 4 parameters may be given, the common queue is default when no parameters<br>
+are supplied<br>
+Use '/&lt;PREC&gt;' as suffix to restrict to certain prec indices; multiple /&lt;PREC&gt;/&lt;PREC&gt;/...can be used<br>
+Also, '<i>' as a suffix to the MAC address or 'C:</i>' will enable automatic logging of<br>
+all prec as they are seen.<br>
+Full automatic operation is also possible with the shorthand<br>
+'A:' (or 'A:<i>'), 'P:' (or 'P:</i>') etc which scans through all known addresses for<br>
+those parameters that take a MAC address.<br>
+wl pktq_stats [C:[+]]|[A:[+]|P:[+]|N:[+]&lt;xx:xx:xx:xx:xx:xx&gt;][/&lt;PREC&gt;[/&lt;PREC&gt;]][//]...
+</p>
+
+<p>
+bs_data	Display per station band steering data<br>
+usage: bs_data [options]<br>
+  options are:<br>
+<div style='padding-left: 30pt'>
+-comma    Use commas to separate values rather than blanks.<br>
+-tab      Use &lt;TAB&gt; to separate values rather than blanks.<br>
+-raw      Display raw values as received from driver.<br>
+-noidle   Do not display idle stations<br>
+-noreset  Do not reset counters after reading
+</div>
+</p>
+
+<p>
+cap	driver capabilities
+</p>
+
+<p>
+malloc_dump<br>
+<div style='padding-left: 30pt'>
+Deprecated. Folded under 'wl dump malloc
+</div>
+</p>
+
+<p>
+chan_info<br>
+<div style='padding-left: 30pt'>
+channel info
+</div>
+</p>
+
+<p>
+add_ie	Add a vendor proprietary IE to 802.11 management packets<br>
+Usage: wl add_ie &lt;pktflag&gt; length OUI hexdata<br>
+&lt;pktflag&gt;: Bit 0 - Beacons<br>
+<div style='padding-left: 60pt'>
+   Bit 1 - Probe Rsp<br>
+   Bit 2 - Assoc/Reassoc Rsp<br>
+   Bit 3 - Auth Rsp<br>
+   Bit 4 - Probe Req<br>
+   Bit 5 - Assoc/Reassoc Req
+</div>
+Example: wl add_ie 3 10 00:90:4C 0101050c121a03<br>
+<div style='padding-left: 60pt'>
+ to add this IE to beacons and probe responses
+</div>
+</p>
+
+<p>
+del_ie	Delete a vendor proprietary IE from 802.11 management packets<br>
+Usage: wl del_ie &lt;pktflag&gt; length OUI hexdata<br>
+&lt;pktflag&gt;: Bit 0 - Beacons<br>
+<div style='padding-left: 60pt'>
+   Bit 1 - Probe Rsp<br>
+   Bit 2 - Assoc/Reassoc Rsp<br>
+   Bit 3 - Auth Rsp<br>
+   Bit 4 - Probe Req<br>
+   Bit 5 - Assoc/Reassoc Req
+</div>
+Example: wl del_ie 3 10 00:90:4C 0101050c121a03
+</p>
+
+<p>
+list_ie	Dump the list of vendor proprietary IEs
+</p>
+
+<p>
+rand	Get a 2-byte Random Number from the MAC's PRNG<br>
+Usage: wl rand
+</p>
+
+<p>
+bcmerrorstr<br>
+<div style='padding-left: 30pt'>
+errorstring
+</div>
+</p>
+
+<p>
+freqtrack<br>
+<div style='padding-left: 30pt'>
+Set Frequency Tracking Mode (0=Auto, 1=On, 2=OFF)
+</div>
+</p>
+
+<p>
+eventing<br>
+<div style='padding-left: 30pt'>
+set/get hex filter bitmask for MAC event reporting up to application layer
+</div>
+</p>
+
+<p>
+event_msgs_ext<br>
+<div style='padding-left: 30pt'>
+set/get bit arbitrary size hex filter bitmask for MAC
+</div>
+</p>
+
+<p>
+event_msgs<br>
+<div style='padding-left: 30pt'>
+set/get hex filter bitmask for MAC event reporting via packet indications
+</div>
+</p>
+
+<p>
+counters<br>
+<div style='padding-left: 30pt'>
+Return driver counter values
+</div>
+</p>
+
+<p>
+reset_cnts<br>
+<div style='padding-left: 30pt'>
+Clear driver counter values
+</div>
+</p>
+
+<p>
+wlc_ver	returns wlc interface version
+</p>
+
+<p>
+delta_stats_interval<br>
+<div style='padding-left: 30pt'>
+set/get the delta statistics interval in seconds (0 to disable)
+</div>
+</p>
+
+<p>
+delta_stats<br>
+<div style='padding-left: 30pt'>
+get the delta statistics for the last interval
+</div>
+</p>
+
+<p>
+assoc_info<br>
+<div style='padding-left: 30pt'>
+Returns the assoc req and resp information [STA only]
+</div>
+</p>
+
+<p>
+autochannel//channel<br>
+<div style='padding-left: 30pt'>
+auto channel selection: <br>
+1 to issue a channel scanning;<br>
+2 to set chanspec based on the channel scan result;<br>
+without argument to only show the chanspec selected; <br>
+ssid must set to null before this process, RF must be up
+</div>
+</p>
+
+<p>
+csscantimer//<br>
+<div style='padding-left: 30pt'>
+auto channel scan timer in minutes (0 to disable)
+</div>
+</p>
+
+<p>
+closed	hides the network from active scans, 0 or 1.<br>
+<div style='padding-left: 30pt'>
+0 is open, 1 is hide
+</div>
+</p>
+
+<p>
+pmkid_info<br>
+<div style='padding-left: 30pt'>
+Returns the pmkid table
+</div>
+</p>
+
+<p>
+probresp_mac_filter<br>
+<div style='padding-left: 30pt'>
+Set/Get MAC filter based Probe response mode. <br>
+0 - Disable MAC filter based Probe response mode.<br>
+1 - Enable MAC filter based Probe response mode.<br>
+No parameter - Returns the current setting.
+</div>
+</p>
+
+<p>
+eap_restrict<br>
+<div style='padding-left: 30pt'>
+set/get EAP restriction
+</div>
+</p>
+
+<p>
+reset_d11cnts<br>
+<div style='padding-left: 30pt'>
+reset 802.11 MIB counters
+</div>
+</p>
+
+<p>
+staname	get/set station name: <br>
+<div style='padding-left: 30pt'>
+Maximum name length is 15 bytes
+</div>
+</p>
+
+<p>
+apname	get AP name
+</p>
+
+<p>
+overlay	overlay virt_addr phy_addr size
+</p>
+
+<p>
+antgain	Set temp ag0/1 value<br>
+usage: wl antgain ag0=0x1 ag1=0x2
+</p>
+
+<p>
+phy_antsel<br>
+<div style='padding-left: 30pt'>
+get/set antenna configuration <br>
+set: -1(AUTO), 0xAB(fixed antenna selection)
+</div>
+<div style='padding-left: 60pt'>
+where A and B is the antenna numbers used for RF chain 1 and 0 respectively
+</div>
+<div style='padding-left: 30pt'>
+query: &lt;utx&gt;[AUTO] &lt;urx&gt;[AUTO] &lt;dtx&gt;[AUTO] &lt;drx&gt;[AUTO]
+</div>
+<div style='padding-left: 60pt'>
+where utx = TX unicast antenna configuration
+</div>
+<div style='padding-left: 90pt'>
+urx = RX unicast antenna configuration<br>
+dtx = TX default (non-unicast) antenna configuration<br>
+drx = RX default (non-unicast) antenna configuration
+</div>
+<div style='padding-left: 30pt'>
+advanced paramaters to set: &lt;utx&gt; &lt;urx&gt; &lt;dtx&gt; &lt;drx&gt;
+</div>
+<div style='padding-left: 60pt'>
+where utx = TX unicast antenna configuration -1 = AUTO
+</div>
+<div style='padding-left: 90pt'>
+urx = RX unicast antenna configuration, -1 = AUTO<br>
+dtx = TX default (non-unicast) antenna configuration, -1 = AUTO<br>
+drx = RX default (non-unicast) antenna configuration, -1 = AUTO
+</div>
+</p>
+
+<p>
+txfifo_sz<br>
+<div style='padding-left: 30pt'>
+set/get the txfifo size; usage: wl txfifo_sz &lt;fifonum&gt; &lt;size_in_bytes&gt;
+</div>
+</p>
+
+<p>
+escan_event_check<br>
+<div style='padding-left: 30pt'>
+Listen and prints the escan events from the dongle<br>
+escan_event_check syntax is: escan_event_check ifname flag<br>
+flag 1 = sync_id info, 2 = bss info, 4 = state + bss info [default], 8 = TLV check for IEs
+</div>
+</p>
+
+<p>
+escanresults<br>
+<div style='padding-left: 30pt'>
+Start escan and display results.<br>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+hs20_ie	set hotspot 2.0 indication IE<br>
+<div style='padding-left: 30pt'>
+usage: wl hs20_ie &lt;length&gt; &lt;hexdata&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+rate_histo<br>
+<div style='padding-left: 30pt'>
+Get rate hostrogram
+</div>
+</p>
+
+<p>
+auth_rekey_init<br>
+<div style='padding-left: 30pt'>
+init/de-init group key rekey(for send_wpa_m1 cmd)<br>
+   Must be enabled before connection for sending
+</div>
+</p>
+
+<p>
+wpa_m1	send a WPA M1 to mac address<br>
+<div style='padding-left: 30pt'>
+Usage: wl wpa_m1 &lt;ptk | gtk | gtk_bad&gt; xx:xx:xx:xx:xx:xx<br>
+ptk: Send a WPA PTK M1<br>
+gtk: Send a WPA GTK M1<br>
+gtk_bad: Send a invalid WPA GTK M1
+</div>
+</p>
+
+<p>
+wme_apsd_trigger<br>
+<div style='padding-left: 30pt'>
+Set Periodic APSD Trigger Frame Timer timeout in ms (0=off)
+</div>
+</p>
+
+<p>
+wme_autotrigger<br>
+<div style='padding-left: 30pt'>
+Enable/Disable sending of APSD Trigger frame when all ac are delivery enabled
+</div>
+</p>
+
+<p>
+reassoc	Initiate a (re)association request.<br>
+<div style='padding-left: 30pt'>
+Usage: wl reassoc &lt;bssid&gt; [options]<br>
+Options:<br>
+-c CL, --chanspecs=CL 	chanspecs (comma or space separated list)
+</div>
+</p>
+
+<p>
+send_nulldata<br>
+<div style='padding-left: 30pt'>
+Sed a null frame to the specified hw address
+</div>
+</p>
+
+<p>
+srchmem	g/set ucode srch engine memory
+</p>
+
+<p>
+clmload	Download CLM data into a driver.  Driver must be down.<br>
+<div style='padding-left: 30pt'>
+Usage: wl clmload &lt;clm blob file name&gt;<br>
+  Note obsolete syntax 'wl clmload 0/1 &lt;clm blob file name&gt;' is still accepted<br>
+  but the download type 0/1 is no longer applicable and is ignored.  Incremental<br>
+  CLM download is no longer supported.  Also reverting to the original built-in<br>
+  CLM is no longer supported.  (This syntax was 'wl clmload 0/1')
+</div>
+</p>
+
+<p>
+calload	Download CAL data into a driver.  Driver must be down.<br>
+<div style='padding-left: 30pt'>
+Usage: wl calload &lt;cal file name&gt; to download existing calibration data file
+</div>
+</p>
+
+<br>
+
+<p>
+caldump	Dump calibration data and save it with calibration storage format.<br>
+<div style='padding-left: 30pt'>
+Usage: wl caldump &lt;cal file name&gt; to dump current calibration info to file
+</div>
+</p>
+
+<br>
+
+<p>
+bmac_reboot<br>
+<div style='padding-left: 30pt'>
+Reboot BMAC
+</div>
+</p>
+
+<p>
+findserver<br>
+<div style='padding-left: 30pt'>
+Used to find the remote server with proper mac address given by the user,this cmd is specific to wifi protocol.
+</div>
+</p>
+
+<p>
+assertlog<br>
+<div style='padding-left: 30pt'>
+get external assert logs<br>
+Usage: wl assertlog
+</div>
+</p>
+
+<p>
+assert_type<br>
+<div style='padding-left: 30pt'>
+set/get the asset_bypass flag; usage: wl assert_type &lt;1/0&gt; (On/Off)
+</div>
+</p>
+
+<p>
+cca_get_stats<br>
+<div style='padding-left: 30pt'>
+Usage: wl cca_stats [-c channel] [-s num seconds][-n]<br>
+ -c channel: Optional. specify channel. 0 = All channels. Default = current channel <br>
+ -n: no analysis of results<br>
+ -s num_seconds: Optional. Default = 10, Max = 60<br>
+ -i: list individual measurements in addition to the averages<br>
+ -curband: Only recommend channels on current band
+</div>
+</p>
+
+<p>
+smfstats<br>
+<div style='padding-left: 30pt'>
+get/clear selected management frame (smf) stats	wl smfstats [-C num]|[--cfg=num] [auth]|[assoc]|[reassoc]|[clear]<br>
+clear - to clear the stats
+</div>
+</p>
+
+<p>
+dongleset<br>
+<div style='padding-left: 30pt'>
+Enable uart driver
+</div>
+</p>
+
+<p>
+manfinfo<br>
+<div style='padding-left: 30pt'>
+show chip package info in OTP
+</div>
+</p>
+
+<p>
+pm_dur	Retrieve accumulated PM duration information (GET only)
+</p>
+
+<br>
+
+<p>
+mpc_dur	Retrieve accumulated MPC duration information in ms (GET) or clear accumulator (SET)<br>
+<div style='padding-left: 30pt'>
+Usage: wl mpc_dur &lt;any-number-to-clear&gt;
+</div>
+</p>
+
+<p>
+txdelay_params<br>
+<div style='padding-left: 30pt'>
+get chanim stats <br>
+ Usage: wl txdelay_params ratio cnt period tune
+</div>
+</p>
+
+<p>
+intfer_params<br>
+<div style='padding-left: 30pt'>
+set/get intfer params <br>
+Usage: wl intfer_params period (in sec) cnt(0~4) txfail_thresh tcptxfail_thresh<br>
+period=0: disable Driver monitor txfail
+</div>
+</p>
+
+<p>
+dngl_wd	enable or disable dongle keep alive watchdog timer<br>
+<div style='padding-left: 30pt'>
+Usage: wl dngl_wd 0\1 (to turn off\on)
+</div>
+</p>
+
+<p>
+tsf	set/get tsf register<br>
+<div style='padding-left: 30pt'>
+Usage: wl tsf [&lt;high&gt; &lt;low&gt;]
+</div>
+</p>
+
+<p>
+mac_rate_histo<br>
+<div style='padding-left: 30pt'>
+Usage: wl mac_rate_histo &lt;mac address&gt; &lt;access category&gt; &lt;num_pkts&gt;<br>
+(MAC address e.g. 00:11:20:11:33:33)<br>
+(Access Category(AC) - 0x10:for entire MAC or 0x4:for video AC for this MAC)<br>
+(num_pkts (optional) - Number of packets to average - max 64 for AC 0x10, max 32 for AC 0x4)
+</div>
+</p>
+
+<p>
+rpmt	rpmt &lt;pm1-to&gt; &lt;pm0-to&gt;
+</p>
+
+<p>
+ie	set/get IE<br>
+<div style='padding-left: 30pt'>
+Usage: For set: wl ie type length hexdata
+</div>
+<div style='padding-left: 60pt'>
+ For get: wl ie type
+</div>
+</p>
+
+<p>
+mempool	Get memory pool statistics
+</p>
+
+<p>
+sr_enable<br>
+<div style='padding-left: 60pt'>
+Get/Set SaveRestore functionality
+</div>
+</p>
+
+<p>
+sr_dump_pmu<br>
+<div style='padding-left: 30pt'>
+Dump value of PMU registers
+</div>
+</p>
+
+<p>
+sr_pmu_keep_on<br>
+<div style='padding-left: 30pt'>
+Keep resource on
+</div>
+</p>
+
+<p>
+sr_power_island<br>
+<div style='padding-left: 30pt'>
+Keep power islands on/off.
+</div>
+Usage: For get:wl sr_power_island<br>
+<div style='padding-left: 30pt'>
+   For set:wl sr_power_island 0x????
+</div>
+<div style='padding-left: 60pt'>
+where ?-&gt; 0 power_island off
+</div>
+<div style='padding-left: 90pt'>
+  ?-&gt; 1 power_island on<br>
+  eg: wl sr_power_island 0x1101
+</div>
+</p>
+
+<p>
+nwoe_ifconfig<br>
+<div style='padding-left: 30pt'>
+Configure the network offload interface, or display current settings<br>
+Usage: wl nwoe_ifconfig [&lt;ip&gt; &lt;netmask&gt; &lt;gateway&gt;]
+</div>
+</p>
+
+<br>
+
+<p>
+antdiv_bcnloss<br>
+<div style='padding-left: 30pt'>
+0	- Disable Rx antenna flip feature based on consecutive beacon loss<br>
+X - beacon loss count after which Rx ant will be flipped<br>
+Usage: wl antdiv_bcnloss &lt;beaconloss_count&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+lpc_params<br>
+<div style='padding-left: 30pt'>
+Set/Get Link Power Control params<br>
+Usage: wl powersel_params &lt;tp_ratio_thresh&gt; &lt;rate_stab_thresh&gt;
+</div>
+<div style='padding-left: 60pt'>
+&lt;pwr_stab_thresh&gt; &lt;pwr_sel_exp_time&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+nar_clear_dump<br>
+<div style='padding-left: 30pt'>
+Clear non-aggregated regulation counters
+</div>
+</p>
+
+<p>
+sar_limit<br>
+<div style='padding-left: 30pt'>
+Set/Get sar_limit<br>
+usage: (set) sar_limit &lt;2Gcore0 2Gcore1 2Gcore2 2Gcore3 5G[0]core0 5G[0]core1...&gt;
+</div>
+<div style='padding-left: 60pt'>
+   (get) sar_limit, return sar limit table
+</div>
+<div style='padding-left: 30pt'>
+unit: all input/output values are absolute and in unit of qdbm
+</div>
+</p>
+
+<br>
+
+<p>
+bmon_bssid<br>
+<div style='padding-left: 30pt'>
+Set monitored BSSID<br>
+usage: bmon_bssid xx:xx:xx:xx:xx:xx 0|1
+</div>
+</p>
+
+<br>
+
+<p>
+event_log_set_init<br>
+<div style='padding-left: 30pt'>
+Initialize an event log set<br>
+Usage: wl event_log_set_init &lt;set&gt; &lt;size&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+event_log_set_expand<br>
+<div style='padding-left: 30pt'>
+Increase the size of an event log set<br>
+Usage: wl event_log_set_expand &lt;set&gt; &lt;size&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+event_log_set_shrink<br>
+<div style='padding-left: 30pt'>
+Decrease the size of an event log set<br>
+Usage: wl event_log_set_expand &lt;set&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+event_log_tag_control<br>
+<div style='padding-left: 30pt'>
+Modify the state of an event log tag<br>
+Usage: wl event_log_tag_control &lt;tag&gt; &lt;set&gt; &lt;flags&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+rmc_ar	Set active receiver to the one that matches the provided mac address<br>
+If there is no match among current RMC receivers, it will return fail<br>
+If mac address is set to all 0 (00:00:00:00:00:00), auto selection mode is enabled<br>
+and the transmitter will choose the active receiver automatically by RSSI<br>
+<div style='padding-left: 30pt'>
+usage: wl rmc_ar [mac address]
+</div>
+Get the device mac that is set to be the active receiver for this transmitter<br>
+<div style='padding-left: 30pt'>
+usage: wl rmc_ar
+</div>
+</p>
+
+<br>
+
+<p>
+pm2_sleep_ret_ext<br>
+<div style='padding-left: 30pt'>
+Get/Set Dynamic Fast Return To Sleep params
+</div>
+</p>
+
+<p>
+sta_monitor<br>
+<div style='padding-left: 30pt'>
+wl sta_monitor [&lt;add/del&gt; &lt;xx:xx:xx:xx:xx:xx&gt;]
+</div>
+</p>
+
+<p>
+monitor_promisc_level<br>
+<div style='padding-left: 30pt'>
+Set a bitmap of different MAC promiscuous level of monitor mode.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl monitor_promisc_level [&lt;bitmap&gt; | &lt;+|-name&gt;]<br>
+bitmap values and corresponding name are the following:<br>
+Args:
+</div>
+<div style='padding-left: 60pt'>
+bit:0:promisc: When set, address filter accepts all received frames.When cleared, the address filter accepts only those frames that match the BSSID or local MAC address<br>
+bit:1:ctrl: When set, the RX filter accepts all received control frames that are accepted by the address filter. When cleared, the RX filter rejects all control frames other than PS poll frames.		bit:3:fcs: When set, the RX filter forwards received frames with FCS errors to the driver.When cleared, frames with FCS errors are discarded.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Example: wl monitor_promisc_level +promisc<br>
+Example: wl monitor_promisc_level 0x2<br>
+Example: wl monitor_promisc_level 0
+</div>
+</p>
+
+<p>
+taf	wl taf &lt;MAC&gt; [&lt;scheduler_id&gt; [&lt;priority&gt;]]<br>
+wl taf &lt;scheduler_id&gt; [coeff [&lt;coeff&gt;]|dump|list]<br>
+wl taf enable [0|1]|order [0|1]|bypass [0|1]|high [&lt;val&gt;]|low [&lt;val&gt;]|force [&lt;val&gt;]|list
+</p>
+
+<p>
+aibss_bcn_force_config<br>
+<div style='padding-left: 30pt'>
+Get/Set AIBSS beacon force configuration 
+</div>
+wl aibss_bcn_force_config &lt;initial_min_bcn_dur,min_bcn_dur,initial_bcn_flood_dur&gt;
+</p>
+
+<br>
+
+<p>
+bcnlenhist<br>
+<div style='padding-left: 30pt'>
+Usage: wl bcnlenhist [0]
+</div>
+</p>
+
+<p>
+bss_peer_info<br>
+<div style='padding-left: 30pt'>
+Get BSS peer info of all the peer's in the indivudual interface<br>
+If a non-zero MAC address is specified, gets the peer info of the PEER alone<br>
+Usage: wl bss_peer_info [MAC address]
+</div>
+</p>
+
+<p>
+dump_modesw_dyn_bwsw<br>
+<div style='padding-left: 30pt'>
+Usage : wl dump_modesw_dyn_bwsw
+</div>
+</p>
+
+<p>
+pwrstats<br>
+<div style='padding-left: 30pt'>
+Get power usage statistics
+</div>
+Usage: wl pwrstats [&lt;type&gt;] ...
+</p>
+
+<p>
+memuse	Get memory usage statistics<br>
+Usage: wl memuse
+</p>
+
+<p>
+drift_stats_reset<br>
+<div style='padding-left: 30pt'>
+Reset drift statistics
+</div>
+</p>
+
+<p>
+aibss_txfail_config<br>
+<div style='padding-left: 30pt'>
+Set/Get txfail configuration for bcn_timeout, max tx retries and max atim failures<br>
+Usage: wl aibss_txfail_config [bcn_timeout max_retry max_atim_failure]
+</div>
+</p>
+
+<p>
+ibss_route_tbl<br>
+<div style='padding-left: 30pt'>
+Get/Set ibss route table<br>
+Usage: wl ibss_route_tbl num_entries [{ip_addr1, mac_addr1}, ...]
+</div>
+</p>
+
+<p>
+ip_route_table<br>
+<div style='padding-left: 30pt'>
+Get/Set ip route table<br>
+Usage: wl ip_route_tbl num_entries [{ip_addr1, mac_addr1}, ...]
+</div>
+</p>
+
+<p>
+rsdb_mode<br>
+<div style='padding-left: 30pt'>
+Set/Get the RSDB mode. Possible values auto(-1), mimo(0), rsdb(1), 80p80(2)
+</div>
+</p>
+
+<p>
+desired_bssid<br>
+<div style='padding-left: 30pt'>
+Set or get the desired BSS ID value<br>
+Usage: wl desired_bssid [BSSID]
+</div>
+</p>
+
+<p>
+ht_features<br>
+<div style='padding-left: 30pt'>
+disable/enable/force proprietary 11n rates support. Interface must be down.
+</div>
+</p>
+
+<p>
+modesw_timecal<br>
+<div style='padding-left: 30pt'>
+Usage: <br>
+ wl modesw_timecal 0~1 for disable /enable <br>
+ wl modesw_timecal to get Time statistics
+</div>
+</p>
+
+<p>
+atim	Set/Get the current ATIM window size
+</p>
+
+<p>
+pcie_bus_tput<br>
+<div style='padding-left: 30pt'>
+Measure the pcie bus througput
+</div>
+Usage: wl pcie_bus_tput -n 64
+</p>
+
+<br>
+
+<p>
+interface_create<br>
+<div style='padding-left: 30pt'>
+create an AP/STA interface on a WLC instance that receives the IOVAR<br>
+Usage: wl interface_create ap/sta [MAC-address]
+</div>
+MAC-address: xx:xx:xx:xx:xx:xx
+</p>
+
+<p>
+interface_remove<br>
+<div style='padding-left: 30pt'>
+Deletes the interface on which this command is received<br>
+Usage:<br>
+ wl interface_remove<br>
+ wl -i &lt;interface_name&gt; interface_remove <br>
+ wl interface_remove -C &lt;bss_cfg_index&gt; 
+</div>
+</p>
+
+<br>
+
+<p>
+phy_read_estpwrlut<br>
+<div style='padding-left: 30pt'>
+Read EstPwr LUT: wl phy_read_estpwrlut core
+</div>
+</p>
+
+<p>
+txcal_gainsweep<br>
+<div style='padding-left: 30pt'>
+start Gain Sweep for TX Cal: wl txcal_gainsweep &lt;xx:xx:xx:xx:xx:xx&gt; [ipg] [len] [nframes] [gidx_start:step:gidx_stop]<br>
+ipg: inter packet gap in us<br>
+len: packet length<br>
+nframes: number of frames; 0 indicates continuous tx test<br>
+gidx_start: Starting TX gain Index<br>
+gidx_stop: Stopping TX gain Index<br>
+step:step size for tx gain index increment
+</div>
+</p>
+
+<p>
+txcal_gainsweep_meas<br>
+<div style='padding-left: 30pt'>
+Get TSSI/PWR measurments from last TX Cal Gain Sweep: wl txcal_gainsweep_meas
+</div>
+Set PWR measurements for TX Cal Gain Sweep: wl txcal_gainsweep_meas core p0 p1 ... p127
+</p>
+
+<p>
+txcal_pwr_tssi_tbl<br>
+<div style='padding-left: 30pt'>
+Get the saved consolidated TSSI/PWR table: wl txcal_pwr_tssi_tbl &lt;core&gt; &lt;chan&gt;<br>
+Generate consolidated TSSI/PWR table from last TX Cal Gain Sweep: wl txcal_pwr_tssi_tbl &lt;core&gt; &lt;Ps&gt; &lt;N&gt; &lt;Ch&gt;
+</div>
+<div style='padding-left: 60pt'>
+Ps: Starting Power in 6.3 format<br>
+N: Number of entries in the table covering the power range (Ps : (Ps+N-1))
+</div>
+<div style='padding-left: 30pt'>
+Set the cosolidated TSSI/PWR table: wl txcal_pwr_tssi_tbl &lt;core&gt; &lt;Ps&gt; &lt;N&gt; &lt;Ch&gt; &lt;Tssi_Ps Tssi_Ps+1 .. Tssi_Ps+N-1&gt;
+</div>
+<div style='padding-left: 60pt'>
+Ps: Starting Power in 6.3 format<br>
+N: Number of entries in the table covering the power range (Ps : (Ps+N-1))<br>
+Ch: Channel Number<br>
+Tssi_X: Adjusted TSSI corresponding to Power X
+</div>
+<div style='padding-left: 30pt'>
+Max number of channel data allowed: 32
+</div>
+</p>
+
+<br>
+
+<p>
+olpc_anchoridx<br>
+<div style='padding-left: 30pt'>
+Get the saved tx power idx and temperature at the olpc anchor power level:
+</div>
+wl olpc_anchoridx &lt;core&gt; &lt;chan&gt;<br>
+Set the temperature and tx power idx at the olpc anchor power level:<br>
+wl olpc_anchoridx &lt;core&gt; &lt;chan&gt; &lt;idx&gt; &lt;temp&gt;<br>
+olpc anchor power level is specified via nvram paramter or iovar.
+</p>
+
+<br>
+
+<p>
+bcntrim_stats<br>
+<div style='padding-left: 30pt'>
+Get Beacon Trim Statistics<br>
+Usage: wl bcntrim_stats
+</div>
+</p>
+
+<br>
+
+<p>
+dfs_ap_move<br>
+<div style='padding-left: 30pt'>
+Move the AP interface to dfs channel specified:<br>
+ Default: Get the dfs scan status<br>
+ -1: Abort given AP move request<br>
+20MHz : [5g]&lt;channel&gt;[/20]<br>
+40MHz : [5g]&lt;channel&gt;/40[u,l]<br>
+80MHz :    [5g]&lt;channel&gt;/80<br>
+channel number (36-200)<br>
+bandwidth, 20, 40, or 80, default 20<br>
+primary sideband for 40MHz on 2g, l=lower, u=upper
+</div>
+OR Set channel with legacy format:<br>
+<div style='padding-left: 30pt'>
+-c channel number (36-224)<br>
+-w bandwidth 20 or 40<br>
+-s ctl sideband, -1=lower, 0=none, 1=upper
+</div>
+</p>
+
+<p>
+pmac	Get mac obj values such as of SHM and IHR<br>
+<div style='padding-left: 30pt'>
+usage: wl pmac &lt;type&gt; &lt;addresses up to 16&gt; -s &lt;step size&gt; -n &lt;num&gt; -b &lt;bitmap&gt; -r
+</div>
+&lt;addresses&gt; : a single address, or multiple, upto 16 addresses, in Decimal or Hex<br>
+&lt;step size&gt; = 0 or 2 or 4<br>
+&lt;num&gt; : how many to print<br>
+&lt;bitmap&gt; : 32-bit value<br>
+-r option is used to specify internal address:
+</p>
+
+<p>
+vasip_counters_clear<br>
+<div style='padding-left: 30pt'>
+clear vasip counters
+</div>
+</p>
+
+<p>
+svmp_mem<br>
+<div style='padding-left: 30pt'>
+Usage: wl svmp_mem &lt;offset&gt; &lt;len&gt; [ &lt;val&gt; ]
+</div>
+With 2 params, read svmp memory at offset for len of 16-bit width.<br>
+With 3rd param, set the same range to the given value
+</p>
+
+<br>
+
+<p>
+restart	Restart driver.  Driver must already be down.
+</p>
+
+<p>
+phymsglevel<br>
+<div style='padding-left: 30pt'>
+set phy debugging message bitvector<br>
+type 'wl phymsglevel ?' for values
+</div>
+</p>
+
+<p>
+tssi	Get the tssi value from radio
+</p>
+
+<p>
+txpathpwr<br>
+<div style='padding-left: 30pt'>
+Turn the tx path power on or off on 2050 radios
+</div>
+</p>
+
+<p>
+powerindex<br>
+<div style='padding-left: 30pt'>
+Set the transmit power for A band(0-63).<br>
+-1 - default value
+</div>
+</p>
+
+<p>
+atten	Set the transmit attenuation for B band. Args: bb radio txctl1.<br>
+<div style='padding-left: 30pt'>
+auto to revert to automatic control<br>
+manual to supspend automatic control
+</div>
+</p>
+
+<p>
+phyreg	Get/Set a phy register:<br>
+<div style='padding-left: 30pt'>
+offset [ value ] [ band ]
+</div>
+</p>
+
+<p>
+radioreg<br>
+<div style='padding-left: 30pt'>
+Get/Set a radio register:<br>
+offset [ value ] [ band/core ]
+</div>
+HTPHY:<br>
+<div style='padding-left: 30pt'>
+Get a radio register: wl radioreg [ offset ] [ cr0/cr1/cr2 ]<br>
+Set a radio register: wl radioreg [ offset ] [ value ] [ cr0/cr1/cr2/all ]
+</div>
+ACPHY:<br>
+<div style='padding-left: 30pt'>
+Get a radio register: wl radioreg [ offset ] [ cr0/cr1/cr2/pll ]<br>
+Set a radio register: wl radioreg [ offset ] [ value ] [ cr0/cr1/cr2/pll/all ]
+</div>
+</p>
+
+<p>
+aciargs	Get/Set various aci tuning parameters.  Choices are:<br>
+<div style='padding-left: 30pt'>
+enter:	CRS glitch trigger level to start detecting ACI<br>
+exit:	CRS glitch trigger level to exit ACI mode<br>
+glitch	Seconds interval between ACI scans when glitchcount is continuously high<br>
+spin:	Num microsecs to delay between rssi samples
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+enter:		(NPHY) CRS glitch trigger level to start detecting ACI<br>
+adcpwr_enter:	(NPHY) ADC power to enter ACI Mitigation mode	<br>
+adcpwr_exit:	(NPHY) ADC power to exit ACI Mitigation mode	<br>
+repeat:		(NPHY) Number of tries per channel to compute power	<br>
+samples:	(NPHY) Number of samples to use to compute power on a channel	<br>
+undetect_sz:	(NPHY) # Undetects to wait before coming out of ACI Mitigation mode	<br>
+loaci:		(NPHY) bphy energy threshold for low aci pwr 	<br>
+mdaci:		(NPHY) bphy energy threshold for medium aci pwr 	<br>
+hiaci:		(NPHY) bphy energy threshold for hi aci pwr 	
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl aciargs [enter x][exit x][spin x][glitch x]
+</div>
+</p>
+
+<p>
+phy_afeoverride<br>
+<div style='padding-left: 30pt'>
+g/set AFE override
+</div>
+</p>
+
+<p>
+pcieserdesreg<br>
+<div style='padding-left: 30pt'>
+g/set SERDES registers: dev offset [val]
+</div>
+</p>
+
+<p>
+txinstpwr<br>
+<div style='padding-left: 30pt'>
+Return tx power based on instant TSSI 
+</div>
+</p>
+
+<p>
+evm	Start an EVM test on the given channel, or stop EVM test.<br>
+<div style='padding-left: 30pt'>
+Arg 1 is channel number 1-14, or "off" or 0 to stop the test.<br>
+Arg 2 is optional rate (1, 2, 5.5 or 11)
+</div>
+</p>
+
+<p>
+noise	Get noise (moving average) right after tx in dBm
+</p>
+
+<p>
+fqacurcy<br>
+<div style='padding-left: 30pt'>
+Manufacturing test: set frequency accuracy mode.<br>
+freqacuracy syntax is: fqacurcy &lt;channel&gt;<br>
+Arg is channel number 1-14, or 0 to stop the test.
+</div>
+</p>
+
+<p>
+crsuprs	Manufacturing test: set carrier suppression mode.<br>
+<div style='padding-left: 30pt'>
+carriersuprs syntax is: crsuprs &lt;channel&gt;<br>
+Arg is channel number 1-14, or 0 to stop the test.
+</div>
+</p>
+
+<p>
+longtrain<br>
+<div style='padding-left: 30pt'>
+Manufacturing test: set longtraining mode.<br>
+longtrain syntax is: longtrain &lt;channel&gt;<br>
+Arg is A band channel number or 0 to stop the test.
+</div>
+</p>
+
+<p>
+interference<br>
+<div style='padding-left: 30pt'>
+NON-ACPHY. Get/Set interference mitigation mode. Choices are:<br>
+0 = none<br>
+1 = non wlan<br>
+2 = wlan manual<br>
+3 = wlan automatic<br>
+4 = wlan automatic with noise reduction
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+ACPHY. Get/Set interference mitigation mode. Bit-Mask:<br>
+0 = desense based on glitches<br>
+1 = limit pktgain based on hwaci (high pwr aci)<br>
+2 = limit pktgain based on w2/nb (high pwr aci)<br>
+3 = enable preemption<br>
+4 = enable HWACI based mitigation<br>
+So a value of 31 would enable all five
+</div>
+</p>
+
+<br>
+
+<p>
+interference_override<br>
+<div style='padding-left: 30pt'>
+NON-ACPHY. Get/Set interference mitigation override. Choices are:<br>
+0 = no interference mitigation<br>
+1 = non wlan<br>
+2 = wlan manual<br>
+3 = wlan automatic<br>
+4 = wlan automatic with noise reduction<br>
+-1 = remove override, override disabled
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+ACPHY. Get/Set interference mitigation mode. Bit-Mask:<br>
+-1 = remove override, override disabled<br>
+0 = desense based on glitches<br>
+1 = limit pktgain based on hwaci (high pwr aci)<br>
+2 = limit pktgain based on w2/nb (high pwr aci)<br>
+3 = enable preemption<br>
+4 = enable HWACI based mitigation<br>
+So a value of 31 would enable all five
+</div>
+</p>
+
+<br>
+
+<p>
+phy_txpwrindex<br>
+<div style='padding-left: 30pt'>
+usage: (set) phy_txpwrindex core0_idx core1_idx core2_idx core3_idx       (get) phy_txpwrindex, return format: core0_idx core1_idx core2_idx core3_idxSet/Get txpwrindex
+</div>
+</p>
+
+<p>
+rssi_cal_freq_grp_2g<br>
+<div style='padding-left: 30pt'>
+usage: wl_rssi_cal_freq_grp_2g [chan_1_2,chan_3_4,...,chan_13_14]
+</div>
+Each of the variables like - chan_1_2 is a byteUpper nibble of this byte is for chan1 and lower for chan2MSB of the nibble tells if the channel is used for calibration3 LSB's tell which group the channel falls inSet/get rssi calibration frequency grouping
+</p>
+
+<p>
+phy_rssi_gain_delta_2gb0<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_2gb0 [val0 val1 ....]
+</div>
+Number of arguments can be - 	 8 for single core (4345 and 4350)	 9 by specifying core_num followed by 8 arguments (4345 and 4350)	 16 for both cores (4350)Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_2gb1<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_2gb1 [val0 val1 ....]
+</div>
+Number of arguments can be - 	 8 for single core (4345 and 4350)	 9 by specifying core_num followed by 8 arguments (4345 and 4350)	 16 for both cores (4350)Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_2gb2<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_2gb2 [val0 val1 ....]
+</div>
+Number of arguments can be - 	 8 for single core (4345 and 4350)	 9 by specifying core_num followed by 8 arguments (4345 and 4350)	 16 for both cores (4350)Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_2gb3<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_2gb3 [val0 val1 ....]
+</div>
+Number of arguments can be - 	 8 for single core (4345 and 4350)	 9 by specifying core_num followed by 8 arguments (4345 and 4350)	 16 for both cores (4350)Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_2gb4<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_2gb4 [val0 val1 ....]
+</div>
+Number of arguments can be - 	 8 for single core (4345 and 4350)	 9 by specifying core_num followed by 8 arguments (4345 and 4350)	 16 for both cores (4350)Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_2g<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_2g [val0 val1 ....]
+</div>
+Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_5gl<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_5gl [val0 val1 ....]
+</div>
+Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_5gml<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_5gml [val0 val1 ....]
+</div>
+Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_5gmu<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_5gmu [val0 val1 ....]
+</div>
+Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rssi_gain_delta_5gh<br>
+<div style='padding-left: 30pt'>
+usage: phy_rssi_gain_delta_5gh [val0 val1 ....]
+</div>
+Set/get rssi gain delta values
+</p>
+
+<p>
+phy_rxgainerr_2g<br>
+<div style='padding-left: 30pt'>
+usage: phy_rxgainerr_2g [val0 val1 ....]
+</div>
+Set/get rx gain delta values
+</p>
+
+<p>
+phy_rxgainerr_5gl<br>
+<div style='padding-left: 30pt'>
+usage: phy_rxgainerr_5gl [val0 val1 ....]
+</div>
+Set/get rx gain delta values
+</p>
+
+<p>
+phy_rxgainerr_5gm<br>
+<div style='padding-left: 30pt'>
+usage: phy_rxgainerr_5gml [val0 val1 ....]
+</div>
+Set/get rx gain delta values
+</p>
+
+<p>
+phy_rxgainerr_5gh<br>
+<div style='padding-left: 30pt'>
+usage: phy_rxgainerr_5gmu [val0 val1 ....]
+</div>
+Set/get rx gain delta values
+</p>
+
+<p>
+phy_rxgainerr_5gu<br>
+<div style='padding-left: 30pt'>
+usage: phy_rxgainerr_5gh [val0 val1 ....]
+</div>
+Set/get rx gain delta values
+</p>
+
+<p>
+phy_test_tssi<br>
+<div style='padding-left: 30pt'>
+wl phy_test_tssi val
+</div>
+</p>
+
+<p>
+phy_test_tssi_offs<br>
+<div style='padding-left: 30pt'>
+wl phy_test_tssi_offs val
+</div>
+</p>
+
+<p>
+phy_rssiant<br>
+<div style='padding-left: 30pt'>
+wl phy_rssiant antindex(0-3)
+</div>
+</p>
+
+<p>
+phy_rssi_ant<br>
+<div style='padding-left: 30pt'>
+Get RSSI per antenna (only gives RSSI of current antenna for SISO PHY)
+</div>
+</p>
+
+<p>
+phy_test_idletssi<br>
+<div style='padding-left: 30pt'>
+get idletssi for the given core; wl phy_test_idletssi corenum
+</div>
+</p>
+
+<p>
+phy_setrptbl<br>
+<div style='padding-left: 30pt'>
+populate the reciprocity compensation table based on SROM cal content
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+usage: wl phy_setrptbl
+</div>
+</p>
+
+<p>
+phy_forceimpbf<br>
+<div style='padding-left: 30pt'>
+force the beamformer into implicit TXBF mode and ready to construct steering matrix
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+usage: wl phy_forceimpbf
+</div>
+</p>
+
+<p>
+phy_forcesteer<br>
+<div style='padding-left: 30pt'>
+force the beamformer to apply steering matrix when TXBF is turned on
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+usage: wl phy_forcesteer 1/0
+</div>
+</p>
+
+<p>
+phy_force_gainlevel<br>
+<div style='padding-left: 30pt'>
+Force rxgain level <br>
+ 0 : force to init gain<br>
+ 1 : force to clip hi gain<br>
+ 2 : force to clip md gain<br>
+ 3 : force to clip lo gain<br>
+ 4 : force to adc clip gain<br>
+ 5 : force to nb clip gain<br>
+ 6 : force to wb clip gain<br>
+ -1 : disable<br>
+ usage: wl phy_force_gainlevel &lt;int32 var&gt;
+</div>
+</p>
+
+<p>
+phy_force_fdiqi<br>
+<div style='padding-left: 30pt'>
+Enable/disable FDIQI Cal/Comp <br>
+ 0 : disable<br>
+ 1 : enable<br>
+ usage: wl phy_force_fdiqi &lt;int32 var&gt;
+</div>
+</p>
+
+<p>
+phy_btcoex_desense<br>
+<div style='padding-left: 30pt'>
+Enable/disable btcoex desense<br>
+ 0 : disable<br>
+ 1 : mode 1<br>
+ usage: wl phy_btcoex_desense &lt;int32 var&gt;
+</div>
+</p>
+
+<p>
+lcnphy_papdepstbl<br>
+<div style='padding-left: 30pt'>
+print papd eps table; Usage: wl lcnphy_papdepstbl
+</div>
+</p>
+
+<p>
+phy_debug_cmd<br>
+<div style='padding-left: 30pt'>
+general purpose command for phy debugging<br>
+ phy function call can be added to wlc_phy_cmn.c<br>
+ usage: wl phy_debug_cmd &lt;int32 var&gt;
+</div>
+</p>
+
+<p>
+rifs	set/get the rifs status; usage: wl rifs &lt;1/0&gt; (On/Off)
+</p>
+
+<p>
+rifs_advert<br>
+<div style='padding-left: 30pt'>
+set/get the rifs mode advertisement status; usage: wl rifs_advert &lt;-1/0&gt; (Auto/Off)
+</div>
+</p>
+
+<p>
+phy_rxiqest<br>
+<div style='padding-left: 30pt'>
+Get phy RX IQ noise in dBm:<br>
+-s # of samples (2^n)<br>
+-a antenna select, 0,1 or 3<br>
+-r resolution select, 0 (coarse) or 1 (fine)<br>
+-f lpf hpc override select, 0 (hpc unchanged) or 1 (overridden to ltrn mode)<br>
+-w dig lpf override select, 0 (lpf unchanged) or 1 (overridden to ltrn_lpf mode)	 or 2 (bypass)<br>
+-g gain-correction select, 0 (disable), 1(enable full correction) 
+</div>
+<div style='padding-left: 60pt'>
+2 (enable temperature correction) or 3(verify rssi_gain_delta)
+</div>
+<div style='padding-left: 30pt'>
+-e extra INITgain in dB on top of default. Valid values = {0, 3, 6, .., 21, 24}<br>
+-i gain mode select, 0 (default gain), 1 (init gain) or 4 (clip LO gain).
+</div>
+</p>
+
+<p>
+phy_txiqcc<br>
+<div style='padding-left: 30pt'>
+usage: phy_txiqcc [a b]
+</div>
+Set/get the iqcc a, b values
+</p>
+
+<p>
+phy_txlocc<br>
+<div style='padding-left: 30pt'>
+usage: phy_txlocc [di dq ei eq fi fq]
+</div>
+Set/get locc di dq ei eq fi fq values
+</p>
+
+<p>
+phytable<br>
+<div style='padding-left: 30pt'>
+usage: wl phytable table_id offset width_of_table_element [table_element]
+</div>
+Set/get table element of a table with the given ID at the given offset<br>
+Note that table width supplied should be 8 or 16 or 32<br>
+table ID, table offset can not be negative
+</p>
+
+<p>
+force_vsdb_chans<br>
+<div style='padding-left: 30pt'>
+Set/get  channels for forced vsdb mode
+</div>
+usage: wl force_vsdb_chans chan1 chan2<br>
+Note: Give chan in the same format as chanspec: eg force_vsdb_chans 1l 48u
+</p>
+
+<p>
+pavars	Set/get temp PA parameters<br>
+usage: wl down<br>
+<div style='padding-left: 30pt'>
+   wl pavars pa2gw0a0=0x1 pa2gw1a0=0x2 pa2gw2a0=0x3 ... <br>
+   wl pavars<br>
+   wl up
+</div>
+  override the PA parameters after driver attach(srom read), before diver up<br>
+  These override values will be propogated to HW when driver goes up<br>
+  PA parameters in one band range (2g, 5gl, 5g, 5gh) must all present if<br>
+  one of them is specified in the command, otherwise it will be filled with 0
+</p>
+
+<p>
+povars	Set/get temp power offset<br>
+usage: wl down<br>
+<div style='padding-left: 30pt'>
+   wl povars cck2gpo=0x1 ofdm2gpo=0x2 mcs2gpo=0x3 ... <br>
+   wl povars<br>
+   wl up
+</div>
+  override the power offset after driver attach(srom read), before diver up<br>
+  These override values will be propogated to HW when driver goes up<br>
+  power offsets in one band range (2g, 5gl, 5g, 5gh) must all present if<br>
+  one of them is specified in the command, otherwise it will be filled with 0  cck(2g only), ofdm, and mcs(0-7) for NPHY are supported 
+</p>
+
+<p>
+rpcalvars<br>
+<div style='padding-left: 30pt'>
+Set/get temp RPCAL parameters
+</div>
+usage: wl down<br>
+<div style='padding-left: 30pt'>
+   wl rpcalvars rpcal2g=0x1 <br>
+   wl rpcalvars<br>
+   wl up
+</div>
+  override the RPCAL parameters after driver attach(srom read), before diver up<br>
+  These override values will be propogated to HW when driver goes up<br>
+  Only the RPCAL parameter specified in the command is updated, the rest is untouched
+</p>
+
+<p>
+fem	Set temp fem2g/5g value<br>
+usage: wl fem (tssipos2g=0x1 extpagain2g=0x2 pdetrange2g=0x1 triso2g=0x1 antswctl2g=0)<br>
+<div style='padding-left: 30pt'>
+(tssipos5g=0x1 extpagain5g=0x2 pdetrange5g=0x1 triso5g=0x1 antswctl5g=0)
+</div>
+</p>
+
+<p>
+maxpower<br>
+<div style='padding-left: 30pt'>
+Set temp maxp2g(5g)a0(a1) value
+</div>
+usage: wl maxpower maxp2ga0=0x1 maxp2ga1=0x2 maxp5ga0=0xff maxp5ga1=0xff<br>
+<div style='padding-left: 30pt'>
+   maxp5gla0=0x3 maxp5gla1=0x4 maxp5gha0=0x5 maxp5gha1=0x6
+</div>
+</p>
+
+<p>
+sample_collect<br>
+<div style='padding-left: 30pt'>
+Optional parameters ACPHY/HTPHY/(NPHY with NREV &gt;= 7) are:<br>
+-f File name to dump the sample buffer (default "sample_collect.dat")<br>
+-t Trigger condition (default now)
+</div>
+<div style='padding-left: 60pt'>
+ now, good_fcs, bad_fcs, bad_plcp, crs, crs_glitch, crs_deassert
+</div>
+<div style='padding-left: 30pt'>
+-b PreTrigger duration in us (default 10)<br>
+-a PostTrigger duration in us (default 10) <br>
+-m Sample collect mode (default 1) 
+</div>
+<div style='padding-left: 60pt'>
+SC_MODE_0_sd_adc			0<br>
+SC_MODE_1_sd_adc_5bits			1<br>
+SC_MODE_2_cic0				2<br>
+SC_MODE_3_cic1				3<br>
+SC_MODE_4s_rx_farrow_1core		4<br>
+SC_MODE_4m_rx_farrow			5<br>
+SC_MODE_5_iq_comp			6<br>
+SC_MODE_6_dc_filt			7<br>
+SC_MODE_7_rx_filt			8<br>
+SC_MODE_8_rssi				9<br>
+SC_MODE_9_rssi_all			10<br>
+SC_MODE_10_tx_farrow			11<br>
+SC_MODE_11_gpio				12<br>
+SC_MODE_12_gpio_trans			13<br>
+SC_MODE_14_spect_ana			14<br>
+SC_MODE_5s_iq_comp			15<br>
+SC_MODE_6s_dc_filt			16<br>
+SC_MODE_7s_rx_filt			17<br>
+ HTPHY: 0=adc, 1..3=adc+rssi, 4=gpio<br>
+ NPHY: 1=Dual-Core adc[9:2], 2=Core0 adc[9:0], 3=Core1 adc[9:0], gpio=gpio
+</div>
+<div style='padding-left: 30pt'>
+-g GPIO mux select (default 0)
+</div>
+<div style='padding-left: 60pt'>
+ use only for gpio mode
+</div>
+<div style='padding-left: 30pt'>
+-d Downsample enable (default 0)
+</div>
+<div style='padding-left: 60pt'>
+ use only for HTPHY
+</div>
+<div style='padding-left: 30pt'>
+-e BeDeaf enable (default 0)<br>
+-i Timeout in units of 10us. (ACPHY is in 10ms unit) (default 1000)
+</div>
+Optional parameters (NPHY with NREV &lt; 7) are:<br>
+<div style='padding-left: 30pt'>
+-f File name to dump the sample buffer (binary format, default "sample_collect.dat")<br>
+-u Sample collect duration in us (default 60)<br>
+-c Cores to do sample collect, only if BW=40MHz (default both)
+</div>
+Optional parameters LCN40PHY are:<br>
+<div style='padding-left: 30pt'>
+-f File name to dump the sample buffer (default "sample_collect.dat")<br>
+-t Trigger condition (default now)
+</div>
+<div style='padding-left: 60pt'>
+ now
+</div>
+<div style='padding-left: 30pt'>
+-s Trigger State (default 0)<br>
+-x Module_Sel1 (default 2)<br>
+-y Module_Sel2 (default 6)<br>
+-n Number of samples (Max 2048, default 2048)
+</div>
+For (NREV &lt; 7), the NPHY buffer returned has the format:<br>
+<div style='padding-left: 30pt'>
+In 20MHz [(uint16)num_bytes, &lt;I(core0), Q(core0), I(core1), Q(core1)&gt;]<br>
+In 40MHz [(uint16)num_bytes(core0), &lt;I(core0), Q(core0)&gt;,
+</div>
+<div style='padding-left: 60pt'>
+(uint16)num_bytes(core1), &lt;I(core1), Q(core1)&gt;]
+</div>
+</p>
+
+<p>
+pkteng_start<br>
+<div style='padding-left: 30pt'>
+start packet engine tx usage: wl pkteng_start &lt;xx:xx:xx:xx:xx:xx&gt; &lt;tx|txwithack&gt; [(async)|sync] [ipg] [len] [nframes] [src]<br>
+start packet engine rx usage: wl pkteng_start &lt;xx:xx:xx:xx:xx:xx&gt; &lt;rx|rxwithack&gt; [(async)|sync] [rxframes] [rxtimeout]<br>
+sync: synchronous mode<br>
+ipg: inter packet gap in us<br>
+len: packet length<br>
+nframes: number of frames; 0 indicates continuous tx test<br>
+src: source mac address<br>
+rxframes: number of receive frames (sync mode only)<br>
+rxtimeout: maximum timout in msec (sync mode only)
+</div>
+</p>
+
+<p>
+pkteng_stop<br>
+<div style='padding-left: 30pt'>
+stop packet engine; usage: wl pkteng_stop &lt;tx|rx&gt;
+</div>
+</p>
+
+<p>
+pkteng_stats<br>
+<div style='padding-left: 30pt'>
+packet engine stats; usage: wl pkteng_stats
+</div>
+</p>
+
+<p>
+phy_force_crsmin<br>
+<div style='padding-left: 30pt'>
+Auto crsmin: <br>
+   phy_force_crsmin -1
+</div>
+Default crsmin value
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+   phy_force_crsmin 0
+</div>
+Set the crsmin value<br>
+<div style='padding-left: 30pt'>
+   phy_force_crsmin core0_th core1_offset core2_offset
+</div>
+</p>
+
+<p>
+Threshold values = 2.5 x NoisePwr_dBm + intercept<br>
+<div style='padding-left: 30pt'>
+   where
+</div>
+<div style='padding-left: 90pt'>
+  NoisePwr_dBm ~= -36/-33/-30dBm for 20/40/80MHz, respectively<br>
+  Intercept = 132/125/119 for 20/40/80MHz, respectively
+</div>
+</p>
+
+<p>
+radarargs<br>
+<div style='padding-left: 30pt'>
+Get/Set Radar parameters in <br>
+order as version, npulses, ncontig, min_pw, max_pw, thresh0,<br>
+thresh1, blank, fmdemodcfg, npulses_lp, min_pw_lp, max_pw_lp,<br>
+min_fm_lp, max_span_lp, min_deltat, max_deltat,<br>
+autocorr, st_level_time, t2_min, fra_pulse_err, npulses_fra,<br>
+npulses_stg2, npulses_stg3, percal_mask, quant, <br>
+min_burst_intv_lp, max_burst_intv_lp, nskip_rst_lp, max_pw_tol, feature_mask
+</div>
+</p>
+
+<p>
+radarargs40<br>
+<div style='padding-left: 30pt'>
+Get/Set Radar parameters for 40Mhz channel in <br>
+order as version, npulses, ncontig, min_pw, max_pw, thresh0,<br>
+thresh1, blank, fmdemodcfg, npulses_lp, min_pw_lp, max_pw_lp,<br>
+min_fm_lp, max_span_lp, min_deltat, max_deltat,<br>
+autocorr, st_level_time, t2_min, fra_pulse_err, npulses_fra,<br>
+npulses_stg2, npulses_stg3, percal_mask, quant, <br>
+min_burst_intv_lp, max_burst_intv_lp, nskip_rst_lp, max_pw_tol, feature_mask
+</div>
+</p>
+
+<p>
+radarthrs<br>
+<div style='padding-left: 30pt'>
+Set Radar threshold for both 20 &amp; 40MHz &amp; 80MHz BW:<br>
+order as thresh0_20_lo, thresh1_20_lo, thresh0_40_lo, thresh1_40_lo<br>
+thresh0_80_lo, thresh1_80_lo, thresh0_20_hi, thresh1_20_hi<br>
+thresh0_40_hi, thresh1_40_hi, thresh0_80_hi, thresh1_80_hi
+</div>
+</p>
+
+<p>
+patrim	Get PA trim option
+</p>
+
+<p>
+wnm	set driver wnm feature mask<br>
+<div style='padding-left: 30pt'>
+type 'wl msglevel ?' for values
+</div>
+</p>
+
+<p>
+wnm_bsstq<br>
+<div style='padding-left: 30pt'>
+send 11v BSS transition management query<br>
+Usage: wl wnm_bsstq [ssid]
+</div>
+</p>
+
+<p>
+tclas_add<br>
+<div style='padding-left: 30pt'>
+add tclas frame classifier type entry<br>
+Usage: wl tclas_add &lt;user priority&gt; &lt;type&gt; &lt;mask&gt; &lt;...&gt;<br>
+type 0 eth2:     &lt;src mac&gt; &lt;dst mac&gt; &lt;ether type&gt;<br>
+type 1/4 ipv4:   &lt;ver&gt; &lt;src&gt; &lt;dst&gt; &lt;s_port&gt; &lt;d_port&gt; &lt;dscp&gt; &lt;prot&gt;<br>
+type 2 802.1Q:   &lt;vlan tag&gt;<br>
+type 3 filter:   &lt;offset&gt; &lt;value&gt; &lt;mask&gt;<br>
+type 4 ipv6:     &lt;ver&gt; &lt;src&gt; &lt;dst&gt; &lt;s_port&gt; &lt;d_port&gt; &lt;dscp&gt; &lt;nxt_hdr&gt; &lt;flw_lbl&gt;<br>
+type 5 802.1D/Q: &lt;802.1Q PCP&gt; &lt;802.1Q CFI&gt; &lt;802.1Q VID&gt;
+</div>
+</p>
+
+<p>
+tclas_del<br>
+<div style='padding-left: 30pt'>
+delete tclas frame classifier type entry<br>
+Usage: wl tclas_del [&lt;idx&gt; [&lt;len&gt;]]
+</div>
+</p>
+
+<p>
+tclas_list<br>
+<div style='padding-left: 30pt'>
+list the added tclas frame classifier type entry<br>
+Usage: wl tclas_list
+</div>
+</p>
+
+<p>
+wnm_tfsreq_add<br>
+<div style='padding-left: 30pt'>
+add one tfs request element and send tfs request frame<br>
+Usage: wl wnm_tfsreq_add &lt;tfs_id&gt; &lt;tfs_action_code&gt; &lt;tfs_subelem_id&gt; &lt;send&gt;<br>
+tfs_id: a non-zero value (1 ~ 255)<br>
+tfs_action_code bitfield: 1: delete after match, 2: notify<br>
+tfs_subelem_id: TFS subelement (0 for none or 1 for previous tclas_add)<br>
+send: 0: store element, 1: send all stored elements
+</div>
+</p>
+
+<p>
+wnm_dms_set<br>
+<div style='padding-left: 30pt'>
+Optionally add pending DMS desc (after tclas_add) and optionally register all desc
+</div>
+on AP side to enable the service (with send=1)	Usage: wl wnm_dms_set &lt;send&gt; [&lt;user_id&gt; [&lt;tc_pro&gt;]]<br>
+<div style='padding-left: 60pt'>
+send: 0: store descriptor, 1: send all stored descs/enable DMS on AP<br>
+user_id: new ID to assign to the created desc (if TCLAS added)
+</div>
+<div style='padding-left: 120pt'>
+ or existing ID to enable on AP (if no TCLAS added), 0 for all desc
+</div>
+<div style='padding-left: 60pt'>
+tc_pro: TCLAS processing element (if several TCLAS added)
+</div>
+</p>
+
+<p>
+wnm_dms_status<br>
+<div style='padding-left: 30pt'>
+list all DMS descriptors and provide their internal and AP status<br>
+Usage: wl wl_wnm_dms_status
+</div>
+</p>
+
+<p>
+wnm_dms_term<br>
+<div style='padding-left: 30pt'>
+Disable registered DMS des on AP side and optionally discard them<br>
+Usage: wl wnm_dms_term &lt;del&gt; [&lt;user_id&gt;]
+</div>
+<div style='padding-left: 60pt'>
+del: Discard desc after disabling the service on AP side<br>
+user_id: desc to disable/delete, 0 for all desc
+</div>
+</p>
+
+<p>
+wnm_service_term<br>
+<div style='padding-left: 30pt'>
+Disable service. Check specific wnm_XXX_term for more info<br>
+Usage: wl wnm_service_term &lt;srv&gt; &lt;service realted params&gt;
+</div>
+<div style='padding-left: 60pt'>
+srv: 1 for DMS, 2 for FMS, 3 for TFS
+</div>
+</p>
+
+<p>
+wnm_timbc_offset<br>
+<div style='padding-left: 30pt'>
+get/set TIM broadcast offset by -32768 period &gt; offset(us) &gt; 32768
+</div>
+CAUTION!! Due to resource limitation, one radio can have only one set of TIMBC offset<br>
+setting.  MBSS need to share the same setting<br>
+<div style='padding-left: 30pt'>
+Usage: wl wnm_timbc_offset &lt;offset&gt; [&lt;tsf_present&gt; [&lt;fix_interval&gt; [&lt;rate_ovreride&gt;]]]
+</div>
+<div style='padding-left: 60pt'>
+offset: in unit of us.  Transmit TIM frame in specific TBTT transmit time time<br>
+tsf_present: can be omitted.  If set to 1, timestamp field will present in TIM frame.If omitted, default setup to 1<br>
+fix_interval: can be omitted.  If set with non-zero value, override STA request interval in TIM Broadcast request.  If omitted, default setup to 0<br>
+rate_override: can be omitted.  In unit of 500k, max setup to 108.  If set, overrideoverride high rate used to transmit TIM broadcast high rate frame
+</div>
+</p>
+
+<p>
+wnm_timbc_set<br>
+<div style='padding-left: 30pt'>
+Enable/disable TIM Broadcast. Station will send appropriate request if AP suport TIMBC<br>
+Usage: wl wnm_timbc_set &lt;interval&gt; [&lt;flags&gt; [&lt;min_rate&gt; [&lt;max_rate&gt;]]]
+</div>
+<div style='padding-left: 60pt'>
+interval: Beacon interval requested for TIM frames, 0 to disable TIM BC<br>
+flags: Bitfield with minimal requirements to keep the service enabled (check doc)<br>
+min_rate: Minimal rate requirement, in Mbps, for TIM high or low rate frames<br>
+max_rate: Maximal rate requirement
+</div>
+</p>
+
+<p>
+wnm_timbc_status<br>
+<div style='padding-left: 30pt'>
+Retrieve TIM Broadcast configuration set with current AP
+</div>
+</p>
+
+<p>
+wnm_maxidle<br>
+<div style='padding-left: 30pt'>
+setup WNM BSS Max Idle Period interval and option<br>
+Usage: wl wnm_maxidle &lt;Idle Period&gt; &lt;Option&gt;<br>
+Idle Period: in unit of 1000TU(1.024s)<br>
+Option: protected keep alive required(0 ~ 1)
+</div>
+</p>
+
+<p>
+wnm_bsstrans_query<br>
+<div style='padding-left: 30pt'>
+send 11v BSS transition management query<br>
+Usage: wl wnm_bsstrans_query [ssid]
+</div>
+</p>
+
+<p>
+wnm_bsstrans_req<br>
+<div style='padding-left: 30pt'>
+send BSS transition management request frame with BSS termination included bit set<br>
+Usage: wl wnm_bsstrans_req &lt;reqmode&gt; &lt;tbtt&gt; &lt;dur&gt; [unicast]<br>
+reqmode: request mode of BSS transition request<br>
+tbtt: time of BSS to end of life, in unit of TBTT, max to 65535<br>
+dur: time of BSS to keep off, in unit of minute, max to 65535<br>
+unicast: [1|0] unicast or broadcast to notify STA in BSS.  Default in unicast.
+</div>
+</p>
+
+<p>
+wnm_keepalives_max_idle<br>
+<div style='padding-left: 60pt'>
+Usage: wl wnm_keepalives_max_idle &lt;keepalives_per_bss_max_idle&gt; &lt;mkeepalive_index&gt; [&lt;max_interval&gt;]
+</div>
+set/get the number of keepalives, mkeep-alive index and max_interval configured per BSS-Idle period.
+</p>
+
+<p>
+wnm_url	set/get wnm session information url<br>
+Usage for set: wl wnm_url length urlstring<br>
+Usage for get: wl wnm_url
+</p>
+
+<p>
+wnm_bsstrans_roamthrottle<br>
+<div style='padding-left: 30pt'>
+Get/Set number of roam scans allowed in throttle period<br>
+Usage: wl wnm_bsstrans_roamthrottle [throttle_period] [scans_allowed]
+</div>
+</p>
+
+<p>
+wnm_bsstrans_rssi_rate_map<br>
+<div style='padding-left: 30pt'>
+Get/Set rssi to rate map<br>
+Usage: wl wnm_bsstrans_rssi_rate_map mode data<br>
+Data is interpeted based on mode<br>
+For mode=0: data = rssi0, rssi1, rssi2.... as per wl_bsstrans_rssi_rate_map_t<br>
+For mode=1: data = phy-type band streams rssi0, rssi1...
+</div>
+<div style='padding-left: 60pt'>
+where, phy-type = cck, ofdm, 11n, 11ac<br>
+band = 2g or 5g for ofdm, 11n and 11ac. Only 2g for cck<br>
+streams = Only 1 for cck and ofdm. 1 to 4 for 11n and 11ac<br>
+rssiX = monotonically non-decreasing rssi values for the combination of phy-type,<br>
+band and streams. Max rssi values for 11ac: 10, 11n: 8, ofdm: 8, cck: 4
+</div>
+</p>
+
+<p>
+cac_addts<br>
+<div style='padding-left: 30pt'>
+add TSPEC, error if STA is not associated or WME is not enabled<br>
+arg: TSPEC parameter input list
+</div>
+</p>
+
+<p>
+cac_delts<br>
+<div style='padding-left: 30pt'>
+delete TSPEC, error if STA is not associated or WME is not enabled<br>
+arg: TSINFO for the target tspec
+</div>
+</p>
+
+<p>
+cac_delts_ea<br>
+<div style='padding-left: 30pt'>
+delete TSPEC, error if STA is not associated or WME is not enabled<br>
+arg1: Desired TSINFO for the target tspec<br>
+arg2: Desired MAC address
+</div>
+</p>
+
+<p>
+cac_tslist<br>
+<div style='padding-left: 30pt'>
+Get the list of TSINFO in driver<br>
+eg. 'wl cac_tslist' get a list of TSINFO
+</div>
+</p>
+
+<p>
+cac_tslist_ea<br>
+<div style='padding-left: 30pt'>
+Get the list of TSINFO for given STA in driver<br>
+eg. 'wl cac_tslist_ea ea' get a list of TSINFO
+</div>
+</p>
+
+<p>
+cac_tspec<br>
+<div style='padding-left: 30pt'>
+Get specific TSPEC with matching TSINFO<br>
+eg. 'wl cac_tspec 0xaa 0xbb 0xcc' where 0xaa 0xbb &amp; 0xcc are TSINFO octets
+</div>
+</p>
+
+<p>
+cac_tspec_ea<br>
+<div style='padding-left: 30pt'>
+Get specific TSPEC for given STA with matching TSINFO<br>
+eg. 'wl cac_tspec 0xaa 0xbb 0xcc xx:xx:xx:xx:xx:xx'
+</div>
+<div style='padding-left: 60pt'>
+where 0xaa 0xbb &amp; 0xcc are TSINFO octets and xx is mac address
+</div>
+</p>
+
+<p>
+rmc_ackmac<br>
+<div style='padding-left: 30pt'>
+Set/Get ACK required multicast mac address<br>
+usage: wl rmc_ackmac -i [index] -t [multicast mac address]
+</div>
+</p>
+
+<p>
+rmc_ackreq<br>
+<div style='padding-left: 30pt'>
+Set/Get ACK rmc_mode 0 disable, 1 enable transmitter, 2 enable initiator <br>
+usage: wl rmc_ackreq [mode]
+</div>
+</p>
+
+<p>
+rmc_txrate<br>
+<div style='padding-left: 30pt'>
+Set/Get a fixed transmit rate for the reliable multicast:<br>
+valid values for 802.11ac are (6, 9, 12, 18, 24, 36, 48, 54)<br>
+-1 (default) means automatically determine the best rate
+</div>
+</p>
+
+<p>
+rmc_status<br>
+<div style='padding-left: 30pt'>
+Display reliable multicast client status
+</div>
+</p>
+
+<p>
+rmc_actf_time<br>
+<div style='padding-left: 30pt'>
+Set/Get mcast action frame tx time period in ms<br>
+usage: wl rmc_actf_time [value]
+</div>
+</p>
+
+<p>
+rmc_ar_timeout<br>
+<div style='padding-left: 30pt'>
+Set/Get rmc active receiver timeout in ms<br>
+usage: wl rmc_ar_timeout [duration in ms]
+</div>
+</p>
+
+<p>
+rmc_rssi_thresh<br>
+<div style='padding-left: 30pt'>
+Set/Get minimum rssi needed for a station to be an active receiver<br>
+usage: wl rmc_rssi_thresh [value]
+</div>
+</p>
+
+<p>
+rmc_stats<br>
+<div style='padding-left: 30pt'>
+Display/Clear reliable multicast client statistical counters<br>
+usage: wl rmc_stats [arg]
+</div>
+</p>
+
+<p>
+rmc_rssi_delta<br>
+<div style='padding-left: 30pt'>
+Display/Set RSSI delta to switch receive leader<br>
+usage: wl rmc_rssi_delta [arg]
+</div>
+</p>
+
+<p>
+rmc_vsie<br>
+<div style='padding-left: 30pt'>
+Display/Set vendor specific IE contents<br>
+usage: wl rmc_vsie [OUI] [Data]
+</div>
+</p>
+
+<p>
+rrm	enable or disable RRM feature<br>
+<div style='padding-left: 30pt'>
+Usage: wl rrm [0/1] to disable/enable RRM feature
+</div>
+</p>
+
+<p>
+rrm_bcn_req<br>
+<div style='padding-left: 30pt'>
+send 11k beacon measurement request<br>
+Usage: wl rrm_bcn_req [bcn mode] [da] [duration] [random int] [channel] [ssid] [repetitions]
+</div>
+</p>
+
+<p>
+rrm_chload_req<br>
+<div style='padding-left: 30pt'>
+send 11k channel load measurement request<br>
+Usage: wl rrm_chload_req [regulatory] [da] [duration] [random int] [channel] [repetitions]
+</div>
+</p>
+
+<p>
+rrm_noise_req<br>
+<div style='padding-left: 30pt'>
+send 11k noise measurement request<br>
+Usage: wl rrm_noise_req [regulatory] [da] [duration] [random int] [channel] [repetitions] 
+</div>
+</p>
+
+<p>
+rrm_frame_req<br>
+<div style='padding-left: 30pt'>
+send 11k frame measurement request<br>
+Usage: wl rrm_frame_req [regulatory] [da] [duration] [random int] [channel] [ta] [repetitions]
+</div>
+</p>
+
+<p>
+rrm_stat_req<br>
+<div style='padding-left: 30pt'>
+send 11k stat measurement request<br>
+Usage: wl rrm_stat_req [da] [random int] [duration] [peer] [group id] [repetitions]
+</div>
+</p>
+
+<p>
+rrm_stat_rpt<br>
+<div style='padding-left: 30pt'>
+Read 11k stat measurement report from STA<br>
+Usage: wl rrm_stat_rpt [mac]
+</div>
+</p>
+
+<p>
+rrm_lm_req<br>
+<div style='padding-left: 30pt'>
+send 11k link measurement request<br>
+Usage: wl rrm_lm_req [da]
+</div>
+</p>
+
+<p>
+rrm_nbr_req<br>
+<div style='padding-left: 30pt'>
+send 11k neighbor report measurement request<br>
+Usage: wl rrm_nbr_req [ssid]
+</div>
+</p>
+
+<p>
+rrm_nbr_list<br>
+<div style='padding-left: 30pt'>
+get 11k neighbor report list<br>
+Usage: wl rrm_nbr_list
+</div>
+</p>
+
+<p>
+rrm_nbr_del_nbr<br>
+<div style='padding-left: 30pt'>
+delete node from 11k neighbor report list<br>
+Usage: wl rrm_nbr_del_nbr [bssid]
+</div>
+</p>
+
+<p>
+rrm_nbr_add_nbr<br>
+<div style='padding-left: 30pt'>
+add node to 11k neighbor report list<br>
+Usage: wl rrm_nbr_add_nbr [bssid] [bssid info] [regulatory] [channel] [phytype]
+</div>
+</p>
+
+<p>
+ns_hostip<br>
+<div style='padding-left: 30pt'>
+Add a ns-ip address or display then
+</div>
+</p>
+
+<p>
+ns_hostip_clear<br>
+<div style='padding-left: 30pt'>
+Clear all ns-ip addresses
+</div>
+</p>
+
+<p>
+wowl	Enable/disable WOWL events<br>
+  0   - Clear all events<br>
+Bit 0 - Wakeup on Magic Packet<br>
+Bit 1 - Wakeup on NetPattern (use 'wl wowl_pattern' to configure pattern)<br>
+Bit 2 - Wakeup on loss-of-link due to Disassociation/Deauth<br>
+Bit 3 - Wakeup on retrograde tsf<br>
+Bit 4 - Wakeup on loss of beacon (use 'wl wowl_bcn_loss' to configure time)
+</p>
+
+<p>
+wowl_bcn_loss<br>
+<div style='padding-left: 30pt'>
+Set #of seconds of beacon loss for wakeup event
+</div>
+</p>
+
+<p>
+wowl_pattern<br>
+<div style='padding-left: 30pt'>
+usage: wowl_pattern [ [clr |  del ] offset mask value ]
+</div>
+No options -- lists existing pattern list<br>
+add -- Adds the pattern to the list<br>
+del -- Removes a pattern from the list<br>
+clr -- Clear current list<br>
+offset -- Starting offset for the pattern<br>
+mask -- Mask to be used for pattern. Bit i of mask =&gt; byte i of the pattern<br>
+value -- Value of the pattern
+</p>
+
+<p>
+wowl_wakeind<br>
+<div style='padding-left: 30pt'>
+usage: wowl_wakeind [clear]
+</div>
+Shows last system wakeup event indications from PCI and D11 cores<br>
+clear - Clear the indications
+</p>
+
+<p>
+wowl_status<br>
+<div style='padding-left: 30pt'>
+usage: wowl_status [clear]
+</div>
+Shows last system wakeup setting
+</p>
+
+<p>
+wowl_pkt<br>
+<div style='padding-left: 30pt'>
+Send a wakeup frame to wakup a sleeping STA in WAKE mode
+</div>
+Usage: wl wowl_pkt &lt;len&gt; &lt;dst ea | bcast | ucast &lt;STA ea&gt;&gt;[ magic [&lt;STA ea&gt;] | net &lt;offset&gt; &lt;pattern&gt; &lt;reason code&gt; ]<br>
+e.g. To send bcast magic frame -- wl wowl_pkt 102 bcast magic 00:90:4c:AA:BB:CC<br>
+<div style='padding-left: 30pt'>
+ To send ucast magic frame -- wl wowl_pkt 102 ucast 00:90:4c:aa:bb:cc magic<br>
+ To send a frame with L2 unicast - wl wowl_pkt 102 00:90:4c:aa:bb:cc net 0 0x00904caabbcc 0x03
+</div>
+ NOTE: offset for netpattern frame starts from "Dest EA" of ethernet frame.So dest ea will be used only when offset is &gt;= 6<br>
+<div style='padding-left: 30pt'>
+ To send a eapol identity frame with L2 unicast - wl wowl_pkt 102 00:90:4c:aa:bb:cc eapid id-string
+</div>
+</p>
+
+<p>
+wowl_ext_magic<br>
+<div style='padding-left: 30pt'>
+Set 6-byte extended magic pattern
+</div>
+Usage: wl wowl_ext_magic 0x112233445566
+</p>
+
+<p>
+wowl_wakeup_reason<br>
+<div style='padding-left: 30pt'>
+Returns pattern id and associated wakeup reason
+</div>
+</p>
+
+<p>
+pkt_filter_add<br>
+<div style='padding-left: 30pt'>
+Install a packet filter.<br>
+Usage: wl pkt_filter_add &lt;id&gt; &lt;polarity&gt; &lt;type&gt; &lt;offset&gt; &lt;bitmask&gt; &lt;pattern&gt;<br>
+id:       Integer. User specified id.<br>
+type:     0 (Pattern matching filter)
+</div>
+<div style='padding-left: 90pt'>
+  1 (Magic pattern match (variable offset)<br>
+  2 (Extended pattern list)
+</div>
+<div style='padding-left: 30pt'>
+offset:   (type 0): Integer offset in received packet to start matching.
+</div>
+<div style='padding-left: 90pt'>
+  (type 1): Integer offset, match here are anywhere later.<br>
+  (type 2): [&lt;base&gt;:]&lt;offset&gt;. Symbolic packet loc plus relative
+</div>
+<div style='padding-left: 180pt'>
+offset, use wl_pkt_filter_add -l for a &lt;base&gt; list.
+</div>
+<div style='padding-left: 30pt'>
+polarity: Set to 1 to negate match result. 0 is default.<br>
+bitmask:  Hex bitmask that indicates which bits of 'pattern' to match.
+</div>
+<div style='padding-left: 90pt'>
+  Must be same size as 'pattern'. Bit 0 of bitmask corresponds<br>
+  to bit 0 of pattern, etc.  If bit N of bitmask is 0, then do<br>
+  *not* match bit N of the pattern with the received payload. If<br>
+  bit N of bitmask is 1, then perform match.
+</div>
+<div style='padding-left: 30pt'>
+pattern:  Hex pattern to match.  Must be same size as &lt;bitmask&gt;.
+</div>
+<div style='padding-left: 90pt'>
+  Syntax: same as bitmask, but for type 2 (pattern list), a '!'<br>
+  may be used to negate that pattern match (e.g. !0xff03).
+</div>
+<div style='padding-left: 30pt'>
+For type 2: [&lt;base&gt;:]&lt;offset&gt; &lt;bitmask&gt; [!]&lt;pattern&gt; triple may be<br>
+repeated; all sub-patterns must match for the filter to match.
+</div>
+</p>
+
+<p>
+pkt_filter_clear_stats<br>
+<div style='padding-left: 30pt'>
+Clear packet filter statistic counter values.<br>
+Usage: wl pkt_filter_clear_stats &lt;id&gt;
+</div>
+</p>
+
+<p>
+pkt_filter_enable<br>
+<div style='padding-left: 30pt'>
+Enable/disable a packet filter.<br>
+Usage: wl pkt_filter_enable &lt;id&gt; &lt;0|1&gt;
+</div>
+</p>
+
+<p>
+pkt_filter_list<br>
+<div style='padding-left: 30pt'>
+List installed packet filters.<br>
+Usage: wl pkt_filter_list [val]<br>
+val: 0 (disabled filters) 1 (enabled filters)
+</div>
+</p>
+
+<p>
+pkt_filter_mode<br>
+<div style='padding-left: 30pt'>
+Set packet filter match action.<br>
+Usage: wl pkt_filter_mode &lt;value&gt;<br>
+value: 1 - Forward packet on match, discard on non-match (default).
+</div>
+<div style='padding-left: 60pt'>
+   0 - Discard packet on match, forward on non-match.
+</div>
+</p>
+
+<p>
+pkt_filter_delete<br>
+<div style='padding-left: 30pt'>
+Uninstall a packet filter.<br>
+Usage: wl pkt_filter_delete &lt;id&gt;
+</div>
+</p>
+
+<p>
+pkt_filter_stats<br>
+<div style='padding-left: 30pt'>
+Retrieve packet filter statistic counter values.<br>
+Usage: wl pkt_filter_stats &lt;id&gt;
+</div>
+</p>
+
+<p>
+pkt_filter_ports<br>
+<div style='padding-left: 30pt'>
+Set up additional port filters for TCP and UDP packets.<br>
+Usage: wl pkt_filter_ports [&lt;port-number&gt;] ...
+</div>
+<div style='padding-left: 60pt'>
+   wl pkt_filter_ports none (to clear/disable)
+</div>
+</p>
+
+<p>
+mfp_config<br>
+<div style='padding-left: 30pt'>
+Config PMF capability<br>
+usage: wl mfp 0/disable, 1/capable, 2/requred
+</div>
+</p>
+
+<p>
+mfp_sha256<br>
+<div style='padding-left: 30pt'>
+Config SHA256 capability<br>
+usage: wl sha256 0/disable, 1/enable
+</div>
+</p>
+
+<p>
+mfp_sa_query<br>
+<div style='padding-left: 30pt'>
+Send a sa query req/resp to a peer<br>
+usage: wl mfp_sa_query flag action id
+</div>
+</p>
+
+<p>
+mfp_disassoc<br>
+<div style='padding-left: 30pt'>
+send bogus disassoc<br>
+Usage: wl mfp_disassoc
+</div>
+</p>
+
+<p>
+mfp_deauth<br>
+<div style='padding-left: 30pt'>
+send bogus deauth<br>
+Usage: wl mfp_dedauth
+</div>
+</p>
+
+<p>
+mfp_assoc<br>
+<div style='padding-left: 30pt'>
+send assoc<br>
+Usage: wl mfp_assoc
+</div>
+</p>
+
+<p>
+mfp_auth<br>
+<div style='padding-left: 30pt'>
+send auth<br>
+Usage: wl mfp_auth
+</div>
+</p>
+
+<p>
+mfp_reassoc<br>
+<div style='padding-left: 30pt'>
+send reassoc<br>
+Usage: wl mfp_reassoc
+</div>
+</p>
+
+<p>
+mfp_bip_test<br>
+<div style='padding-left: 30pt'>
+bip test<br>
+Usage: wl mfp_bip_test
+</div>
+</p>
+
+<p>
+ota_teststop<br>
+<div style='padding-left: 60pt'>
+Usage: ota_teststop
+</div>
+</p>
+
+<p>
+ota_loadtest<br>
+<div style='padding-left: 60pt'>
+Usage: ota_loadtest [filename] <br>
+picks up ota_test.txt if file is not given
+</div>
+</p>
+
+<p>
+ota_stream<br>
+<div style='padding-left: 60pt'>
+Usage: wl ota_stream start   : to start the test
+</div>
+<div style='padding-left: 30pt'>
+wl ota_stream ota_sync <br>
+wl ota_stream test_setup synchtimeoout(seconds) synchbreak/loop synchmac txmac rxmac <br>
+wl ota_stream ota_tx chan bandwidth contrlchan rates stf txant rxant tx_ifs tx_lennum_pkt pwrctrl start:delta:end <br>
+wl ota_stream ota_rx chan bandwidth contrlchan -1 stf txant rxant tx_ifstx_len num_pkt <br>
+wl ota_stream stop   : to stop the test
+</div>
+</p>
+
+<p>
+ota_teststatus<br>
+<div style='padding-left: 60pt'>
+Usage: otatest_status		Displays current running test details	otatest_status n			displays test arguments for nth line
+</div>
+</p>
+
+<p>
+bssload_static<br>
+<div style='padding-left: 30pt'>
+get or set static BSS load<br>
+usage: wl bssload_static [off | &lt;sta_count&gt; &lt;chan_util&gt; &lt;acc&gt;]
+</div>
+</p>
+
+<p>
+bssload_report<br>
+<div style='padding-left: 30pt'>
+Get the latest BSS Load IE data from the associated AP's beacon<br>
+Usage: bssload_report
+</div>
+</p>
+
+<p>
+bssload_report_event<br>
+<div style='padding-left: 30pt'>
+Get/Set BSS load threshold for sending WLC_E_BSS_LOAD event<br>
+Usage: wl bssload_report_event [rate_limit_msec] [level] [level] ...
+</div>
+<div style='padding-left: 60pt'>
+[level] is a 0...255 channel utilization value.<br>
+Up to 8 levels in increasing order may be specified.
+</div>
+</p>
+
+<p>
+bssload_event_check<br>
+<div style='padding-left: 30pt'>
+Listens forever for BSS Load events and prints them.<br>
+Usage: wl bssload_event_check
+</div>
+</p>
+
+<p>
+curppr	Return current tx power per rate offset.
+</p>
+
+<p>
+txcore	Usage: wl txcore -k &lt;CCK core mask&gt; -o &lt;OFDM core mask&gt; -s &lt;1..4&gt; -c &lt;core bitmap&gt;<br>
+<div style='padding-left: 30pt'>
+-k CCK core mask<br>
+-o OFDM core mask<br>
+-s # of space-time-streams<br>
+-c active core (bitmask) to be used when transmitting frames
+</div>
+</p>
+
+<p>
+txcore_override<br>
+<div style='padding-left: 30pt'>
+Usage: wl txcore_override<br>
+get the user override of txcore
+</div>
+</p>
+
+<p>
+txchain_pwr_offset<br>
+<div style='padding-left: 30pt'>
+Usage: wl txchain_pwr_offset [qdBm offsets]<br>
+Get/Set the current offsets for each core in qdBm (quarter dBm)
+</div>
+</p>
+
+<p>
+mimo_ss_stf<br>
+<div style='padding-left: 30pt'>
+get/set SS STF mode.<br>
+Usage: wl mimo_ss_stf &lt;value&gt; &lt;-b a | b&gt;<br>
+value: 0 - SISO; 1 - CDD<br>
+-b(band): a - 5G; b - 2.4G
+</div>
+</p>
+
+<p>
+spatial_policy<br>
+<div style='padding-left: 30pt'>
+set/get spatial_policy<br>
+Usage: wl spatial_policy &lt;-1: auto / 0: turn off / 1: turn on&gt;
+</div>
+<div style='padding-left: 60pt'>
+   to control individual band/sub-band use<br>
+   wl spatial_policy a b c d e<br>
+   where a is 2.4G band setting<br>
+   where b is 5G lower band setting<br>
+   where c is 5G middle band setting<br>
+   where d is 5G high band setting<br>
+   where e is 5G upper band setting
+</div>
+</p>
+
+<p>
+ratetbl_ppr<br>
+<div style='padding-left: 30pt'>
+Usage: For get: wl ratetbl_ppr
+</div>
+<div style='padding-left: 60pt'>
+ For set: wl ratetbl_ppr &lt;rate&gt; &lt;ppr&gt;
+</div>
+</p>
+
+<p>
+ol_stats<br>
+<div style='padding-left: 30pt'>
+Give suboption "list" to list various suboptions
+</div>
+</p>
+
+<p>
+ol_eventlog<br>
+<div style='padding-left: 30pt'>
+Give suboption "list" to list various suboptions
+</div>
+</p>
+
+<p>
+ol_cons	Display the ARM console or issue a command to the ARM console<br>
+  Usage: ol_cons [&lt;cmd&gt;]<br>
+<div style='padding-left: 30pt'>
+"?" - Display the list of active console commands
+</div>
+</p>
+
+<p>
+ol_wowl_cons<br>
+<div style='padding-left: 30pt'>
+Give suboption "list" to list various suboptions
+</div>
+</p>
+
+<p>
+ol_clr	Give suboption "list" to list various suboptions
+</p>
+
+<p>
+ol_notify_bcn_ie<br>
+<div style='padding-left: 30pt'>
+Enable/Disable IE ID notification
+</div>
+</p>
+
+<p>
+ol_arp_hostip<br>
+<div style='padding-left: 30pt'>
+Add a host-ip address or display them
+</div>
+</p>
+
+<p>
+ol_nd_hostip<br>
+<div style='padding-left: 30pt'>
+Add a local host-ipv6 address or display them
+</div>
+</p>
+
+<p>
+tpc_mode<br>
+<div style='padding-left: 30pt'>
+Enable/disable AP TPC.
+</div>
+Usage: wl tpc_mode &lt;mode&gt; <br>
+<div style='padding-left: 30pt'>
+0 - disable, 1 - BSS power control, 2 - AP power control, 3 - Both (1) and (2)
+</div>
+</p>
+
+<p>
+tpc_period<br>
+<div style='padding-left: 30pt'>
+Set AP TPC periodicity in secs.
+</div>
+Usage: wl tpc_period &lt;secs&gt; 
+</p>
+
+<p>
+tpc_lm	Get current link margins.
+</p>
+
+<p>
+tpc_rpt_override<br>
+<div style='padding-left: 30pt'>
+set/get tpc report txpwr and linkmargin values<br>
+Usage: wl tpc_rpt_override [&lt;txpwr&gt; &lt;link_margin&gt;]
+</div>
+</p>
+
+<p>
+toe_ol	Get/Set tcpip offload components
+</p>
+
+<p>
+toe_stats<br>
+<div style='padding-left: 30pt'>
+Display checksum offload statistics
+</div>
+</p>
+
+<p>
+toe_stats_clear<br>
+<div style='padding-left: 30pt'>
+Clear checksum offload statistics
+</div>
+</p>
+
+<p>
+arp_ol	Get/Set arp offload components
+</p>
+
+<p>
+arp_peerage<br>
+<div style='padding-left: 30pt'>
+Get/Set age of the arp entry in minutes
+</div>
+</p>
+
+<p>
+arp_table_clear<br>
+<div style='padding-left: 30pt'>
+Clear arp cache
+</div>
+</p>
+
+<p>
+arp_hostip<br>
+<div style='padding-left: 30pt'>
+Add a host-ip address or display them
+</div>
+</p>
+
+<p>
+arp_hostip_clear<br>
+<div style='padding-left: 30pt'>
+Clear all host-ip addresses
+</div>
+</p>
+
+<p>
+arp_stats<br>
+<div style='padding-left: 30pt'>
+Display ARP offload statistics
+</div>
+</p>
+
+<p>
+arp_stats_clear<br>
+<div style='padding-left: 30pt'>
+Clear ARP offload statistics
+</div>
+</p>
+
+<p>
+mkeep_alive<br>
+<div style='padding-left: 30pt'>
+Send specified "mkeep-alive" packet periodically.<br>
+Usage: wl mkeep_alive &lt;index0-3&gt; &lt;period&gt; &lt;packet&gt;
+</div>
+<div style='padding-left: 60pt'>
+index: 0 - 3.<br>
+period: Re-transmission period in milli-seconds. 0 to disable packet transmits.<br>
+packet: Hex packet contents to transmit. The packet contents should include the entire ethernet packet (ethernet header, IP header, UDP header, and UDP payload) specified in network byte order. If no packet is specified, a nulldata frame will be sent instead.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+e.g. Send keep alive packet every 30 seconds using id-1:<br>
+wl mkeep_alive 1 30000 0x0014a54b164f000f66f45b7e08004500001e000040004011c52a0a8830700a88302513c413c4000a00000a0d
+</div>
+</p>
+
+<p>
+keep_alive<br>
+<div style='padding-left: 30pt'>
+Send specified "keep-alive" packet periodically.<br>
+Usage: wl keep_alive &lt;period&gt; &lt;packet&gt;
+</div>
+<div style='padding-left: 60pt'>
+period: Re-transmission period in milli-seconds. 0 to disable packet transmits.<br>
+packet: Hex packet contents to transmit. The packet contents should include the entire ethernet packet (ethernet header, IP header, UDP header, and UDP payload) specified in network byte order.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+e.g. Send keep alive packet every 30 seconds:<br>
+wl keep_alive 30000 0x0014a54b164f000f66f45b7e08004500001e000040004011c52a0a8830700a88302513c413c4000a00000a0d
+</div>
+</p>
+
+<p>
+ap	Set AP mode: 0 (STA) or 1 (AP)
+</p>
+
+<p>
+tkip_countermeasures<br>
+<div style='padding-left: 30pt'>
+Enable or disable TKIP countermeasures (TKIP-enabled AP only)<br>
+0 - disable<br>
+1 - enable
+</div>
+</p>
+
+<p>
+shortslot_restrict<br>
+<div style='padding-left: 30pt'>
+Get/Set AP Restriction on associations for 11g Short Slot Timing capable STAs.<br>
+0 - Do not restrict association based on ShortSlot capability<br>
+1 - Restrict association to STAs with ShortSlot capability
+</div>
+</p>
+
+<p>
+ignore_bcns<br>
+<div style='padding-left: 30pt'>
+AP only (G mode): Check for beacons without NONERP element(0=Examine beacons, 1=Ignore beacons)
+</div>
+</p>
+
+<p>
+scb_timeout<br>
+<div style='padding-left: 30pt'>
+AP only: inactivity timeout value for authenticated stas
+</div>
+</p>
+
+<p>
+assoclist<br>
+<div style='padding-left: 30pt'>
+AP only: Get the list of associated MAC addresses.
+</div>
+</p>
+
+<p>
+radar	Enable/Disable radar
+</p>
+
+<p>
+authe_sta_list<br>
+<div style='padding-left: 30pt'>
+Get authenticated sta mac address list
+</div>
+</p>
+
+<p>
+autho_sta_list<br>
+<div style='padding-left: 30pt'>
+Get authorized sta mac address list
+</div>
+</p>
+
+<p>
+beacon_info<br>
+<div style='padding-left: 30pt'>
+Returns the 802.11 management frame beacon information
+</div>
+Usage: wl beacon_info [-f file] [-r]<br>
+<div style='padding-left: 30pt'>
+-f Write beacon data to file<br>
+-r Raw hex dump of beacon data
+</div>
+</p>
+
+<p>
+probe_resp_info<br>
+<div style='padding-left: 30pt'>
+Returns the 802.11 management frame probe response information
+</div>
+Usage: wl probe_resp_info [-f file] [-r]<br>
+<div style='padding-left: 30pt'>
+-f Write probe response data to file<br>
+-r Raw hex dump of probe response data
+</div>
+</p>
+
+<p>
+bss	set/get BSS enabled status: up/down //
+</p>
+
+<p>
+closednet<br>
+<div style='padding-left: 30pt'>
+set/get BSS closed network attribute
+</div>
+</p>
+
+<p>
+ap_isolate<br>
+<div style='padding-left: 30pt'>
+set/get AP isolation    //
+</div>
+</p>
+
+<p>
+mode_reqd<br>
+<div style='padding-left: 30pt'>
+Set/Get operational capabilities required for STA to associate to the BSS supported by the interface.<br>
+Usage: wl [-i ifname] mode_reqd [value]
+</div>
+<div style='padding-left: 60pt'>
+   wl mode_reqd [-C bss_idx ] [value]
+</div>
+<div style='padding-left: 90pt'>
+ &lt;ifname&gt; is the name of the interface corresponding to the BSS.<br>
+   If the &lt;ifname&gt; is not given, the primary BSS is assumed.<br>
+ &lt;bss_idx&gt; is the the BSS configuration index.<br>
+   If the &lt;bss_idx&gt; is not given, configuraion #0 is assumed<br>
+ &lt;value&gt; is the numeric values in the range [0..3]<br>
+ 0 - no requirements on joining devices.<br>
+ 1 - devices must advertise ERP (11g) capabilities to be allowed to associate<br>
+   to a 2.4 GHz BSS.<br>
+ 2 - devices must advertise HT (11n) capabilities to be allowed to associate<br>
+   to a BSS.<br>
+ 3 - devices must advertise VHT (11ac) capabilities to be allowed to associate<br>
+   to a BSS.
+</div>
+<div style='padding-left: 30pt'>
+The command returns an error if the BSS interface is up.<br>
+This configuration can only be changed while the BSS interface is down.<br>
+Note that support for HT implies support for ERP,<br>
+and support for VHT implies support for HT.
+</div>
+</p>
+
+<p>
+ampdu_tid<br>
+<div style='padding-left: 30pt'>
+enable/disable per-tid ampdu; usage: wl ampdu_tid &lt;tid&gt; [0/1]
+</div>
+</p>
+
+<p>
+ampdu_txaggr<br>
+<div style='padding-left: 30pt'>
+enable/disable tx aggregation per tid or all tid for specific interface;<br>
+get current status: wl ampdu_txaggr<br>
+enable/disable all category(tid): wl ampdu_txaggr &lt;0/1&gt;<br>
+enable/disable per category(tid): wl ampdu_txaggr [&lt;tid&gt; &lt;0/1&gt;]
+</div>
+</p>
+
+<p>
+ampdu_rxaggr<br>
+<div style='padding-left: 30pt'>
+enable/disable rx aggregation per tid or all tid for specific interface;<br>
+get current status: wl ampdu_rxaggr<br>
+enable/disable all category(tid): wl ampdu_rxaggr &lt;0/1&gt;<br>
+enable/disable per category(tid): wl ampdu_rxaggr [&lt;tid&gt; &lt;0/1&gt;]
+</div>
+</p>
+
+<p>
+ampdu_retry_limit_tid<br>
+<div style='padding-left: 30pt'>
+Set per-tid ampdu retry limit; usage: wl ampdu_retry_limit_tid &lt;tid&gt; [0~31]
+</div>
+</p>
+
+<p>
+ampdu_rr_retry_limit_tid<br>
+<div style='padding-left: 30pt'>
+Set per-tid ampdu regular rate retry limit; usage: wl ampdu_rr_retry_limit_tid &lt;tid&gt; [0~31]
+</div>
+</p>
+
+<p>
+ampdu_send_addba<br>
+<div style='padding-left: 30pt'>
+send addba to specified ea-tid; usage: wl ampdu_send_addba &lt;tid&gt; &lt;ea&gt;
+</div>
+</p>
+
+<p>
+ampdu_send_delba<br>
+<div style='padding-left: 30pt'>
+send delba to specified ea-tid; usage: wl ampdu_send_delba &lt;tid&gt; &lt;ea&gt; [initiator]
+</div>
+</p>
+
+<p>
+ampdu_txq_prof_start<br>
+<div style='padding-left: 30pt'>
+start sample txq profiling data
+</div>
+</p>
+
+<p>
+ampdu_txq_prof_dump<br>
+<div style='padding-left: 30pt'>
+show txq histogram
+</div>
+</p>
+
+<p>
+ampdu_txq_ss<br>
+<div style='padding-left: 30pt'>
+take txq snapshot
+</div>
+</p>
+
+<p>
+ampdu_activate_test<br>
+<div style='padding-left: 30pt'>
+actiate
+</div>
+</p>
+
+<p>
+ampdu_clear_dump<br>
+<div style='padding-left: 30pt'>
+clear ampdu counters
+</div>
+</p>
+
+<p>
+srcrc	Get the CRC for input binary file
+</p>
+
+<p>
+cis_source<br>
+<div style='padding-left: 30pt'>
+Display which source is used for the SDIO CIS
+</div>
+</p>
+
+<p>
+nvram_source<br>
+<div style='padding-left: 30pt'>
+Display which source is used for nvram
+</div>
+</p>
+
+<p>
+customvar1<br>
+<div style='padding-left: 30pt'>
+print the value of customvar1 in hex format
+</div>
+</p>
+
+<p>
+gpioout	Set any GPIO pins to any value. Use with caution as GPIOs would be assigned to chipcommon<br>
+<div style='padding-left: 30pt'>
+Usage: gpiomask gpioval
+</div>
+</p>
+
+<p>
+devpath	print device path
+</p>
+
+<p>
+ccreg	g/set cc registers
+</p>
+
+<p>
+corereg	!!! internal only !!! g/set ANY registers in ANY core: core offset [val]
+</p>
+
+<p>
+corewrapperreg<br>
+<div style='padding-left: 30pt'>
+!!! internal only !!! g/set ANY core wrapper register in ANY core: coreidx offset [val]
+</div>
+</p>
+
+<p>
+sflags	g/set core iostatus flags
+</p>
+
+<p>
+cflags	g/set core ioctrl flags
+</p>
+
+<p>
+jtagureg<br>
+<div style='padding-left: 30pt'>
+g/set JTAG user registers
+</div>
+</p>
+
+<p>
+coma	Put the router in a catatonic state
+</p>
+
+<p>
+pciereg	g/set pcie tlp/dlp/plp registers
+</p>
+
+<p>
+pcicfgreg<br>
+<div style='padding-left: 30pt'>
+g/set pci cfg register
+</div>
+</p>
+
+<p>
+pllreset<br>
+<div style='padding-left: 30pt'>
+set the pll to reset value<br>
+Usage: wl pllreset
+</div>
+</p>
+
+<p>
+timestamp<br>
+<div style='padding-left: 30pt'>
+Get the debug hw timestamp
+</div>
+</p>
+
+<p>
+otpraw	Read/Write raw data to on-chip otp<br>
+Usage: wl otpraw &lt;offset&gt; &lt;bits&gt; [&lt;data&gt;]
+</p>
+
+<p>
+otpw	Write an srom image to on-chip otp<br>
+Usage: wl otpw file
+</p>
+
+<p>
+nvotpw	Write nvram to on-chip otp<br>
+Usage: wl nvotpw file
+</p>
+
+<p>
+diag	diag testindex(1-interrupt, 2-loopback, 3-memory, 4-led); precede by 'wl down' and follow by 'wl up'
+</p>
+
+<p>
+otpdump	Dump raw otp
+</p>
+
+<p>
+otpstat	Dump OTP status
+</p>
+
+<p>
+bw_cap	Get/set the per-band bandwidth.<br>
+Usage: wl bw_cap &lt;2g|5g&gt; [&lt;cap&gt;]<br>
+<div style='padding-left: 30pt'>
+2g|5g - Band: 2.4GHz or 5GHz respectively
+</div>
+cap:<br>
+<div style='padding-left: 30pt'>
+0x1 - 20MHz<br>
+0x3 - 20/40MHz<br>
+0x7 - 20/40/80MHz<br>
+0xff - Unrestricted
+</div>
+</p>
+
+<p>
+cur_mcsset<br>
+<div style='padding-left: 30pt'>
+Get the current mcs set
+</div>
+</p>
+
+<p>
+mimo_ps	get/set mimo power save mode, (0=Dont send MIMO, 1=proceed MIMO with RTS, 2=N/A, 3=No restriction)
+</p>
+
+<p>
+ofdm_txbw<br>
+<div style='padding-left: 30pt'>
+get/set ofdm txbw (2=20Mhz(lower), 3=20Mhz upper, 4(not allowed), 5=40Mhz dup)
+</div>
+</p>
+
+<p>
+cck_txbw<br>
+<div style='padding-left: 30pt'>
+get/set cck txbw (2=20Mhz(lower), 3=20Mhz upper)
+</div>
+</p>
+
+<p>
+frameburst<br>
+<div style='padding-left: 30pt'>
+Disable/Enable frameburst mode
+</div>
+</p>
+
+<p>
+nrate	"auto" to clear a rate override, or:<br>
+-r legacy rate (CCK, OFDM)<br>
+-m HT MCS index<br>
+-s stf mode (0=SISO,1=CDD,2=STBC,3=SDM)<br>
+-w Override MCS only to support STA's with/without STBC capability
+</p>
+
+<p>
+mimo_txbw<br>
+<div style='padding-left: 30pt'>
+get/set mimo txbw (2=20Mhz(lower), 3=20Mhz upper, 4=40Mhz, 4=40Mhz(DUP)<br>
+6=80Mhz(20LL), 7=80Mhz(20LU), 8=80Mhz(20UL), 9=80Mhz(20UU)<br>
+10=80Mhz(40L), 11=80Mhz(40U), 12=80Mhz)
+</div>
+</p>
+
+<p>
+txmcsset<br>
+<div style='padding-left: 30pt'>
+get Transmit MCS rateset for 11N device
+</div>
+</p>
+
+<p>
+rxmcsset<br>
+<div style='padding-left: 30pt'>
+get Receive MCS rateset for 11N device
+</div>
+</p>
+
+<p>
+wds	Set or get the list of WDS member MAC addresses.<br>
+<div style='padding-left: 30pt'>
+Set using a space separated list of MAC addresses.<br>
+wl wds xx:xx:xx:xx:xx:xx [xx:xx:xx:xx:xx:xx ...]
+</div>
+</p>
+
+<p>
+lazywds	Set or get "lazy" WDS mode (dynamically grant WDS membership to anyone).
+</p>
+
+<p>
+wds_remote_mac<br>
+<div style='padding-left: 30pt'>
+Get WDS link remote endpoint's MAC address
+</div>
+</p>
+
+<p>
+wds_wpa_role_old<br>
+<div style='padding-left: 30pt'>
+Get WDS link local endpoint's WPA role (old)
+</div>
+</p>
+
+<p>
+wds_wpa_role<br>
+<div style='padding-left: 30pt'>
+Get/Set WDS link local endpoint's WPA role
+</div>
+</p>
+
+<p>
+wds_type<br>
+<div style='padding-left: 30pt'>
+Indicate whether the interface to which this IOVAR is sent is of WDS or DWDS type.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl wds_type -i &lt;ifname&gt;<br>
+ifname is the name of the interface to query the type.<br>
+Return values:
+</div>
+<div style='padding-left: 60pt'>
+0:The interface type is neither WDS nor DWDS.<br>
+1:The interface is WDS type.<br>
+2:The interface is DWDS type.
+</div>
+</p>
+
+<br>
+
+<p>
+wepstatus<br>
+<div style='padding-left: 30pt'>
+Set or Get WEP status<br>
+wepstatus [on|off]
+</div>
+</p>
+
+<p>
+primary_key<br>
+<div style='padding-left: 30pt'>
+Set or get index of primary key
+</div>
+</p>
+
+<p>
+addwep	Set an encryption key.  The key must be 5, 13 or 16 bytes long, or<br>
+<div style='padding-left: 30pt'>
+10, 26, 32, or 64 hex digits long.  The encryption algorithm is<br>
+automatically selected based on the key size. keytype is accepted<br>
+only when key length is 16 bytes/32 hex digits and specifies<br>
+whether AES-OCB or AES-CCM encryption is used. Default is ccm.<br>
+WAPI is selected if key len is 32 and arguments contain wapi.<br>
+addwep &lt;keyindex&gt; &lt;keydata&gt; [ocb | ccm | wapi] [notx] [xx:xx:xx:xx:xx:xx]
+</div>
+</p>
+
+<p>
+rmwep	Remove the encryption key at the specified key index.
+</p>
+
+<p>
+keys	Prints a list of the current WEP keys
+</p>
+
+<p>
+tsc	Print Tx Sequence Couter for key at specified key index.
+</p>
+
+<p>
+wsec_test<br>
+<div style='padding-left: 30pt'>
+Generate wsec errors<br>
+wsec_test &lt;test_type&gt; &lt;keyindex|xx:xx:xx:xx:xx:xx&gt;<br>
+type 'wl wsec_test ?' for test_types
+</div>
+</p>
+
+<p>
+scancache_clear<br>
+<div style='padding-left: 30pt'>
+clear the scan cache
+</div>
+</p>
+
+<p>
+passive	Puts scan engine into passive mode
+</p>
+
+<p>
+scansuppress<br>
+<div style='padding-left: 30pt'>
+Suppress all scans for testing.<br>
+0 - allow scans<br>
+1 - suppress scans
+</div>
+</p>
+
+<p>
+scan_channel_time<br>
+<div style='padding-left: 30pt'>
+Get/Set scan channel time
+</div>
+</p>
+
+<p>
+scan_unassoc_time<br>
+<div style='padding-left: 30pt'>
+Get/Set unassociated scan channel dwell time
+</div>
+</p>
+
+<p>
+scan_home_time<br>
+<div style='padding-left: 30pt'>
+Get/Set scan home channel dwell time
+</div>
+</p>
+
+<p>
+scan_passive_time<br>
+<div style='padding-left: 30pt'>
+Get/Set passive scan channel dwell time
+</div>
+</p>
+
+<p>
+scan_nprobes<br>
+<div style='padding-left: 30pt'>
+Get/Set scan parameter for number of probes to use per channel scanned
+</div>
+</p>
+
+<p>
+scan_ps	Get/Set scan power optimization enable/disable
+</p>
+
+<p>
+scanmac	Configure scan MAC using subcommands:<br>
+<div style='padding-left: 30pt'>
+scanmac enable &lt;0|1&gt;<br>
+scanmac bsscfg<br>
+scanmac config &lt;mac&gt; &lt;random_mask&gt; &lt;scan_bitmap&gt;
+</div>
+</p>
+
+<br>
+
+<p>
+obss_scan_params<br>
+<div style='padding-left: 30pt'>
+set/get Overlapping BSS scan parameters
+</div>
+Usage: wl obss_scan a b c d e ...; where<br>
+<div style='padding-left: 30pt'>
+a-Passive Dwell, {5-1000TU}, default = 100<br>
+b-Active Dwell, {10-1000TU}, default = 20<br>
+c-Width Trigger Scan Interval, {10-900sec}, default = 300<br>
+d-Passive Total per Channel, {200-10000TU}, default = 200<br>
+e-Active Total per Channel, {20-1000TU}, default = 20<br>
+f-Channel Transition Delay Factor, {5-100}, default = 5<br>
+g-Activity Threshold, {0-100%}, default = 25
+</div>
+</p>
+
+<p>
+obss_coex_action<br>
+<div style='padding-left: 30pt'>
+send OBSS 20/40 Coexistence Mangement Action Frame<br>
+Usage: wl obss_coex_action -i &lt;1/0&gt; -w &lt;1/0&gt; -c &lt;channel list&gt;<br>
+ -i: 40MHz intolerate bit; -w: 20MHz width Req bit;<br>
+ -c: channel list, 1 - 14<br>
+ At least one option must be provided
+</div>
+</p>
+
+<p>
+obss_prot<br>
+<div style='padding-left: 30pt'>
+Get/set OBSS protection (-1=auto, 0=disable, 1=enable)
+</div>
+</p>
+
+<br>
+
+<p>
+dump_obss<br>
+<div style='padding-left: 30pt'>
+Usage: <br>
+ wl dump_obss [-d num msecs] to begin measurement<br>
+ wl dump_obss to query for the measurement results
+</div>
+</p>
+
+<p>
+dump_obss_dyn_bwsw<br>
+<div style='padding-left: 30pt'>
+Usage: <br>
+ wl dump_obss_dyn_bwsw [-d num msecs] to begin measurement<br>
+ wl dump_obss_dyn_bwsw to query for the results
+</div>
+</p>
+
+<p>
+dyn_bwsw_params<br>
+<div style='padding-left: 30pt'>
+Configure the params for dynamic bandswitch<br>
+Usage (Get): wl dyn_bwsw_params <br>
+Usage (Set): wl dyn_bwsw_params actvcfm=0x03 noactcfm=0x06
+</div>
+<div style='padding-left: 90pt'>
+noactincr=0x05 psense=2000<br>
+rxcrsthresh=0x20 secdurlim=30 
+</div>
+<div style='padding-left: 30pt'>
+ To reset to default value give val 0<br>
+ Example : wl dyn_bwsw_params rxcrsthresh=0
+</div>
+</p>
+
+<br>
+
+<p>
+rssi_event<br>
+<div style='padding-left: 30pt'>
+Set parameters associated with RSSI event notification<br>
+usage: wl rssi_event &lt;rate_limit&gt; &lt;rssi_levels&gt;<br>
+rate_limit: Number of events posted to application will be limited to 1 per this rate limit. Set to 0 to disable rate limit.<br>
+rssi_levels: Variable number of RSSI levels (maximum 8)  in increasing order (e.g. -85 -70 -60). An event will be posted each time the RSSI of received beacons/packets crosses a level.
+</div>
+</p>
+
+<p>
+chq_event<br>
+<div style='padding-left: 30pt'>
+Set parameters associated with channel quality  event notification<br>
+usage: wl chq_event &lt;rate_limit&gt; &lt;cca_levels&gt; &lt;nf_levels&gt; &lt;nf_lte_levels&gt;<br>
+rate_limit: Number of events posted to application will be limited to 1 per this rate limit. Set to 0 to disable rate limit.<br>
+csa/nf/nf_lte levels: Variable number of threshold levels (maximum 8) in pairs of hi-to-low/lo-to-hi, and in increasing order (e.g. -90 -85 -80). A 0 0 pair terminates level array for one metric. An event will be posted whenever a threshold is being crossed.
+</div>
+</p>
+
+<p>
+chanim_state<br>
+<div style='padding-left: 30pt'>
+get channel interference state<br>
+Usage: wl chanim_state channel<br>
+Valid channels: 1 - 14<br>
+returns: 0 - Acceptable; 1 - Severe
+</div>
+</p>
+
+<p>
+chanim_mode<br>
+<div style='padding-left: 30pt'>
+get/set channel interference measure (chanim) mode<br>
+Usage: wl chanim_mode &lt;value&gt;<br>
+value: 0 - disabled; 1 - detection only; 2 - detection and avoidance
+</div>
+</p>
+
+<p>
+chanim_acs_record<br>
+<div style='padding-left: 30pt'>
+get the auto channel scan record. <br>
+ Usage: wl acs_record
+</div>
+</p>
+
+<p>
+chanim_stats<br>
+<div style='padding-left: 30pt'>
+get chanim stats <br>
+ Usage: wl chanim_stats
+</div>
+</p>
+
+<p>
+monitor_lq<br>
+<div style='padding-left: 30pt'>
+Start/Stop monitoring link quality metrics - RSSI and SNR<br>
+Usage: wl monitor_lq &lt;0: turn off / 1: turn on
+</div>
+</p>
+
+<p>
+monitor_lq_status<br>
+<div style='padding-left: 30pt'>
+Returns averaged link quality metrics - RSSI and SNR values
+</div>
+</p>
+
+<p>
+seq_start<br>
+<div style='padding-left: 30pt'>
+Initiates command batching sequence. Subsequent IOCTLs will be queued until
+</div>
+seq_stop is received.
+</p>
+
+<p>
+seq_stop<br>
+<div style='padding-left: 30pt'>
+Defines the end of command batching sequence. Queued IOCTLs will be executed.
+</div>
+</p>
+
+<p>
+seq_delay<br>
+<div style='padding-left: 30pt'>
+Driver should spin for the indicated amount of time.
+</div>
+It is only valid within the context of batched commands.
+</p>
+
+<p>
+seq_error_index<br>
+<div style='padding-left: 30pt'>
+Used to retrieve the index (starting at 1) of the command that failed within a batch
+</div>
+</p>
+
+<p>
+btc_params<br>
+<div style='padding-left: 30pt'>
+g/set BT Coex parameters
+</div>
+</p>
+
+<p>
+btc_flags<br>
+<div style='padding-left: 30pt'>
+g/set BT Coex flags
+</div>
+</p>
+
+<p>
+btcx_clear_dump<br>
+<div style='padding-left: 30pt'>
+clear btcoex debug counters
+</div>
+</p>
+
+<p>
+ledbh	set/get led behavior<br>
+<div style='padding-left: 30pt'>
+Usage: wl ledbh [0-3] [0-15]
+</div>
+</p>
+
+<p>
+led_blink_sync<br>
+<div style='padding-left: 30pt'>
+set/get led_blink_sync<br>
+Usage: wl led_blink_sync [0-3] [0/1]
+</div>
+</p>
+
+<p>
+itfr_get_stats<br>
+<div style='padding-left: 30pt'>
+get interference source information
+</div>
+</p>
+
+<p>
+itfr_enab<br>
+<div style='padding-left: 30pt'>
+get/set STA interference detection mode(STA only)<br>
+ 0  - disable<br>
+ 1  - enable maual detection<br>
+ 2  - enable auto detection
+</div>
+</p>
+
+<p>
+itfr_detect<br>
+<div style='padding-left: 30pt'>
+issue an interference detection request
+</div>
+</p>
+
+<p>
+wci2_config<br>
+<div style='padding-left: 30pt'>
+Get/Set LTE coex MWS signaling config<br>
+Usage: wl wci2_config &lt;rxassert_off&gt; &lt;rxassert_jit&gt; &lt;rxdeassert_off&gt; &lt;rxdeassert_jit&gt; &lt;txassert_off&gt; &lt;txassert_jit&gt; &lt;txdeassert_off&gt; &lt;txdeassert_jit&gt; &lt;patassert_off&gt; &lt;patassert_jit&gt; &lt;inactassert_off&gt; &lt;inactassert_jit&gt; &lt;scanfreqassert_off&gt; &lt;scanfreqassert_jit&gt; &lt;priassert_off_req&gt;
+</div>
+</p>
+
+<p>
+mws_params<br>
+<div style='padding-left: 30pt'>
+Get/Set LTE coex MWS channel params<br>
+Usage: wl mws_params &lt;rx_center_freq&gt; &lt;tx_center_freq&gt; &lt;rx_channel_bw&gt; &lt;tx_channel_bw&gt; &lt;channel_en&gt; &lt;channel_type&gt;
+</div>
+</p>
+
+<p>
+mws_debug_msg<br>
+<div style='padding-left: 30pt'>
+Get/Set LTE coex BT-SIG message<br>
+Usage: wl mws_debug_msg &lt;Message&gt; &lt;Interval 20us-32000us&gt; &lt;Repeats&gt;
+</div>
+</p>
+
+<p>
+extlog	get external logs<br>
+<div style='padding-left: 30pt'>
+Usage: wl extlog &lt;from_last&gt; &lt;number&gt;<br>
+from_last: 1 - from the last log record; 0 - whole log recrods<br>
+number: number of log records to get, MAX is 32.
+</div>
+</p>
+
+<p>
+extlog_clr<br>
+<div style='padding-left: 30pt'>
+clear external log records
+</div>
+</p>
+
+<p>
+extlog_cfg<br>
+<div style='padding-left: 30pt'>
+get/set external log configuration
+</div>
+</p>
+
+<p>
+nan	superfunction for nan protocol commands 
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl nan [command] [cmd options] as follows:
+</div>
+<div style='padding-left: 60pt'>
+wl nan enable [1/0] - enable disable nan functionality<br>
+wl nan attr [MAC, ETC] <br>
+wl nan publish &lt;instance&gt; &lt;service name&gt; [options]<br>
+wl nan subscribe &lt;instance&gt; &lt;service name&gt; [options]<br>
+wl nan cancel_publish &lt;instance&gt;<br>
+wl nan cancel_subscribe &lt;instance&gt;<br>
+wl nan scan<br>
+wl nan scanresults<br>
+wl nan scan_params -s &lt;scantime&gt; -h &lt;hometime&gt; -c &lt;6,44,149&gt;
+</div>
+</p>
+
+<p>
+HCI_cmd	carries HCI commands to the driver<br>
+<div style='padding-left: 30pt'>
+usage: wl HCI_cmd &lt;command&gt; &lt;args&gt;
+</div>
+</p>
+
+<p>
+HCI_ACL_data<br>
+<div style='padding-left: 30pt'>
+carries HCI ACL data packet to the driver<br>
+usage: wl HCI_ACL_data &lt;logical link handle&gt; &lt;data&gt;
+</div>
+</p>
+
+<p>
+btamp_statelog<br>
+<div style='padding-left: 30pt'>
+Return state transistion log of BTAMP
+</div>
+</p>
+
+<p>
+sd_cis	dump sdio CIS
+</p>
+
+<p>
+sd_devreg<br>
+<div style='padding-left: 30pt'>
+g/set device register across SDIO bus
+</div>
+</p>
+
+<p>
+sd_drivestrength<br>
+<div style='padding-left: 30pt'>
+g/set SDIO bus drive strenth in mA
+</div>
+</p>
+
+<p>
+sd_hostreg<br>
+<div style='padding-left: 30pt'>
+g/set local controller register
+</div>
+</p>
+
+<p>
+sd_blockmode<br>
+<div style='padding-left: 30pt'>
+g/set blockmode
+</div>
+</p>
+
+<p>
+sd_blocksize<br>
+<div style='padding-left: 30pt'>
+g/set block size for a function
+</div>
+</p>
+
+<p>
+sd_ints	g/set client ints
+</p>
+
+<p>
+sd_dma	g/set dma usage
+</p>
+
+<p>
+sd_numints<br>
+<div style='padding-left: 30pt'>
+number of device interrupts
+</div>
+</p>
+
+<p>
+sd_numlocalints<br>
+<div style='padding-left: 30pt'>
+number of non-device controller interrupts
+</div>
+</p>
+
+<p>
+sd_divisor<br>
+<div style='padding-left: 30pt'>
+set the divisor for SDIO clock generation
+</div>
+</p>
+
+<p>
+sd_mode	g/set SDIO bus mode (spi, sd1, sd4)
+</p>
+
+<p>
+sd_highspeed<br>
+<div style='padding-left: 30pt'>
+set the high-speed clocking mode
+</div>
+</p>
+
+<p>
+sd_msglevel<br>
+<div style='padding-left: 30pt'>
+g/set debug message level
+</div>
+</p>
+
+<p>
+sd_hciregs<br>
+<div style='padding-left: 30pt'>
+dump sdio Host Controller Interrupt Registers
+</div>
+</p>
+
+<p>
+nd_hostip<br>
+<div style='padding-left: 30pt'>
+Add a local host-ipv6 address or display them
+</div>
+</p>
+
+<p>
+nd_solicitip<br>
+<div style='padding-left: 30pt'>
+Add a local host solicit ipv6 address or display them
+</div>
+</p>
+
+<p>
+nd_remoteip<br>
+<div style='padding-left: 30pt'>
+Add a local remote ipv6 address or display them
+</div>
+</p>
+
+<p>
+nd_status<br>
+<div style='padding-left: 30pt'>
+Displays Neighbor Discovery Status
+</div>
+</p>
+
+<p>
+nd_hostip_clear<br>
+<div style='padding-left: 30pt'>
+Clear all host-ip addresses
+</div>
+</p>
+
+<p>
+nd_macaddr<br>
+<div style='padding-left: 30pt'>
+Get/set the MAC address for offload
+</div>
+</p>
+
+<p>
+nd_status_clear<br>
+<div style='padding-left: 30pt'>
+Clear neighbor discovery status
+</div>
+</p>
+
+<p>
+pfnset	Configures preferred network offload parameter<br>
+<div style='padding-left: 30pt'>
+pfnset syntax is: pfnset [scanfrq xxxxx(30 sec)] [netimeout xxxx(60 sec)][slowfrq xxxx(180 sec)] [bestn (2)|[1-BESTN_MAX]] [mscan (0)|[0-MSCAN_MAX]][bdscan (0)|1] [adapt (off)|[smart, strict, slow]][rssi_delta xxxx(30 dBm)] [sort (listorder)|rssi] [bkgscan (0)|1] [immediateevent (0)|1][immediate 0|(1)] [repeat (10)|[1-20]] [exp (2)|[1-5]] [separate 0|(1)]
+</div>
+</p>
+
+<p>
+pfnadd	Adding SSID based preferred networks to monitor and connect<br>
+<div style='padding-left: 30pt'>
+pfnadd syntax is: pfnadd ssid &lt;SSID&gt; [hidden (0)|1][imode (bss)|ibss][amode (open)|shared] [wpa_auth (wpadisabled)|wpapsk|wpa2psk|wpanone|any][wsec WEP|TKIP|AES|TKIPAES] [suppress (neither)|found|lost] [rssi &lt;rssi&gt;(0 dBm)]
+</div>
+Up to 16 SSID networks can be added together in one pfnadd<br>
+<div style='padding-left: 30pt'>
+To specify more than one WPA methods, use a number (same format as wpa_auth iovar) as the parameter of wpa_auth (e.g. 0x84 for wpapsk and wpa2psk.)
+</div>
+</p>
+
+<p>
+pfnadd_bssid<br>
+<div style='padding-left: 30pt'>
+Adding BSSID based preferred networks to monitor and connect<br>
+pfnadd_bssid syntax is: pfnadd_bssid bssid &lt;BSSID&gt; [suppress (neither)|found|lost][rssi &lt;rssi&gt;(0 dBm)]<br>
+Up to 150 BSSIDs can be added together in one pfnadd_bssid
+</div>
+</p>
+
+<p>
+pfncfg	Configures channel list and report type<br>
+Usage: pfncfg [channel &lt;list&gt;] [report &lt;type&gt;] [prohibited 1|0]<br>
+<div style='padding-left: 30pt'>
+report &lt;type&gt; is ssidonly, bssidonly, or both (default: both)<br>
+prohibited flag 1: allow and (passively) scan any channel (default 0)
+</div>
+</p>
+
+<p>
+pfn	Enable/disable preferred network off load monitoring<br>
+<div style='padding-left: 30pt'>
+pfn syntax is: pfn 0|1
+</div>
+</p>
+
+<p>
+pfnclear<br>
+<div style='padding-left: 30pt'>
+Clear the preferred network list<br>
+pfnclear syntax is: pfnclear
+</div>
+</p>
+
+<p>
+pfnbest	Get the best n networks in each of up to m scans, with 16bit timestamp<br>
+<div style='padding-left: 30pt'>
+pfnbest syntax is: pfnbest
+</div>
+</p>
+
+<p>
+pfnlbest<br>
+<div style='padding-left: 30pt'>
+Get the best n networks in each scan, up to m scans, with 32bit timestmp<br>
+pfnbest syntax is: pfnlbest
+</div>
+</p>
+
+<p>
+pfnsuspend<br>
+<div style='padding-left: 30pt'>
+Suspend/resume pno scan<br>
+pfnsuspend syntax is: pfnsuspend 0|1
+</div>
+</p>
+
+<p>
+pfnmem	Get supported mscan with given bestn<br>
+<div style='padding-left: 30pt'>
+pfnmem syntax is: pfnmscan bestn [1-BESTN_MAX]
+</div>
+</p>
+
+<p>
+pfneventchk<br>
+<div style='padding-left: 30pt'>
+Listen and prints the preferred network off load event from dongle<br>
+pfneventchk syntax is: pfneventchk [ifname]
+</div>
+</p>
+
+<p>
+event_filter<br>
+<div style='padding-left: 30pt'>
+Set/get event filter<br>
+event_filter syntax is: event_filter [value]
+</div>
+</p>
+
+<p>
+pfn_roam_alert_thresh<br>
+<div style='padding-left: 30pt'>
+Get/Set PFN and roam alert threshold<br>
+Usage: wl pfn_roam_alert_thresh [pfn_alert_thresh] [roam_alert_thresh]
+</div>
+</p>
+
+<p>
+tbow_doho<br>
+<div style='padding-left: 30pt'>
+Trigger the BT-WiFi handover/handback
+</div>
+</p>
+
+<p>
+p2p_ssid<br>
+<div style='padding-left: 30pt'>
+set WiFi P2P wildcard ssid.<br>
+Usage: wl p2p_ssid &lt;ssid&gt;
+</div>
+</p>
+
+<p>
+p2p_state<br>
+<div style='padding-left: 30pt'>
+set WiFi P2P discovery state.<br>
+Usage: wl p2p_state &lt;state&gt; [&lt;chanspec&gt; &lt;dwell time&gt;]
+</div>
+</p>
+
+<p>
+p2p_scan<br>
+<div style='padding-left: 30pt'>
+initiate WiFi P2P scan.<br>
+Usage: wl p2p_scan S|E &lt;scan parms&gt;<br>
+Default to an active scan across all channels for any SSID.<br>
+Optional arg: SSIDs, list of [up to 10] SSIDs to scan (comma or space separated).<br>
+Options:<br>
+-s S, --ssid=S		SSIDs to scan<br>
+-t ST, --scan_type=ST	[active|passive|prohibit|offchan|hotspot] scan type<br>
+--bss_type=BT		[bss/infra|ibss/adhoc] bss type to scan<br>
+-b MAC, --bssid=MAC	particular BSSID MAC address to scan, xx:xx:xx:xx:xx:xx<br>
+-n N, --nprobes=N	number of probes per scanned channel<br>
+-a N, --active=N	dwell time per channel for active scanning<br>
+-p N, --passive=N	dwell time per channel for passive scanning<br>
+-h N, --home=N		dwell time for the home channel between channel scans<br>
+-c L, --chanspecs=L	comma or space separated list of chanspecs to scan
+</div>
+</p>
+
+<p>
+p2p_ifadd<br>
+<div style='padding-left: 30pt'>
+add WiFi P2P interface<br>
+Usage: wl p2p_ifadd &lt;MAC-address&gt; go|client|dyngo [chanspec]
+</div>
+MAC-address: xx:xx:xx:xx:xx:xx
+</p>
+
+<p>
+p2p_ifdel<br>
+<div style='padding-left: 30pt'>
+delete WiFi P2P interface<br>
+Usage: wl p2p_ifdel &lt;MAC-address&gt;
+</div>
+MAC-address: xx:xx:xx:xx:xx:xx
+</p>
+
+<p>
+p2p_ifupd<br>
+<div style='padding-left: 30pt'>
+update an interface to WiFi P2P interface<br>
+Usage: wl p2p_ifupd &lt;MAC-address&gt; go|client
+</div>
+MAC-address: xx:xx:xx:xx:xx:xx
+</p>
+
+<p>
+p2p_if	query WiFi P2P interface bsscfg index<br>
+<div style='padding-left: 30pt'>
+Usage: wl p2p_if &lt;MAC-address&gt;
+</div>
+MAC-address: xx:xx:xx:xx:xx:xx
+</p>
+
+<p>
+p2p_noa	set/get WiFi P2P NoA schedule<br>
+<div style='padding-left: 30pt'>
+Usage: wl p2p_noa &lt;type&gt; &lt;type-specific-params&gt;
+</div>
+<div style='padding-left: 60pt'>
+type 0: Scheduled Absence (on GO): &lt;type&gt; &lt;action&gt; &lt;action-specific-params&gt;
+</div>
+<div style='padding-left: 90pt'>
+action -1: Cancel the schedule: &lt;type&gt; &lt;action&gt;<br>
+action 0,1,2: &lt;type&gt; &lt;action&gt; &lt;option&gt; &lt;option-specific-params&gt;
+</div>
+<div style='padding-left: 120pt'>
+action 0: Do nothing during absence periods<br>
+action 1: Sleep during absence periods<br>
+option 0: &lt;start:tsf&gt; &lt;interval&gt; &lt;duration&gt; &lt;count&gt; ...<br>
+option 1 [&lt;start-percentage&gt;] &lt;duration-percentage&gt;<br>
+option 2 &lt;start:tsf-offset&gt; &lt;interval&gt; &lt;duration&gt; &lt;count&gt;
+</div>
+<div style='padding-left: 60pt'>
+type 1: Requested Absence (on GO): 
+</div>
+<div style='padding-left: 90pt'>
+action -1: Cancel the schedule: &lt;type&gt; &lt;action&gt;<br>
+action 2: &lt;type&gt; &lt;action&gt; &lt;option&gt; &lt;option-specific-params&gt;
+</div>
+<div style='padding-left: 120pt'>
+action 2: Turn off GO beacons and probe responses during absence period<br>
+option 2 &lt;start:tsf-offset&gt; &lt;interval&gt; &lt;duration&gt; &lt;count&gt;
+</div>
+</p>
+
+<p>
+p2p_ops	set/get WiFi P2P OppPS and CTWindow<br>
+<div style='padding-left: 30pt'>
+Usage: wl p2p_ops &lt;ops&gt; [&lt;ctw&gt;]
+</div>
+<div style='padding-left: 60pt'>
+&lt;ops&gt;:
+</div>
+<div style='padding-left: 90pt'>
+0: Disable OppPS<br>
+1: Enable OppPS
+</div>
+<div style='padding-left: 60pt'>
+&lt;ctw&gt;:
+</div>
+<div style='padding-left: 90pt'>
+10 and up to beacon interval
+</div>
+</p>
+
+<p>
+p2p_da_override<br>
+<div style='padding-left: 30pt'>
+Get/Set WiFi P2P device interface addr<br>
+Usage: wl p2p_da_override &lt;MAC-address&gt;
+</div>
+MAC-address: xx:xx:xx:xx:xx:xx<br>
+(When MAC-address is set to 00:00:00:00:00:00, default da restored)
+</p>
+
+<p>
+tdls_endpoint<br>
+<div style='padding-left: 30pt'>
+Available TDLS operations to each TDLS peer.<br>
+usage: wl tdls_endpoint &lt;disc, create, delete, PM, wake, cw&gt; &lt;ea&gt; [chanspec]
+</div>
+<div style='padding-left: 60pt'>
+   [chanspec] only applies to 'cw' operaton.
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+   addendum:<br>
+   wl tdls_endpoint wfd_disc &lt;ea&gt; sends a WFD tunneled Probe Request
+</div>
+</p>
+
+<p>
+tdls_wfd_ie<br>
+<div style='padding-left: 30pt'>
+To set, get and clear additional WFD IE in setup_req and setup_resp<br>
+To set2, get2 and clear2 additional WFD IE in tunneled probe_req and probe_resp<br>
+usage: wl tdls_wfd_ie get  &lt;own|peer_eth_addr#&gt; [ip] [port]
+</div>
+<div style='padding-left: 60pt'>
+   wl tdls_wfd_ie get2 &lt;own|peer_eth_addr#&gt; [alt_mac] [port] [PC_bit]
+</div>
+<div style='padding-left: 90pt'>
+   peer_eth_addr#: HH:HH:HH:HH:HH:HH<br>
+   and peer must be TDLS connected (only in case of setup)
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+   wl tdls_wfd_ie &lt;clr|clr2&gt; own
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+   wl tdls_wfd_ie set  own wfd_ie_hexa_string [ip# [port# [type# [bssid#]]]]<br>
+   wl tdls_wfd_ie set2 own wfd_ie_hexa_string [alt_mac# [port# [type#]]]
+</div>
+<div style='padding-left: 90pt'>
+   wfd_ie_hexa_string: should start with the full WFD IE header
+</div>
+<div style='padding-left: 240pt'>
+   e.g. 0xDDXX506F9A0A...
+</div>
+<div style='padding-left: 90pt'>
+   ip#:      XXX.XXX.XXX.XXX<br>
+   alt_mac#: HH:HH:HH:HH:HH:HH<br>
+   port#:    0-65535<br>
+   type#:    0 for source, 1 for primary sink<br>
+   bssid#:   HH:HH:HH:HH:HH:HH
+</div>
+</p>
+
+<p>
+tdls_sta_info<br>
+<div style='padding-left: 30pt'>
+wl tdls_sta_info &lt;xx:xx:xx:xx:xx:xx&gt;
+</div>
+</p>
+
+<p>
+trf_mgmt_config<br>
+<div style='padding-left: 30pt'>
+Sets/gets traffic management configuration.<br>
+Usage: wl trf_mgmt_config [&lt;enable&gt; 
+</div>
+<div style='padding-left: 210pt'>
+  [&lt;host IP address&gt; &lt;host IP subnet mask&gt; <br>
+   &lt;downlink kbps&gt; &lt;uplink kbps&gt; [&lt;flags&gt;]]] 
+</div>
+<div style='padding-left: 30pt'>
+enable: 0 - Disable traffic management
+</div>
+<div style='padding-left: 90pt'>
+1 - Enables traffic management (host IP arguments required)
+</div>
+<div style='padding-left: 30pt'>
+Flag values are the following:<br>
+0x0001 : Add DSCP values to tx packets<br>
+0x0002 : Disable traffic shaping...just do priority classification
+</div>
+</p>
+
+<p>
+If no arguments are entered, the current traffic management configuration <br>
+is displayed.
+</p>
+
+<p>
+e.g. Configure traffic management and specify local ip addr. and bandwidth data:
+</p>
+
+<p>
+wl trf_mgmt_config 1 12.0.0.1 255.0.0.0 5000 650
+</p>
+
+<p>
+trf_mgmt_filters_add<br>
+<div style='padding-left: 30pt'>
+Adds a traffic management filter.<br>
+Usage: wl trf_mgmt_filter_add [dst_port src_port prot priority]<br>
+dst_port    : Destination TCP or UDP port <br>
+src_port    : Source TCP or UDP port (0 - wildcard for any source port)<br>
+prot        : L4 protocol (6 - TCP, 17 - UDP)<br>
+priority    : Priority value (see trf_mgmt_priority_values enum) 
+</div>
+</p>
+
+<p>
+e.g. Add a tcp wildcard filter:
+</p>
+
+<p>
+wl trf_mgmt_filters_add 80 0 6 2
+</p>
+
+<p>
+trf_mgmt_filters_addex<br>
+<div style='padding-left: 30pt'>
+Adds a traffic management filter.<br>
+Usage: wl trf_mgmt_filter_add flag [dst_port src_port prot priority]<br>
+Usage: wl trf_mgmt_filter_add flag [dst_mac priority] <br>
+Flag values are the following:<br>
+0x0000 : filter on tcp/udp src/dst port<br>
+0x0001 : filter on destination MAC address<br>
+0x0010 : do not update the packet priority <br>
+0x0020 : Tag packets as Favored<br>
+dst_mac    : Destination MAC address <br>
+dst_port    : Destination TCP or UDP port <br>
+src_port    : Source TCP or UDP port (0 - wildcard for any source port)<br>
+prot        : L4 protocol (6 - TCP, 17 - UDP)<br>
+priority    : Priority value (see trf_mgmt_priority_values enum) 
+</div>
+</p>
+
+<p>
+e.g. Add a tcp wildcard filter for all src/dst ports:
+</p>
+
+<p>
+wl trf_mgmt_filters_addex 0 0 0 6 2
+</p>
+
+<p>
+e.g. Add a dst mac address filter
+</p>
+
+<p>
+wl trf_mgmt_filters_addex 0x31 aa:bb:cc:dd:ee:ff 2
+</p>
+
+<p>
+trf_mgmt_filters_remove<br>
+<div style='padding-left: 30pt'>
+Removes a traffic management filter.<br>
+Usage: wl trf_mgmt_filter_remove [dst_port src_port prot]<br>
+dst_port    : Destination TCP or UDP port <br>
+src_port    : Source TCP or UDP port (0 - wildcard for any source port)<br>
+prot        : L4 protocol (6 - TCP, 17 - UDP)
+</div>
+</p>
+
+<p>
+e.g. Remove a tcp wildcard filter:
+</p>
+
+<p>
+wl trf_mgmt_filters_remove 80 0 6
+</p>
+
+<p>
+trf_mgmt_filters_removeex<br>
+<div style='padding-left: 30pt'>
+Removes a traffic management filter.<br>
+Usage: wl trf_mgmt_filter_remove flag [dst_port src_port prot]<br>
+Usage: wl trf_mgmt_filter_remove flag [dst_mac]<br>
+Flag values are the following:<br>
+0x0000 : filter on tcp/udp src/dst port<br>
+0x0001 : filter on destination MAC address<br>
+0x0010 : do not update the packet priority <br>
+0x0020 : Tag packets as Favored<br>
+dst_mac    : Destination MAC address <br>
+dst_port    : Destination TCP or UDP port <br>
+src_port    : Source TCP or UDP port (0 - wildcard for any source port)<br>
+prot        : L4 protocol (6 - TCP, 17 - UDP)
+</div>
+</p>
+
+<p>
+e.g. Remove a tcp wildcard filter:
+</p>
+
+<p>
+wl trf_mgmt_filters_removeex 0 80 0 6
+</p>
+
+<p>
+wl trf_mgmt_filters_removeex 0x31 00:90:4c:52:a8:83
+</p>
+
+<p>
+trf_mgmt_filters_list<br>
+<div style='padding-left: 30pt'>
+Lists all traffic management filters.<br>
+Usage: wl trf_mgmt_filter_list
+</div>
+</p>
+
+<p>
+trf_mgmt_filters_clear<br>
+<div style='padding-left: 30pt'>
+Clears all traffic management filters.<br>
+Usage: wl trf_mgmt_filters_clear
+</div>
+</p>
+
+<p>
+trf_mgmt_bandwidth<br>
+<div style='padding-left: 30pt'>
+Sets/gets traffic management bandwidth configuration.<br>
+Usage: wl trf_mgmt_bandwidth 
+</div>
+<div style='padding-left: 90pt'>
+  [downlink uplink min_tx_bk min_tx_be min_tx_vi
+</div>
+<div style='padding-left: 210pt'>
+  [min_rx_b min_rx_be min_rx_vi]]
+</div>
+<div style='padding-left: 30pt'>
+downlink   : downlink bandwidth (kbps)<br>
+uplink     : uplink bandwidth (kbps)<br>
+min_tx_bk  : min. guaranteed tx bandwidth percentage for BK (kbps)<br>
+min_tx_be  : min. guaranteed tx bandwidth percentage for BE (kbps)<br>
+min_tx_vi  : min. guaranteed tx bandwidth percentage for VI (kbps)
+</div>
+</p>
+
+<p>
+(min_tx_bo + min_tx_be + min_tx_vi) must equal 100.<br>
+<div style='padding-left: 30pt'>
+min_rx_bk  : min. guaranteed rx bandwidth percentage for BK (kbps)<br>
+min_rx_be  : min. guaranteed rx bandwidth percentage for BE (kbps)<br>
+min_rx_vi  : min. guaranteed rx bandwidth percentage for VI (kbps)
+</div>
+</p>
+
+<p>
+(min_rx_bk + min_rx_be + min_rx_vi) must equal 100.<br>
+If no rx gandwidth arguments are entered, tx bandwidth is used for rx.<br>
+If no arguments are entered, the current bandwidth configuration is displayed.
+</p>
+
+<p>
+trf_mgmt_flags<br>
+<div style='padding-left: 30pt'>
+Sets/gets traffic management operational flags.<br>
+Usage: wl trf_mgmt_flags [flags]
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Flag values are the following:<br>
+0x0001 : Add DSCP values to tx packets<br>
+0x0002 : Disable traffic shaping...just do priority classification
+</div>
+</p>
+
+<p>
+If no arguments are entered, the current operational flags are displayed.
+</p>
+
+<p>
+trf_mgmt_stats<br>
+<div style='padding-left: 30pt'>
+Gets traffic management statistics.<br>
+Usage: wl trf_mgmt_stats [index]<br>
+index : Queue index
+</div>
+</p>
+
+<p>
+trf_mgmt_stats_clear<br>
+<div style='padding-left: 30pt'>
+Clears traffic management statistics.<br>
+Usage: wl trf_mgmt_stats_clear
+</div>
+</p>
+
+<p>
+trf_mgmt_shaping_info<br>
+<div style='padding-left: 30pt'>
+Gets traffic management shaping parameters.<br>
+Usage: wl trf_mgmt_shaping_info [index]<br>
+index : Queue index
+</div>
+</p>
+
+<p>
+proxd	Enable/Disable Proximity Detection<br>
+<div style='padding-left: 30pt'>
+0 : disable<br>
+1 [initiator|target|neutral] [u/r]: enable with the specified mode and wakeup mechanism<br>
+ftm [&lt;session-id&gt;] &lt;cmd&gt; [&lt;param-name&gt;&lt;param-value&gt;...]: enable FTM, type 'wl proxd -h ftm' for more information
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Example: wl proxd 1 initiator
+</div>
+</p>
+
+<p>
+proxd_collect<br>
+<div style='padding-left: 30pt'>
+collect the debugging informations of Proximity Detection 
+</div>
+</p>
+
+<p>
+Optional parameters is:<br>
+<div style='padding-left: 30pt'>
+enable to enable the proxd collection.<br>
+disable to disable the proxd collection.<br>
+-l, dump local collect data and request load remote AP collect data.<br>
+-r, dump remote collect data or request load remote AP collect data.<br>
+-f File name to dump the sample buffer (default "proxd_collect.dat")
+</div>
+</p>
+
+<br>
+
+<p>
+proxd_params<br>
+<div style='padding-left: 30pt'>
+Set/Get operational parameters for a method of Proximity Detection
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl proxd_params method [-c channel] [-i interval] [-d duration] [-s rssi_thresh] [-p tx_power] [-r tx_rate] [-t timeout] [-m maxconvergetime] [-g &lt;xx:xx:xx:xx:xx:xx&gt;] [-y retrycnt]
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Mandatory args:
+</div>
+<div style='padding-left: 60pt'>
+method: == 1 (RSSI) or == 2 (TOF) methods are supported) 
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Optional method specific args - for method 1: 
+</div>
+<div style='padding-left: 60pt'>
+-c chanspec     : (all methods) channel to use for Proximity Detection
+</div>
+<div style='padding-left: 180pt'>
+:  e.g: 161/80, if [/BW] omitted, driver will assume 20Mhz by default
+</div>
+<div style='padding-left: 60pt'>
+-i interval     : (RSSI method) interval between neighbor finding attempts (in TU)
+</div>
+<div style='padding-left: 180pt'>
+: (Once associated as STA mode, this value is ignored and<br>
+:  the interval follows DTIM)
+</div>
+<div style='padding-left: 60pt'>
+-d duration     : (RSSI method) duration of neighbor finding attempts (in ms)
+</div>
+<div style='padding-left: 180pt'>
+: == dwelling time on home channel specificed by -c channel
+</div>
+<div style='padding-left: 60pt'>
+-s rssi_thresh  : RSSI threshold for Proximity Detection criteria (in dBm)
+</div>
+<div style='padding-left: 180pt'>
+: (-99 to -1)
+</div>
+<div style='padding-left: 60pt'>
+-p tx_power     : (RSSI method) tx power of Proximity Detection frames (in dBm)<br>
+-r tx_rate      : (all methods) tx rate of Proximity Detection frames (in Mbps)
+</div>
+<div style='padding-left: 180pt'>
+: (TOF) tx_rate format is {R|{hM|vM[xS]}[s][l][g]}[eT][bB]<br>
+: R - legacy rate, hM - HT MCS index[0-23], vMxS - VHT MCS index[0-9] and Nss[1-8]<br>
+: s - Use STBC expansion, l - Use LDPC encoding, g - SGI, Short Guard Interval<br>
+: eT - Tx expansion, number of tx chains[0-3], bB - tx bandwidth, MHz: 20, 40, 80
+</div>
+<div style='padding-left: 60pt'>
+-t timeout      : (all methods) state machine receive timeout of Proximity Detection frames (in ms)<br>
+-m maxconverge  : (RSSI method) device stays up for a whole interval to detect the peer
+</div>
+<div style='padding-left: 180pt'>
+: when no peer found after max converge time (in ms)
+</div>
+</p>
+
+<p>
+<div style='padding-left: 60pt'>
+-g tgt_mac      : (TOF) proximity target mac address for a method  <br>
+-f ftm_cnt      : (TOF) number of ftm frames requested by initiator from target  <br>
+-y retry_cnt    : (TOF) number of retransmit attempts for FTM frames 
+</div>
+<div style='padding-left: 30pt'>
+Example: wl proxd_params 1 -c 36 -i 100 -d 10 -s -40 -p 12 -r 6 -t 20 -m 1000<br>
+Example: wl proxd_params 1 -s -55<br>
+Example: wl proxd_params 2 -c 11 -f 10 -g 00:90:4c:a5:01:32 -r v0
+</div>
+</p>
+
+<p>
+proxd_tune<br>
+<div style='padding-left: 30pt'>
+Set/Get tune parameters for TOF method of Proximity Detection
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl proxd_tune method [operations]
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Mandatory args:
+</div>
+<div style='padding-left: 60pt'>
+method: == 2 (TOF) methods are supported 
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Operations:
+</div>
+<div style='padding-left: 60pt'>
+-k K factor     : hardware dependant RTD delay adjustment factor <br>
+-b bcmack       : 0:disable BCM ACK, 1:enable BCM ACK<br>
+-n minDT        : min time difference of T1 and T4 or T2 and T3 <br>
+-x maxDT		 : max time difference of T1 and T4 or T2 and T3 <br>
+-t total_frmcnt : total count limit of measurement frames transmitted <br>
+-N threshold_log2 : log2 number of simple threshold crossing <br>
+-S threshold_scale: scale number of simple threshold crossing <br>
+-F ftm_cnt      : number of measurement frames requested by initiator <br>
+-r rsv_media_value: reserve media duration value for TOF <br>
+-f flags        : TOF state machine control flags<br>
+-A timestamp_adj : enable/disable sw/hw/seq assisted timestamp adjustment, the data format is s[0|1]h[0|1]r[0|1] <br>
+-W window_adjust : set search window length and offset, the data format is bBlLoO, B is bandwidth 
+</div>
+<div style='padding-left: 180pt'>
+ : with value 20, 40 or 80, L is window length, O is offset
+</div>
+</p>
+
+<p>
+proxd_bssid<br>
+<div style='padding-left: 30pt'>
+Set/Get BSSID to be used in proximity detection frames
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl proxd_bssid &lt;xx:xx:xx:xx:xx:xx&gt;
+</div>
+</p>
+
+<p>
+proxd_mcastaddr<br>
+<div style='padding-left: 30pt'>
+Set/Get Multicast MAC address of Proximity Detection Frames
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl proxd_mcastaddr &lt;xx:xx:xx:xx:xx:xx&gt;
+</div>
+</p>
+
+<p>
+proxd_find<br>
+<div style='padding-left: 30pt'>
+Start Proximity Detection
+</div>
+</p>
+
+<p>
+proxd_stop<br>
+<div style='padding-left: 30pt'>
+Stop Proximity Detection
+</div>
+</p>
+
+<p>
+proxd_status<br>
+<div style='padding-left: 30pt'>
+Get status of Proximity Detection
+</div>
+</p>
+
+<p>
+proxd_monitor<br>
+<div style='padding-left: 30pt'>
+Monitor detected peer status in proximity
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl proxd_monitor &lt;xx:xx:xx:xx:xx:xx&gt;
+</div>
+</p>
+
+<p>
+proxd_payload<br>
+<div style='padding-left: 30pt'>
+Get/Set payload content transferred between the proximity detected peers
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl proxd_payload [len hexstring]
+</div>
+</p>
+
+<p>
+proxd_report<br>
+<div style='padding-left: 30pt'>
+Get/Set report distance results list
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Usage: wl proxd_report [mac address list]
+</div>
+</p>
+
+<p>
+proxd_nancfg<br>
+<div style='padding-left: 30pt'>
+Get/Set "proxd_nancfg" params .<br>
+Usage: wl proxd_nancfg &lt;chanspec&gt; &lt;start_timeslot&gt; &lt;duration&gt; [&lt;allow_mac&gt; [flag]]
+</div>
+</p>
+
+<br>
+
+<p>
+proxd_nanfind<br>
+<div style='padding-left: 30pt'>
+Send specified "proxd_nanfind " params .<br>
+Usage: wl proxd_nanfind &lt;num_dws&gt; [&lt;chanspec&gt; &lt;peer addr&gt; &lt;bitmap&gt; &lt;count&gt; &lt;retry&gt; &lt;flag&gt;]
+</div>
+<div style='padding-left: 60pt'>
+ for each peer, add the [&lt;chanspec&gt; &lt;peer addr&gt; &lt;bitmap&gt; &lt;count&gt; &lt;retry&gt; &lt;flag&gt;]
+</div>
+</p>
+
+<br>
+
+<p>
+proxd_nanstatus<br>
+<div style='padding-left: 30pt'>
+Return host initiated ranging results.
+</div>
+</p>
+
+<br>
+
+<p>
+proxd_nanpeer<br>
+<div style='padding-left: 30pt'>
+Return peer initiated ranging results.
+</div>
+</p>
+
+<br>
+
+<p>
+proxd_event_check<br>
+<div style='padding-left: 30pt'>
+Listen and print Location Based Service events<br>
+proxd_event_check syntax is: proxd_event_check ifname
+</div>
+</p>
+
+<p>
+p2po_listen<br>
+<div style='padding-left: 30pt'>
+start/get listen
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Start listen<br>
+usage: p2po_listen [period(ms)] [interval(ms)]
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+Read back listen period and interval<br>
+usage: p2po_listen
+</div>
+</p>
+
+<p>
+p2po_find<br>
+<div style='padding-left: 30pt'>
+start discovery
+</div>
+</p>
+
+<p>
+p2po_stop<br>
+<div style='padding-left: 30pt'>
+stop both P2P listen and P2P device discovery offload<br>
+usage: p2po_stop
+</div>
+</p>
+
+<p>
+p2po_addsvc<br>
+<div style='padding-left: 30pt'>
+add query-service pair<br>
+usage: p2po_addsvc &lt;protocol&gt; &lt;"query"&gt; &lt;"response"&gt;
+</div>
+<div style='padding-left: 60pt'>
+&lt;protocol&gt;: 1 = Bonjour, 2 = UPnP
+</div>
+</p>
+
+<p>
+p2po_delsvc<br>
+<div style='padding-left: 30pt'>
+delete query-service pair<br>
+usage: p2po_delsvc &lt;protocol&gt; &lt;"query"&gt;
+</div>
+<div style='padding-left: 60pt'>
+&lt;protocol&gt;: 1 = Bonjour, 2 = UPnP, 0 = delete all
+</div>
+</p>
+
+<p>
+p2po_sd_req_resp<br>
+<div style='padding-left: 30pt'>
+find a service<br>
+usage: p2po_sd_req_resp &lt;protocol&gt; &lt;"query"&gt;
+</div>
+<div style='padding-left: 60pt'>
+&lt;protocol&gt;: 1 = Bonjour, 2 = UPnP
+</div>
+</p>
+
+<p>
+p2po_sd_cancel<br>
+<div style='padding-left: 30pt'>
+cancel finding a service
+</div>
+</p>
+
+<p>
+p2po_listen_channel<br>
+<div style='padding-left: 30pt'>
+set listen channel to channel 1, 6, 11, or default<br>
+usage: p2po_listen_channel &lt;1|6|11|0&gt;
+</div>
+</p>
+
+<p>
+p2po_find_config<br>
+<div style='padding-left: 30pt'>
+set/get the parameters for the p2po_find command<br>
+usage: p2po_find_config &lt;flags&gt; &lt;home_time&gt; &lt;social channels&gt;
+</div>
+<div style='padding-left: 60pt'>
+   flags: bit 0 = scan for both P2P devices and non-P2P APs
+</div>
+<div style='padding-left: 30pt'>
+example: p2po_find_config 0 100 11 165
+</div>
+<div style='padding-left: 90pt'>
+ Scan for only P2P devices, home time 100ms, social channels 11 165
+</div>
+</p>
+
+<br>
+
+<p>
+p2po_results<br>
+<div style='padding-left: 30pt'>
+Listens and displays P2PO results.
+</div>
+</p>
+
+<p>
+p2po_gas_config<br>
+<div style='padding-left: 30pt'>
+set GAS state machine tunable parameters<br>
+usage: p2po_gas_config &lt;max_retrans&gt; &lt;resp_timeout&gt; &lt;max_comeback_delay&gt; &lt;max_retries&gt;
+</div>
+</p>
+
+<p>
+p2po_wfds_seek_add<br>
+<div style='padding-left: 60pt'>
+Set usage: p2po_wfds_seek_add &lt;seek_hdl&gt; &lt;service_hash&gt; &lt;macaddr&gt; &lt;service_name&gt; [service_info_req]
+</div>
+Add a WFDS service to seek<br>
+<div style='padding-left: 60pt'>
+&lt;hdl&gt; An arbitrary number identifying this add request<br>
+&lt;service_hash&gt; 6 hex byte service hash of the service to seek<br>
+&lt;macaddr&gt; 6 hex byte advertiser MAC address to match, all FFs if wildcard<br>
+&lt;service_name&gt; Service name to seek<br>
+&lt;service_info_req&gt; Service Info Request string to send in Service Discovery request
+</div>
+<div style='padding-left: 30pt'>
+eg. p2po_wfds_seek_add 1234 1 0x090a0b112233 org.wi-fi.wfds.print.rx<br>
+eg. p2po_wfds_seek_add 1234 1 0x090a0b112233 org.wi-fi.wfds.* abcdefg<br>
+Get usage: p2po_wfds_seek_add &lt;seek_hdl&gt;Get information about a configured WFDS seek
+</div>
+<div style='padding-left: 60pt'>
+&lt;hdl&gt; The hdl of a previously added WFDS service to seek
+</div>
+<div style='padding-left: 30pt'>
+eg. p2po_wfds_seek_add 1234
+</div>
+</p>
+
+<p>
+p2po_wfds_seek_del<br>
+<div style='padding-left: 30pt'>
+delete a WFDS service to seek<br>
+usage: p2po_wfds_seek_del &lt;seek_hdl&gt;
+</div>
+<div style='padding-left: 60pt'>
+&lt;hdl&gt; the hdl specified in a previous p2po_wfds_seek_add
+</div>
+</p>
+
+<p>
+p2po_wfds_seek_dump<br>
+<div style='padding-left: 30pt'>
+dump WFDS services to seek
+</div>
+</p>
+
+<p>
+p2po_wfds_advertise_add<br>
+<div style='padding-left: 30pt'>
+add a WFDS service to advertise<br>
+Set usage: p2po_wfds_advertise_add &lt;adv_hdl&gt; &lt;adv_id&gt; &lt;cfg_meth&gt; &lt;hash&gt; &lt;service_name&gt; &lt;status&gt; [service_info]
+</div>
+<div style='padding-left: 60pt'>
+&lt;hdl&gt; An arbitrary number identifying this add request<br>
+&lt;adv_id&gt; 4 hex byte advertisement ID<br>
+&lt;cfg_meth&gt; 2 hex byte WPS config methods supported by this service<br>
+&lt;service_hash&gt; 6 hex byte service hash of the service to advertise<br>
+&lt;service_name&gt; Service name. Text string up to 255 chars<br>
+&lt;status&gt; Status code of the service to advertise, 0...255<br>
+&lt;service_info&gt; Service information to send in Service Discovery Response. Text string up to 255 chars
+</div>
+<div style='padding-left: 30pt'>
+eg. p2po_wfds_advertise_add 4321 0x7a7b9e9f 0x0080 0x1133557799aa org.wi-fi.wfds.print.rx 0 abcdefg<br>
+Get usage: p2po_wfds_advertise_add &lt;adv_hdl&gt;Get information about a configured WFDS advertise service
+</div>
+<div style='padding-left: 60pt'>
+&lt;adv_hdl&gt; The hdl of a previously added WFDS advertise service
+</div>
+<div style='padding-left: 30pt'>
+eg. p2po_wfds_advertise_add 4321
+</div>
+</p>
+
+<p>
+p2po_wfds_advertise_del<br>
+<div style='padding-left: 60pt'>
+usage: p2po_wfds_advertise_del &lt;adv_hdl&gt;<br>
+&lt;hdl&gt; the hdl specified in a previous p2po_wfds_advertise_add
+</div>
+<div style='padding-left: 30pt'>
+eg. p2po_wfds_advertise_del 4321
+</div>
+</p>
+
+<p>
+p2po_wfds_advertise_dump<br>
+<div style='padding-left: 30pt'>
+dump WFDS services to advertise
+</div>
+</p>
+
+<p>
+anqpo_set<br>
+<div style='padding-left: 30pt'>
+set ANQP offload parameters<br>
+usage: anqpo_set [max_retransmit &lt;number&gt;]
+</div>
+<div style='padding-left: 60pt'>
+[response_timeout &lt;msec&gt;] [max_comeback_delay &lt;msec&gt;]<br>
+[max_retries &lt;number&gt;] [query "encoded ANQP query"]
+</div>
+</p>
+
+<p>
+anqpo_stop_query<br>
+<div style='padding-left: 30pt'>
+stop ANQP query<br>
+usage: anqpo_stop_query
+</div>
+</p>
+
+<p>
+anqpo_start_query<br>
+<div style='padding-left: 30pt'>
+start ANQP query to peer(s)<br>
+usage: anqpo_start_query &lt;channel&gt; &lt;xx:xx:xx:xx:xx:xx&gt;
+</div>
+<div style='padding-left: 60pt'>
+[&lt;channel&gt; &lt;xx:xx:xx:xx:xx:xx&gt;]&gt;
+</div>
+</p>
+
+<p>
+anqpo_auto_hotspot<br>
+<div style='padding-left: 30pt'>
+automatic ANQP query to maximum number of hotspot APs, default 0 (disabled)<br>
+usage: anqpo_auto_hotspot [max]
+</div>
+</p>
+
+<p>
+anqpo_ignore_mode<br>
+<div style='padding-left: 30pt'>
+ignore duplicate SSIDs or BSSIDs, default 0 (SSID)<br>
+usage: anqpo_ignore_mode [0 (SSID) | 1 (BSSID)]
+</div>
+</p>
+
+<p>
+anqpo_ignore_ssid_list<br>
+<div style='padding-left: 30pt'>
+get, clear, set, or append to ANQP offload ignore SSID list<br>
+usage: wl anqpo_ignore_ssid_list [clear |
+</div>
+<div style='padding-left: 60pt'>
+set &lt;ssid1&gt; [ssid2] |<br>
+append &lt;ssid3&gt; [ssid4]&gt;
+</div>
+</p>
+
+<p>
+anqpo_ignore_bssid_list<br>
+<div style='padding-left: 30pt'>
+get, clear, set, or append to ANQP offload ignore BSSID list<br>
+usage: wl anqpo_ignore_bssid_list [clear |
+</div>
+<div style='padding-left: 60pt'>
+set &lt;xx:xx:xx:xx:xx:xx&gt; [xx:xx:xx:xx:xx:xx] |<br>
+append &lt;xx:xx:xx:xx:xx:xx&gt; [xx:xx:xx:xx:xx:xx]]&gt;
+</div>
+</p>
+
+<p>
+anqpo_results<br>
+<div style='padding-left: 30pt'>
+Listens and displays ANQP results.
+</div>
+</p>
+
+<p>
+btc_dynctl<br>
+<div style='padding-left: 30pt'>
+Usage:<br>
+ [-d dflt_dsns_level] [-l low_dsns_level] [-m mid_dsns_level] [-h high_dsns_level]<br>
+ [-c default_btc_mode<br>
+ [-s mode_switching_btrssi_hysteresis in dBm
+</div>
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+ [-f dynctl_flags] : bit0: Dynctl on/off, bit1-desense on/off, bit2-m_switch on/off, bit7-dryrun on/off<br>
+ [-j row_idx:btcmode,bt_pwr,wl_rssi_high,wl_rssi_low] : set one row in mode table<br>
+ [-k row_idx:btcmode,bt_pwr,wl_rssi_high,wl_rssi_low] : set one row in desense table<br>
+ [-n number of active rows in mode switching table<br>
+ [-o number of active rows in desense switching table
+</div>
+</p>
+
+<br>
+<br>
+
+<p>
+btc_dynctl_status<br>
+<div style='padding-left: 30pt'>
+Usage: command doeesn't take any arguments]
+</div>
+</p>
+
+<br>
+
+<p>
+btc_dynctl_sim<br>
+<div style='padding-left: 30pt'>
+Usage: wl btc_dynctl_sim [1|0] [-b bt_sim_pwr] [-r bt_sim_rssi] [-w wl_sim_rssi] 
+</div>
+</p>
+
+<br>
+
+
+
+<!-- End wiki content -->
+
+</body>
+
+</html>
