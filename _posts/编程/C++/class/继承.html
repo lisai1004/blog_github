@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>ftp.gnu.orggnumake</title>
+	<title>继承</title>
 	<meta name='Generator' content='Zim 0.67'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -40,7 +40,30 @@
 
 <!-- Wiki content -->
 
-	
+	<h1>继承</h1>
+
+<p>
+Created Sunday 24 September 2017
+</p>
+
+<p>
+1.当子类省略继承模式关键字时，其默认值是private模式
+</p>
+
+<p>
+2.构造函数的调用顺序<br>
+先基类（如果是多继承，就是先声明的基类），后子类<br>
+class A: public B, pulibc C<br>
+3.析构函数的调用顺序<br>
+先子类，后基类。（与构造调用相反）
+</p>
+
+<p>
+4.如果基类没有构造函数，则子类可有可无；<br>
+如果基类有构造函数，则子类必须有构造函数，并且通过子类定义的构造函数将参数传递给基类的构造函数。
+</p>
+
+
 
 <!-- End wiki content -->
 

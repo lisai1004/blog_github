@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>编译</title>
+	<title>成员访问权限</title>
 	<meta name='Generator' content='Zim 0.67'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -40,42 +40,74 @@
 
 <!-- Wiki content -->
 
-	<h1>编译</h1>
+	<h1>成员访问权限</h1>
 
 <p>
-Created 星期四 03 八月 2017<br>
-1.evb_mini<br>
-arch/arm/configs/delta2_defconfig
+Created Sunday 27 August 2017
 </p>
 
 <p>
-@@ -43,6 +43,11 @@ CONFIG_UNIX_DIAG=y<br>
- CONFIG_NET_KEY=y<br>
- CONFIG_INET=y<br>
- CONFIG_IP_MULTICAST=y<br>
-+CONFIG_IP_MROUTE=y<br>
-+CONFIG_IP_PIMSM_V1=y<br>
-+CONFIG_IP_PIMSM_V2=y<br>
-+CONFIG_IP_MROUTE_MULTIPLE_TABLES=y       # For multiple routing tables<br>
-+CONFIG_IPV6_MROUTE_MULTIPLE_TABLES=y     # For multiple routing tables<br>
- CONFIG_IP_ADVANCED_ROUTER=y<br>
- CONFIG_IP_MULTIPLE_TABLES=y<br>
- CONFIG_INET_ESP=y
+1.三种权限public、protected、private<br>
+private：       只能由(1)该类中的函数、(2)其友元函数访问；不能被(3)其友元函数其他访问，(4)该类的对象也不能访问。<br>
+protected：可以被(1)该类中的函数、(2)子类的函数、(3)其友元函数访问；不能被(4)该类的对象访问。<br>
+public：         可以被(1)该类中的函数、(2)子类的函数、(3)其友元函数访问、(4)该类的对象访问。
 </p>
 
 <p>
-1.在某些Makefile中看到了 obj-m := test.o module-objs := test.o 请问module-objs := test.o什么作用，有obj-m := test.o不是就可以编译成模块了么<br>
-声明：我的回答不一定正确。<br>
-<div style='padding-left: 30pt'>
-   obj-m := test.o是指定模块名称是test.ko。如果只是由test.o，来编译成test.ko，那后面的module-objs := test.o最好省略（我觉得你这2句话写一起，估计编译会出错）。
-</div>
-但是有时候，test.ko是由test.o file1.o file2.o这样多个.o文件编译成test.ko模块，那需要:<br>
-<div style='padding-left: 30pt'>
-obj-m := test.o <br>
-module-objs := file1.o file2.o test_main.o(注意，这里不要用test.o)
-</div>
- 所以module-objs 用在多.o文件编译的时候	
+PS：<br>
+1）成员函数没有三种权限约束，都可以访问<br>
+2）友元函数包括3种：<br>
+设为友元的普通的非成员函数；设为友元的其他类的成员函数；设为友元类中的所有成员函数。<br>
+3）
 </p>
+
+<br>
+
+<p>
+3.继承相关<br>
+组合结果
+</p>
+
+<p>
+基类中 继承方式 子类中
+</p>
+
+<p>
+public ＆ public继承 =&gt; public<br>
+public ＆ protected继承 =&gt; protected<br>
+public ＆ private继承 = &gt; private
+</p>
+
+<p>
+protected ＆ public继承 =&gt; protected<br>
+protected ＆ protected继承 =&gt; protected<br>
+protected ＆ private继承 = &gt; private
+</p>
+
+<p>
+private ＆ public继承 =&gt; 子类无权访问<br>
+private ＆ protected继承 =&gt; 子类无权访问<br>
+private ＆ private继承 = &gt; 子类无权访问
+</p>
+
+<p>
+由以上组合结果可以看出<br>
+1、public继承不改变基类成员的访问权限<br>
+2、private继承使得基类所有成员在子类中的访问权限变为private<br>
+3、protected继承将基类中public成员变为子类的protected成员，其它成员的访问 权限不变。<br>
+4、基类中的private成员不受继承方式的影响，子类永远无权访。
+</p>
+
+<p>
+此外，在使用private继承时，还存在另外一种机制：准许访问 。<br>
+我们已经知道，在基类以private方式被继承时，其public和protected成员在子类中变为private成员。然而某些情况下，需要在子类中将一个或多个继承的成员恢复其在基类中的访问权限。<br>
+C++支持以两种方式实现该目的<br>
+方法一，使用using 语句，这是C++标准建议使用的方式<br>
+方法二，使用访问声明，形式为 base-class::member;， 位置在子类中适当的访问声明处。(注，只能恢复原有访问权限，而不能提高或降低访问权限)
+</p>
+
+<br>
+
 
 
 <!-- End wiki content -->

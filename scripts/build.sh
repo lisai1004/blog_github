@@ -5,7 +5,7 @@
 #mkdir -p /blog_github/_posts
 #[ -e _resources ] && rm -rf *
 #cd ..
-rm -rf /blog_github/_posts/*
+sudo rm -rf /blog_github/_posts/*
 
 zim --export \
 --format=html --template=Print \

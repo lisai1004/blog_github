@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>socket</title>
+	<title>linux-交叉编译</title>
 	<meta name='Generator' content='Zim 0.67'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -40,26 +40,46 @@
 
 <!-- Wiki content -->
 
-	<h1>socket</h1>
+	<h1>linux-交叉编译</h1>
 
 <p>
-Created 星期四 03 八月 2017
+Created 星期二 19 九月 2017
 </p>
 
 <p>
-　　套接字类型是指创建套接字的应用程序要使用的通信服务类型。linux系统支持多种套接字类型，最常用的有以下三种：
+1.参数解释<br>
+交叉编译某个应用程序时，通常需要 ./configure 来生成对应的 Makefile<br>
+./configure 最关键的三个选项是：<br>
+--host=HOST<br>
+指定软件运行的系统平台.如果没有指定,将会运行`config.guess'来检测.
 </p>
 
 <p>
-　　（1）SOCK_STREAM：流式套接字，提供面向连接、可靠的数据传输服务，数据按字节流、按顺序收发，保证在传输过程中无丢失、无冗余。TCP协议支持该套接字。
+--build=BUILD<br>
+指定软件包安装的系统平台.如果没有指定,默认值将是'--host'选项的值.
 </p>
 
 <p>
-　　（2）SOCK_DGRAM：数据报套接字，提供面向无连接的服务，数据收发无序，不能保证数据的准确到达。UDP协议支持该套接字。
+--target=GARGET<br>
+指定软件面向(target to)的系统平台.这主要在程序语言工具如编译器和汇编器上下文中起作用.如果没有指定,默认将使用'--host'选项的值. 
 </p>
 
 <p>
-　　（3）SOCK_RAW：原始套接字。允许对低于传输层的协议或物理网络直接访问，例如可以接收和发送ICMP报文。常用于检测新的协议。
+一般而言，我们只要指定 --host 就可以了
+</p>
+
+<p>
+记住：--host 指定的是交叉编译工具链的前缀
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>
+./configure --prefix=./install --disable-static --enable-shared --enable-gpl --enable-pthreads --cross-prefix=arm-none-linux-gnueabi- --enable-cross-compile --target-os=linux --extra-cflags="-mcpu=arm9 -W -Wall -Wpointer-arith -Wstrict-prototypes -Winline -Wundef -O2 -Wall" --arch=armv4l --cpu=arm9 
 </p>
 
 

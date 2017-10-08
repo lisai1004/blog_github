@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>android状态机机制StateMachine</title>
+	<title>修改ubuntu密码</title>
 	<meta name='Generator' content='Zim 0.67'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -40,49 +40,28 @@
 
 <!-- Wiki content -->
 
-	<h1>android状态机机制StateMachine</h1>
+	<h1>修改ubuntu密码</h1>
 
 <p>
 Created 星期四 03 八月 2017<br>
-1.StateMachine是一个层次结构的状态机，它可以处理一些消息，并维护一个层次结构的状态。<br>
-阅读StateMachine源码，其结构大致如下：
-</p>
-
-<p>
-ProcessedMessageInfo类
-</p>
-
-<p>
-ProcessedMessages类
-</p>
-
-<p>
-SmHandler类
-</p>
-
-<p>
-Statelnfor
-</p>
-
-<p>
-HaltingState<br>
-QuitingState
-</p>
-
-<br>
-<br>
-<br>
-
-<p>
-2、Handler中obtainMessage与new Message的区别：
-</p>
-
-<p>
-obtainmessage（）是从消息池中拿来一个msg 不需要另开辟空间new
-</p>
-
-<p>
-new需要重新申请，效率低，obtianmessage可以循环利用；
+1.修改ubuntu密码<br>
+出于安全机制普通用户设置密码的时候是无法使用短密码或者过简单密码。<br>
+如果想用简单密码，必须使用管理员权限。<br>
+方案一：利用sudo命令  <br>
+sudo命令是临时允许系统管理员让普通用户执行一些或者全部的root命令<br>
+假设需要更改密码的账户为lucifer<br>
+输入命令          sudo passwd lucifer     （更改lucifer用户密码）<br>
+会提示             [sudo] password for lucifer:  xxx    （这里的XXX是root密码）<br>
+输入新的 UNIX 密码： aa   （aa是需要更改的密码）<br>
+重新输入新的 UNIX 密码： aa<br>
+passwd：已成功更新密码<br>
+方案二：利用-su 临时切换用户身份<br>
+lucifer@xmomx:~$ su <br>
+密码： xxx  （这里的XXX是root密码）<br>
+passwd lucifer （更改lucifer用户密码）<br>
+输入新的 UNIX 密码： aa <br>
+重新输入新的 UNIX 密码： aa <br>
+passwd：已成功更新密码
 </p>
 
 

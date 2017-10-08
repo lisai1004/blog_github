@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>安卓系统文件目录</title>
+	<title>虚函数</title>
 	<meta name='Generator' content='Zim 0.67'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -40,59 +40,24 @@
 
 <!-- Wiki content -->
 
-	<h1>安卓系统文件目录</h1>
+	<h1>虚函数</h1>
 
 <p>
-Created 星期四 03 八月 2017<br>
-\\system\\usr<br>
-用户文件夹，包含共享、键盘布局、时间区域文件等
+Created Sunday 24 September 2017
 </p>
 
 <p>
-\\system\\sounds<br>
-默认的音乐测试文件，仅有一个test.mid文件，用于播放测试的文件。<br>
-\\system\\sounds\\test.mid
+1.使用virtual关键字声明虚函数
 </p>
 
 <p>
-\\system\\media<br>
-铃声音乐文件夹，除了常规的铃声外还有一些系统提示事件音
+2.纯虚函数<br>
+在基类中只宣布某个虚函数的原型，并为了明确通知编译系统，需要添加“=0”
 </p>
 
 <p>
-\\system\\lib<br>
-lib目录中存放的主要是系统底层库，如平台运行时库
-</p>
-
-<p>
-\\system\\framework<br>
-framework主要是一些核心的文件，从后缀名为jar可以看出是是系统平台框架
-</p>
-
-<p>
-\system\\fonts<br>
-字体文件夹，除了标准字体和粗体、斜体外可以看到文件体积最大的可能是中文字库，或一些unicode字库，从T-Mobile G1上可以清楚的看到显示简体中文正常，其中DroidSansFallback.ttf文件大小
-</p>
-
-<br>
-
-<p>
-\\system\\etc<br>
-从文件夹名称来看保存的都是系统的配置文件，比如APN接入点设置等核心配置
-</p>
-
-<br>
-
-<p>
-\\system\\bin<br>
-这个目录下的文件都是系统的本地程序，从bin文件夹名称可以看出是binary二进制的程序，里面主要是Linux系统自带的组件
-</p>
-
-<br>
-
-<p>
-\\system\\app<br>
-这个里面主要存放的是常规下载的应用程序，可以看到都是以APK格式结尾的文件。在这个文件夹下的程序为系统默认的组件，自己安装的软件将不会出现在这里，而是\\data\\文件夹中
+3.抽象类<br>
+含有纯虚函数的类，不能声明任何对象，其作用就是被其他类继承（子类必须对纯虚函数进行覆盖）
 </p>
 
 

@@ -158,8 +158,20 @@ def listdir_all_file(path):
 			break
 		if os.path.isdir(file_path):
 			continue
+
 		if os.path.dirname(file_path) == '/blog_github/_posts':
 			continue
+		'''
+		a=file_path.split('/')
+		print a
+		file_path_tmp = ''
+		i = 1
+		for i in range(a.__len__() - 1):
+			file_path_tmp = a[i] + '-'
+ 			i = i + 1
+ 		file_path_tmp = file_path_tmp + '-' + a[i] 
+		file_path= file_path_tmp
+		'''
 		shutil.move(file_path, '/blog_github/_posts')	
 		#print(file_name)
 

@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>change-ubuntu-password</title>
+	<title>搭建安卓编译环境</title>
 	<meta name='Generator' content='Zim 0.67'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -40,28 +40,126 @@
 
 <!-- Wiki content -->
 
-	<h1>change-ubuntu-password</h1>
+	<p>
+Content-Type: text/x-zim-wiki<br>
+Wiki-Format: zim 0.4<br>
+Creation-Date: 2017-08-03T14:29:00+08:00
+</p>
+
+<h1>搭建安卓编译环境</h1>
 
 <p>
 Created 星期四 03 八月 2017<br>
-1.修改ubuntu密码<br>
-出于安全机制普通用户设置密码的时候是无法使用短密码或者过简单密码。<br>
-如果想用简单密码，必须使用管理员权限。<br>
-方案一：利用sudo命令  <br>
-sudo命令是临时允许系统管理员让普通用户执行一些或者全部的root命令<br>
-假设需要更改密码的账户为lucifer<br>
-输入命令          sudo passwd lucifer     （更改lucifer用户密码）<br>
-会提示             [sudo] password for lucifer:  xxx    （这里的XXX是root密码）<br>
-输入新的 UNIX 密码： aa   （aa是需要更改的密码）<br>
-重新输入新的 UNIX 密码： aa<br>
-passwd：已成功更新密码<br>
-方案二：利用-su 临时切换用户身份<br>
-lucifer@xmomx:~$ su <br>
-密码： xxx  （这里的XXX是root密码）<br>
-passwd lucifer （更改lucifer用户密码）<br>
-输入新的 UNIX 密码： aa <br>
-重新输入新的 UNIX 密码： aa <br>
-passwd：已成功更新密码
+(1）安装编译工具<br>
+<div style='padding-left: 30pt'>
+sudo apt-get install -y git flex bison gperf build-essential libncurses5-dev:i386<br>
+sudo apt-get install libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev g++-multilib<br>
+sudo apt-get install tofrodos python-markdown libxml2-utils xsltproc zlib1g-dev:i386<br>
+sudo apt-get install dpkg-dev libsdl1.2-dev libesd0-dev<br>
+sudo apt-get install git-core gnupg flex bison gperf build-essential<br>
+sudo apt-get install zip curl zlib1g-dev gcc-multilib g++-multilib<br>
+sudo apt-get install libc6-dev-i386<br>
+sudo apt-get install lib32ncurses5-dev x11proto-core-dev libx11-dev<br>
+sudo apt-get install lib32z-dev ccache<br>
+sudo apt-get install libgl1-mesa-dev libxml2-utils xsltproc unzip m4
+</div>
+注：安装过程中可能出现版本不匹配的问题，但是系统会给出应安装的正确版本提示，按照系统提示安装即可。如果出现不能安装的情况，可以执行 sudo apt-get update 后再进行安装，如果再安装不上，则可以放弃，影响不大。如果电脑里没有git一定要安装一下git。<br>
+（2）安装jdk<br>
+Android4.4的源码编译所使用的jdk为oracle jdk1.6。由于不能直接下载，所以可在论坛或网盘上找资源下载jdk1.6.0_45.下载后为.bin文件<br>
+首先在/usr/loacl目录下创建jvm文件夹用来存放jdk<br>
+<div style='padding-left: 30pt'>
+mkdir /usr/local/jvm
+</div>
+然后进入到Downloads下找到刚才下载的jdk，复制到/usr/local/jvm中<br>
+<div style='padding-left: 30pt'>
+cp jdk-6u45-linux-x64.bin /usr/local/jvm
+</div>
+然后进入到/usr/local/jvm下，给.bin文件一个可执行权限<br>
+<div style='padding-left: 30pt'>
+chmod +x jdk-6u45-linux-x64.bin
+</div>
+执行.bin文件进行安装<br>
+<div style='padding-left: 30pt'>
+./jdk-6u45-linux-x64.bin
+</div>
+安装成功后设置环境变量，打开/etc/profile，添加如下几行后保存<br>
+<div style='padding-left: 30pt'>
+export JAVA_HOME=/usr/local/java/jdk1.6.0_45<br>
+export JRE_HOME=/usr/local/java/jdk1.6.0_45/jre<br>
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH<br>
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH
+</div>
+修改后Log Out之后再进入，在终端输入java -version，显示java version "1.6.0_45"则为配置成功<br>
+注：编译的时候jdk一定要安装1.6的最高版本，即jdk1.6.0_45，否则编译中会报错，android:搭建安卓编译环境:推荐下载地址http:download.csdn.netdetailjavahr7291125<br>
+（3）安装make<br>
+由于ubuntu16.04自带make版本过高，无法编译。因此需要将make降至3.81或3.82版本(最好使用3.81)<br>
+android:搭建安卓编译环境:下载地址ftp:ftp.gnu.orggnumake<br>
+下载后到Downloads下将文件拷到其他目录（home下即可），然后解压<br>
+<div style='padding-left: 30pt'>
+tar -zxvf make3.8.2.tar.gz
+</div>
+解压后进入到make3.8.2的目录下<br>
+<div style='padding-left: 30pt'>
+./configure<br>
+make<br>
+make install
+</div>
+执行完后在/usr/local/bin中可得到新版本的make，复制到/usr/bin中即可<br>
+注：make过程中可能会出现错误，不用理会，只要make install能够成功执行即可。<br>
+（4）编译<br>
+首先在.bashrc文件末尾追加export USE_CCACHE = 1<br>
+<div style='padding-left: 30pt'>
+echo export USE_CCACHE=1 &gt;&gt; ~/.bashrc
+</div>
+然后导入编译Android源码所需的环境变量和其他参数：<br>
+<div style='padding-left: 30pt'>
+source build/envsetup.sh
+</div>
+然后<br>
+<div style='padding-left: 30pt'>
+make clean<br>
+make update-api<br>
+make
+</div>
+注：其中前两行不是必须的，make update-api可能会出错，但是影响不大。<br>
+最后一行make也可以用make -j4（四线程编译），电脑性能好的可以用make -j8或-j10，总之是二的倍数。我怕电脑死机只用了make，不过稍微有点慢。<br>
+如果没什么意外的话等待编译成功就好了。。。<br>
+（5）启动Android模拟器<br>
+<div style='padding-left: 30pt'>
+source build/envsetup.sh<br>
+lunch sdk-eng<br>
+emulator
+</div>
+等待一会之后模拟器即可启动<br>
+（6）最后：<br>
+过程整理出来大概就是这样，由于上文好多命令都是我自己手敲上去的，可能有的敲错了，给大家推荐两篇参考博客<br>
+<a href="http://www.jianshu.com/p/6d97b4a10b18" title="http://www.jianshu.com/p/6d97b4a10b18" class="http">http://www.jianshu.com/p/6d97b4a10b18</a><br>
+<a href="http://blog.sina.com.cn/s/blog_6e65e8cc0102wm83.html" title="http://blog.sina.com.cn/s/blog_6e65e8cc0102wm83.html" class="http">http://blog.sina.com.cn/s/blog_6e65e8cc0102wm83.html</a>
+</p>
+
+<br>
+
+<p>
+附:<br>
+1.~/.bashrc<br>
+ #demon add at 20170707  <br>
+export JAVA_HOME=/usr/local/jvm/jdk1.6.0_45<br>
+export JRE_HOME=/usr/local/jvm/jdk1.6.0_45/jre<br>
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH<br>
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH<br>
+export ANDROID_JAVA_HOME=$JAVA_HOME<br>
+export PATH=~/bin:$PATH<br>
+ARM_PATH=/opt/arm-2010q1/bin<br>
+ARC_PATH=/opt/gnutools/arc2.3-p2/elf32-4.2.1/bin                            <br>
+M8_PATH=/opt/arc-4.8-amlogic-20130904-r2/bin:/opt/gcc-linaro-arm-linux-gnuea    bihf/bin<br>
+export PATH=${CLASSPATH}:${ARM_PATH}:${ARC_PATH}:${M8_PATH}:$PATH<br>
+export PATH=${PATH}:/opt/staruml<br>
+export USE_CCACHE=1
+</p>
+
+<p>
+2.安装lzop<br>
+sudo apt-get install lzop
 </p>
 
 

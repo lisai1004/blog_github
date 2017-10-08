@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>get-android-source</title>
+	<title>class</title>
 	<meta name='Generator' content='Zim 0.67'>
 	<style type='text/css'>
 		a          { text-decoration: none      }
@@ -40,37 +40,35 @@
 
 <!-- Wiki content -->
 
-	<h1>get-android-source</h1>
+	<h1>class</h1>
 
 <p>
-Created 星期四 03 八月 2017<br>
-获取Android源码<br>
-（1）下载repo<br>
-在用户目录下创建一个bin文件夹来存放repo，并把该路径设置到环境变量中<br>
-<div style='padding-left: 30pt'>
-mkdir ~/bin<br>
-PATH=~/bin:$PATH
-</div>
-下载repo脚本<br>
-<div style='padding-left: 30pt'>
-curl <a href="https://storage.googleapis.com/git-repo-downloads/repo" title="https://storage.googleapis.com/git-repo-downloads/repo" class="https">https://storage.googleapis.com/git-repo-downloads/repo</a> &gt; ~/bin/repo
-</div>
-设置repo可执行权限<br>
-<div style='padding-left: 30pt'>
-chmod a+x ~/bin/repo
-</div>
-（2）初始化repo客户端<br>
-创建AndroidCode目录用来存放源码<br>
-<div style='padding-left: 30pt'>
-mkdir AndroidCode<br>
-cd AndroidCode
-</div>
-运行repo下载源码<br>
-<div style='padding-left: 30pt'>
-repo init -u <a href="https://android.googlesource.com/platform/manifest" title="https://android.googlesource.com/platform/manifest" class="https">https://android.googlesource.com/platform/manifest</a> -b android-4.4_r1<br>
-repo sync
-</div>
-注：下载android源码对网络要求较高，如果中间出现错误，不要删除已缓存的文件，重新执行repo sync即可。如果网速不允许的话，推荐在论坛或者网盘上找资源，在windows下载后拷贝到ubuntu下即可（无需配置repo）。无论采用哪种方式，切记源码的路径一定不要含有中文。
+Created Saturday 23 September 2017
+</p>
+
+<p>
+1.与结构体的不同<br>
+默认成员访问权限不同<br>
+结构为public<br>
+类为private
+</p>
+
+<p>
+2.sizeof<br>
+类都为1<br>
+空结构体为1<br>
+非空结构体由其成员决定
+</p>
+
+<p>
+3.友元类<br>
+实现一个类对另一个类的无限制访问（public,private,protected），它建立了一个类通往另一个类的桥梁<br>
+1）友元关系不能继承<br>
+A是B的友元，C是A的子类，则不能推断C是B的友元<br>
+2）不可传递<br>
+A是B的友元，B是的子类，则不能推断A是C的友元<br>
+3）不可交换<br>
+A是B的友元，B不一定是A的友元
 </p>
 
 

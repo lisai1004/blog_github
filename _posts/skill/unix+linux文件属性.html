@@ -1,0 +1,805 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>unix+linux文件属性</title>
+	<meta name='Generator' content='Zim 0.67'>
+	<style type='text/css'>
+		a          { text-decoration: none      }
+		a:hover    { text-decoration: underline }
+		a:active   { text-decoration: underline }
+		strike     { color: grey                }
+		u          { text-decoration: none;
+					 background-color: yellow   }
+		tt         { color: #2e3436;            }
+		pre        { color: #2e3436;
+					 margin-left: 20px          }
+		h1         { text-decoration: underline;
+					 color: #4e9a06; margin-bottom: 0 }
+		h2         { color: #4e9a06; margin-bottom: 0 }
+		h3         { color: #4e9a06; margin-bottom: 0 }
+		h4         { color: #4e9a06; margin-bottom: 0 }
+		h5         { color: #4e9a06; margin-bottom: 0 }
+		p          { margin-top: 0              }
+		span.zim-tag {
+			color: #ce5c00;
+		}
+		div.zim-object {
+			border-style:solid;
+			border-width:1px;
+		}
+		.checked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8sMEGsKGkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEBUlEQVRIx62V22tdRRTGf7Nn73P2ybntnNOe3NqkPTGgLTVUUZF6QatSLOKTPgqCIqLgQ0H/A1sQQbBYCBb1QfAxiC8tSO1FqHkwJVKtjdTGNraUmObsc9nXmfGh7cGYpM1D5nHWzPetteZb3wg2eB2YqYm4zSadsMtoboiNBH/3TE0awx6j+MRoxoTg/IYRvP19TQrJS0bzhdHGSyKFkLTtjSKwMjyiEz43ynhtP6bdjBCWyFobAf7eT7VhNF/q1FRbjYjmUohlCVPwnB+6FUxMTJipqSmUUhhjEGKd3bMT4ks/Y6oLBK2Yth8hHYtCJXOix7Nf7xLMzc0xOzvLzp078TyPNE3viW3QJPXzhNWbxFFKHCmMhoLn/FHodd48vGfhapdAacXQlkFK5dL6wIUm6fuTZPuvqDQhaMUYYyiVyuQr6rXDexYuAdi3tSv1ZJNs/R/CaszzT+1na88uXFnCEnJVgivBNN8uTJKmHQI/ptOOcXNZzMz9mOqFs90OHpipWcYwlo5P4ebnuOkrvr5wgrH+h3im7y36MzuwRXYZeKha/OhP0EkadFoxQSdGSotedR/+XwMc2XvKdNUFOFqZx6LKZWIiwjgkikNmLp/hm8sH+K1zjFTHXfBYdTi+eJArzXM0GxFxoBDCopLvo/fqEwi1XPkWkGqjFo2TgB1jOYZUKZTS/D1/ncmLh7jon0IbRWoiTi59ymzzJEEQE3cStNZsGxqlfPE57MBbOR8fP3hDGalOO9fq2DlBvmZw8xa2IxACGn6TydlD/O6f5OzSV/zif0cYhLQaEXGkKBbz7Ov/AOlXV1cxgBJRI3fuSTrpTawt18kWIZN1CFuaONI0w0WOXfsI43YIggh/KUSlhqxrMz74AkOZcWBm9QkH+Gw8NDLuITi+m0yzhluSyJzBLcpblUhFxywSRAEtPwQjsKVN30CNh0uvYuOubSHLtN3J0TO1j0pmBNuFbFWRK0gyPRZpktL2I5JQkclKakNlnh54g6ocvevUr/Ai2a7wineEkcJupA3S1Wg0nVZM2E6wbEF5U5G9Q++wI7sfR7h3N8HVNstykBfzH+KJEZwiWD0aIwxCgJ0R1Mu7GXOeJSuK93bZtQIle4D9pUNU5DC5jEsu55AvZakM5NicGyEj8uuz8bUCQgj67QfY671P3vEoeC69gy695U1U7NG7XV0pUwBjDJa1/JJlWWxzHuflzQe5FJ/GsgUVuZ2t8lEkTvfc0aNHb72flBhjVicQQqCUuvM3/M+WDVguWBrMVdDXEGZlBVEUrVCU9d9s5+fnaTQa2PZyPxEIhJaI1EEoZwX4ncynp6fXrmB4eJjR0VFarRbNZnP9P9rt9gohqNVq1Ov1ZbF/AZGev3hLJ2/zAAAAAElFTkSuQmCC)}
+		.xchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8bDYnDxEwAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAEK0lEQVRIx9WVS2hTWRjHf/eR3CY1nbxMH2YiZRQS6qO13YlMVxY3SnVcuNIBFezGpSADLoQqLu1sHJCqdCFSXFpw4YOCSH3BtFqttTNamabX3DS5bfO6uffMoglja3RGcDMHzuac7/z/53++//cd+L8P6VuCPQYZ8ADNgBd4J31DcDcQs+GnHByRocEDv0kfBSjAOlYCs11Q+gpwDegS8LMJ+3QIK0ATzEhV8Odnz5bzw8P4dJ25aJQ/WlvJ1df/K7hSLtOcTNI+Pk69rpMTgqIQhCDvh1/VSpw79+gRrRMTmLZNezLJJsPg+a5dmOEwQlFqg1sWG16/Jv7sGWXDwBACFQjC9HcwIMONKkGp4PGAJGEDS0IQmZlhnWnye3c3eiyGo6qr3WHbrJ+dJf7gAXI6zSIr72T7/fgzmT4FHnTBsgrQBfYvTU0km5vxz86iADnAm0rRPTWFt7cXZccOJJcLAGHb2K9ekT93jmwmwwdAAFpjI6Ntbfxw5879ag7l6o1sr5eHHR3IsRgeQK/M4sQE+YEB7JcvEY6zAj45SWFgAPPxYwzHoQxIkQjTPT0kIxE+Noj8sexFn4/xnh58iQTeSpHkHAdrbIzi0BCOrmNPTpK/eJHM3bt8sCyKQCiR4NWePWSiUZw1+ZLXJm4pFKLhzBlCsRh2RUXacVgeGaF47RrL58+zcP8+RrmMkCQinZ1EL1zAjERqmkH+tLYl1G3bCJw4QUjT0IA0MJfLMX/5MqmHD0nZNiUgtGULG/r7ccXjINWuWbnmqsuFu7sb/4EDNLlcBIEioNs2KUAFGmMxmk6dQm1tRZI+3xBqEkiShBQOox05Ql1nJ26gvuIUAWiKQnj/ftStW5Fk+YuF+NldsbBA4cYN9KdPmaso8Fc62ZJtk7l1C2t0FGdxESHE1xE4hkHh6lX0oSHSpRIewC/LrPf7CSgKNpCamkI/fZr8pUuIZBIcpyaBunahPp1mub+fDyMjGKUSChCsq6Nh717q9u2jbnSU0uAgRrFIwTThyhUCqRS+hgZKLS1fJvDm87SNjZGcnsYUAjcQ8vsJ9/Xh7u1FDgRQN20iks3iDA+zZFmYhQLqzZtsj8WY3L0baY2Sf55ICCKpFHUzM2SEQAJCHg+hY8fQDh5EDgRWDoRC1J88SePRo2geD0XAcBy8b98Sv3ePYDZbbf2rFQjLIphMsmDbaEBQVQkePox26BCSz7e6i4bDrDt+nGYhmBscpFAskheC4Js3bPR4qHphFYEnlcI7P4/jdqNpGu8TCe4oCsXr1z//F2ga3+/cSfTJE0qmSVYIsKzaOZDcbjKyzFIiwfvt21kMBLA07YsetzWNd+3tLLW0sH5igvT8PH9Go/z44kX+E4LGjg7GDYOcy4XlOEgLC//5P/5LCFzxOPLmzWyIx+m6fduu7v0NVGqyTSycKksAAAAASUVORK5CYII=)}
+		.unchecked-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB9gKGQ8qAt8h3m8AAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAA60lEQVRIx+2VsQqDMBRF70sCLg5OLoKgjk7+lJ/hh+STXBwcnRz8ArMEkrxOFktbaC3tULzTg5e8k5vADXDq70VbobXmvu/hvQczg4heHrJfXxQFuq67blZbMc8zpmlCXddIkgTOuZcBUko45zCOI6y1Nz2xFSEEZFmGOI7fGg4A3nsQEZqmuXOu9jallACAtm3fvmutNaIoAjM/dkBECCF89KCbk4eAb+kEnIAT8EsAM0OIz3hSyrssUvss8t5fg+uIrLXPs0gIgWVZYIyBUurQyYdheO4gz3NUVQVjDNZ1PfSjpWmKsixvehfB9GBZ3NndrgAAAABJRU5ErkJggg==)}
+		.migrated-box {list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAANOgAADMQBiN+4gQAAAAd0SU1FB+AKHREFA8vJSnkAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAAC1klEQVRIx+2VT0hUURTGf/e958w4Tc3TYowMw1GyEgwr1MqsFmbZIrIWQZsWJUjbdoHQpl3Qps0swnCRECQFYkR/TC1iKkqmfzAKTo2Vf8hoRsfR995tkRMT87RRWkUHHhy495zvnvvu933wP/75EKkkEAjIYDCIaZpIKRFCZN0kfX9xcTGtra2/irVUEolECIfDlJeXo+s6hmFkDaCqKoZhEAqFSCaTv60pqcSyLAoLC/F4PEtqDmCaJkIIKisrMybX0sdUVRWA5ubmPzdNjjI1cpXkZC/O1fV03PXgdDqRUtpPIITAsqxsDz0Z/3CZQv8uqo4N4C8/Tp2/DdM0MiZQlvk41OTkI/LW1SGtCVb5drD3eCc71wcA+VcAHA5vDd8+3UGakxiJV7i9pdQevU5T1R35pJ3MV5QW1pf+0kWBheJ2SWua8EQXZXsu4fVVYEz1sEKvof5EuxjoPvzpcRvrdp9C2gGMx6cpOHBmbImMesds7BZubwMVDTfXDnQ3vQfK7AC8wLfExMX5whyQc3q2OEnjGm5vE76SQxsfBLr77a7CNf+n0r/l6sSMtsBSnurckiIILCobAtVZhpF4gZF4jubaymj4Ch/fd380LE7bAnjc0NPxk2yqpmEuwGxF0ag+0k5uTpzZeBeaazvj0We8fXojainsb2xh2BZgbe0gSIllzSIUh63wfQ6dZ/O2fbjcKlOj58jJ3cVENESw5yErc9nf2MLQ4jwQAkV1Lqiq37/cZ9WaahJjF9AcmxiPDhLs7ePe23oOnmUwg2hSShQle96tKDjA2HAniusgo9FxnvY9Jxw7RWzGYy92QghM00x5g53qp9sHmtB58/o2umOI2NwGolMnMYUHIb7aAyiKwsjICLqu2/qBEIKUUAohMaSHSLyBSMoPTINQ6CX5+fn2AEVFRZSUlBCPx4nFYhl3L4RESjF/GEgX3pSj+Xw+/H7/b3U/AEOZFnp7O5+5AAAAAElFTkSuQmCC)}
+		ul {list-style-image: none}
+		/* ul rule needed to reset style for sub-bullets */
+	</style>
+</head>
+<body>
+
+<!-- Wiki content -->
+
+	<h1>unix+linux文件属性</h1>
+
+<p>
+Created 星期五 29 九月 2017
+</p>
+
+<p>
+UNIX中有句话“一切皆为文件”，因此全方位了解文件属性是非常必要的。
+</p>
+
+<p>
+stat函数如下,使用stat函数最多的可能是ls -l命令了
+</p>
+<div class="zim-object">
+<pre><code class="cpp">int stat(const char *path, struct stat *buf);
+int fstat(int fd, struct stat *buf);
+int lstat(const char *path, struct stat *buf);
+struct stat {
+	dev_t     st_dev;     /* ID of device containing file */
+	ino_t     st_ino;     /* inode number */
+	mode_t    st_mode;    /* protection */
+	nlink_t   st_nlink;   /* number of hard links */
+	uid_t     st_uid;     /* user ID of owner */
+	gid_t     st_gid;     /* group ID of owner */
+	dev_t     st_rdev;    /* device ID (if special file) */
+	off_t     st_size;    /* total size, in bytes */
+	blksize_t st_blksize; /* blocksize for file system I/O */
+	blkcnt_t  st_blocks;  /* number of 512B blocks allocated */
+	time_t    st_atime;   /* time of last access */
+	time_t    st_mtime;   /* time of last modification */
+	time_t    st_ctime;   /* time of last status change */
+		  }</code></pre>
+</div>
+
+<br>
+
+<p>
+本章围绕stat的属性进行介绍UNIX文件相关的属性。<br>
+<ol type="1" start="1">
+<li>检测文件类型</li>
+</ol>
+</p>
+
+<p>
+我们知道有很多文件类型，如普通文件、目录文件、字符特殊文件、块文件、FIFO、套接口、符号链接文件（stat函数检测不出来，得是lstat函数才行）文件类型的信息包含在st_mode，可以用下表的宏确定文件类型。
+</p>
+<div class="zim-object">
+<pre><code class="cpp">S_ISREG(m)  //is it a regular file
+S_ISDIR(m)  //directory
+S_ISCHR(m) // character device
+S_ISBLK(m) // block device
+S_ISFIFO(m) //FIFO (named pipe)
+S_ISLNK(m)  //symbolic link
+S_ISSOCK(m) //socket</code></pre>
+</div>
+
+<p>
+下面看一个程序
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;errno.h&gt;
+
+int
+main(int argc, char *argv[])
+{
+	int         i;
+	struct stat buf;
+	char        *ptr;
+
+	for (i = 1; i &lt; argc; i++) {
+		printf("%s: ", argv[i]);
+		if (lstat(argv[i], &amp;buf) &lt; 0) {
+			perror("lstat error");
+			continue;
+		}
+		if (S_ISREG(buf.st_mode))
+			ptr = "regular";
+		else if (S_ISDIR(buf.st_mode))
+			ptr = "directory";
+		else if (S_ISCHR(buf.st_mode))
+			ptr = "character special";
+		else if (S_ISBLK(buf.st_mode))
+			ptr = "block special";
+		else if (S_ISFIFO(buf.st_mode))
+			ptr = "fifo";
+		else if (S_ISLNK(buf.st_mode))
+			ptr = "symbolic link";
+		else if (S_ISSOCK(buf.st_mode))
+			ptr = "socket";
+		else
+			ptr = " unknown mode ";
+		printf("%s\n", ptr);
+	}
+	exit(0);
+}</code></pre>
+</div>
+
+<p>
+<ol type="1" start="2">
+<li>设置用户ID(SUID)和设置用户组ID(SGID)</li>
+</ol>
+详情见uid,suid<br>
+<ol type="1" start="3">
+<li>文件访问权限</li>
+</ol>
+</p>
+
+<p>
+st_mode也包含了对文件的访问权限，下面看下文件权限。
+</p>
+<div class="zim-object">
+<pre><code class="cpp">S_IRUSR  //owner has read permission
+S_IWUSR  //owner has write permission
+S_IXUSR  //owner has execute permission
+S_IRWXG  //mask for group permissions
+S_IRGRP  //group has read permission
+S_IWGRP  //group has write permission
+S_IXGRP // group has execute permission
+S_IRWXO  //mask for permissions for others (not in group)
+S_IROTH  //others have read permission
+S_IWOTH  //others have write permission
+S_IXOTH  //others have execute permission</code></pre>
+</div>
+
+<p>
+目录的读权限允许获取该目录中所有文件名的列表，执行权限使可以通过该目录(搜索目录，寻找一个特定文件名)<br>
+<ol type="1" start="1">
+<li>一个文件的读权限，这与open函数的O_RDONLY和O_RDWR有关</li>
+<li>一个文件的写权限，这与open函数的O_WRONLY和O_RDWR有关</li>
+<li>为在open函数中创建一个新文件，必须对该目录具有写权限和执行权限</li>
+<li>为删除一个文件，必须对包含该文件的目录具有，但对该文件则不需要读，写权限</li>
+</ol>
+</p>
+
+<p>
+文件测试<br>
+<div style='padding-left: 30pt'>
+进程每次打开、创建或删除文件时，内核就进行访问权限测试，而这种测试可能涉及文件的所有者(st_uid,st_gid)、进程的有效ID(euid,egid)以及进程的附加组ID。其中两个所有者ID是文件的性质，两个有效ID和附加组ID是进程的性质。内核进行的测试如下<br>
+(1)若进程euid是root，则干什么都行；<br>
+(2)若进程euid是等于uid，按照相应用户的权限读写；<br>
+(3)若进程的egid或进程的附加组id等于文件gid,按照组相应的权限读写；<br>
+(4)若其他用户适当的访问权限被设置，则允许访问，否则拒接访问；
+</div>
+</p>
+
+<p>
+<ol type="1" start="4">
+<li>新文件和目录的所有权</li>
+</ol>
+</p>
+
+<p>
+当用open或creat创建文件时<br>
+<ol type="1" start="1">
+<li>新文件的UID设置为进程的有效用户ID(euid)</li>
+<li>组ID可以是进程的有效组ID或它所在目录的组ID</li>
+</ol>
+(/var/spool/mail)<br>
+如下测试例子
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys/types.h&gt;
+
+int main(void)
+{
+        if (creat("test.txt",0666) &lt; 0)
+        {
+                perror("create file error");
+                exit(1);
+        }
+        printf("create file success\n");
+        exit(0);
+}</code></pre>
+</div>
+
+<p>
+测试过程
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#测试1
+$ ./a.out //以david用户执行,euid=uid=david
+create file success
+$ ll test.txt
+-rw-rw-r-- 1 david david 0 Oct 16 09:26 test.txt
+$ rm test.txt //删除test.txt
+#测试2
+$ ./a.out //以root用户执行,euid=uid=root
+create file succes
+$ ll test.txt
+-rw-r--r-- 1 root root 0 Oct 16 09:29 test.txt
+#测试3
+$ chmod u+s a.out //设置SUID
+$ rm test.txt //删除test.txt
+$ ll a.out
+-rwsrwxr-x 1 david david 8666 Oct 16 09:26 a.out
+$ ./a.out //以root用户执行，uid=root,euid=david
+create file success
+$ ll test.txt 
+-rw-r--r-- 1 david root 0 Oct 16 09:35 test.txt
+</code></pre>
+</div>
+
+<p>
+从上测试可看出，新创建的文件的uid始终和euid一样。<br>
+<ol type="1" start="5">
+<li>access函数</li>
+</ol>
+当用open函数打开一个文件时，内核以进程的有效用户ID和有效组ID为基础执行其访问权限测试，但当一个进程使用SUID或SGID作为另一个用户运行时，可能会需要测试其实际用户(uid)和gid能否访问一个给定的文件，因此需要access函数,access函数是按实际用户ID和实际组ID进行访问测试的。
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+int access(const char *pathname, int mode);
+/*
+成功返回0，失败返回-1
+mode常量:
+R_OK：测试读权限
+W_OK：测试写权限
+X_OK：测试执行权限
+F_OK：测试文件是否存在
+*/</code></pre>
+</div>
+
+<br>
+
+<p>
+测试例子
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;errno.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+
+int main(int argc, char *argv[])
+{
+    if (argc != 2)
+    {   
+        printf("uasge: ./aout");
+        exit(1);
+    }   
+    if (access(argv[1],R_OK) &lt; 0)  //测试实际uid能否访问shadow文件
+    {   
+        perror("access error");
+    }   
+    else
+        printf("read access OK\n");
+    if (open(argv[1],O_RDONLY) &lt; 0)  //测试进程的有效id(euid)能否访问shadow文件
+    {   
+        perror("open error");
+        exit(1);
+    }   
+    else
+        printf("open for reading OK\n");
+    exit(0);
+}</code></pre>
+</div>
+
+<p>
+测试1，简单测试功能
+</p>
+<div class="zim-object">
+<pre><code class="cpp"># ll a.out
+-rwxr-xr-x. 1 david david 5358 Apr 14 06:53 a.out
+# ./a.out a.out //一般用户,此时a.out的euid和uid都是david
+read access OK
+open for reading OK</code></pre>
+</div>
+
+<p>
+测试2,更改a.out为root用户
+</p>
+<div class="zim-object">
+<pre><code class="cpp"># ll /etc/shadow
+-r--------. 1 root root 1047 Mar 13 08:00 /etc/shadow
+# ./a.out /etc/shadow // 以david用户执行，uid是david,euid=uid
+access error: Permission denied  
+open error: Permission denied  
+$ chown root a.out //更改a.out用户是root
+# ll a.out
+-rwxr-xr-x. 1 root david 5338 Apr 14 07:01 a.out
+# ./a.out /etc/shadow  //以david用户执行,此时进程的uid是david,euid=uid，也是david
+access error: Permission denied
+open error: Permission denied
+$ ./a.out /etc/shadow  //以root用户执行,此时进程的uid是root,euid=uid,也是root
+read access OK
+open for reading OK
+</code></pre>
+</div>
+
+<p>
+测试3,设置EUID位
+</p>
+<div class="zim-object">
+<pre><code class="cpp">$ chmod u+s a.out  //并打开euid,将用户的进程的有效用户ID(euid)设置为a.out所有者的id，为root
+# ll a.out
+-rwsr-xr-x. 1 root david 5338 Apr 14 07:01 a.out
+# ./a.out /etc/shadow  //以david用户执行，uid是david,euid是root
+access error: Permission denied
+open for reading OK  
+$ ./a.out /etc/shadow  //以root用户执行，此时uid是root,euid是root
+read access OK
+open for reading OK</code></pre>
+</div>
+
+<br>
+
+<p>
+注意进程的uid就是执行当前文件的用户(并不是当前用户所有者的ID)，而euid一般是等于uid的，但如果设置了euid,则euid等于可执行文件所有者的ID，所以判读一个进程的uid,euid,先看谁执行的进程，则uid就是谁；若没有设置euid，则euid=uid,若设置了euid，euid=可执行文件的所有者ID<br>
+<ol type="1" start="6">
+<li>umask函数</li>
+</ol>
+umask函数为进程设置文件创建屏蔽字，并返回以前的值。(少数几个没有出错返回函数的一个),umask设置创建文件时要屏蔽的位。
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;sys/stat.h&gt;
+mode_t umask(mode_t cmask);
+/*返回值：以前的文件创建屏蔽字*/</code></pre>
+</div>
+
+<p>
+当进程创建文件或目录时，一定会使用umask创建屏蔽字，如下栗子
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;sys/types.h&gt;
+
+int main(void)
+{
+    umask(0);
+    if (creat("foo",0666) &lt; 0)
+        perror("create error for foo");
+    umask(0066);
+    if (creat("bar",0666) &lt; 0)
+        perror("create error for foo");
+    exit(0);
+}
+</code></pre>
+</div>
+
+<p>
+测试过程
+</p>
+<div class="zim-object">
+<pre><code class="cpp">$ umask  //打印当前mask值
+0002
+$ ll foo bar
+-rw------- 1 zty zty 0 Oct 16 09:42 bar
+-rw-rw-rw- 1 zty zty 0 Oct 16 09:42 foo
+</code></pre>
+</div>
+
+<p>
+通常umask命令并不影响父进程（常常是shell）的屏蔽字，所有shell都内置umask命令,用户可以设置umask值控制他们创建文件的默认权限。在写创建新文件程序时，若需确保指定的访问权限位已激活，需在进程运行时修改umask值，否则会继承父进程(通常是shell)的mask值
+</p>
+<div class="zim-object">
+<pre><code class="cpp">$ umask -S //打印符号形式
+u=rwx,g=rwx,o=rx
+$ umask 027 //更改文件模式创建屏蔽字
+$ umask -S
+u=rwx,g=rx,o=</code></pre>
+</div>
+
+<br>
+
+<p>
+<ol type="1" start="7">
+<li>chmod、fchmod</li>
+</ol>
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;sys/stat.h&gt;
+int chmod(const char *path, mode_t mode); //在指定的文件上进行操作
+int fchmod(int fildes, mode_t mode); //已打开的文件进行操作
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<br>
+
+<p>
+为改变一个文件的权限位，进程的euid必须等于文件的所有者id,或进程必须具有root权限<br>
+<ol type="1" start="8">
+<li>chown、fchown、lchown函数</li>
+</ol>
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+int chown(const char *path, uid_t owner, gid_t group);
+int fchown(int fildes, uid_t owner, gid_t group);
+int lchown(const char *path, uid_t owner, gid_t group);
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<p>
+<div style='padding-left: 30pt'>
+除了引用文件是符号链接外，这三个函数操作相似，在符号链接的情况下，lchown更改符号链接本身的所有者，而不是该符号链接所指向的文件<br>
+owner、group中任意一个是-1，则对应ID不变<br>
+谁能更改UID,GID(root?进程拥有者？)
+</div>
+</p>
+
+<p>
+<ol type="1" start="9">
+<li>文件长度、文件截短</li>
+</ol>
+</p>
+
+<p>
+stat结构成员st_size表示以字节为单位的文件长度；<br>
+<ol type="1" start="1">
+<li>对目录：文件长度通常是一个数的倍数(16或512);</li>
+<li>对符号链接，文件长度是文件名中的实际字节数；</li>
+</ol>
+如今UNIX系统大都提供st_blksize(best I/O block size)和st_blocks(number of disk blocks allocated)，其中，第一个是对文件I/O较适合的块长度，第二个是所分配的实际512字节块的数量(依赖于版本实现)，当我们将st_blksize用于读操作时，读一个文件所需要的时间量最少，为了效率的缘故，标准I/O库也试图以此读、写st_blksize个字节。
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+文件的空洞<br>
+空洞是由设置的偏移量超过文件尾端，并写了某些数据后造成的。<br>
+截图103页。
+</div>
+</p>
+
+<p>
+这两个函数将现有的文件长度截短为length字节，如将一个文件清空为0
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+int truncate(const char *path, off_t length);
+int ftruncate(int fildes, off_t length);
+/*成功返回0,出错返回-1*/</code></pre>
+</div>
+
+<br>
+
+<p>
+<ol type="1" start="10">
+<li>文件系统</li>
+</ol>
+</p>
+
+<p>
+主要讲i节点和指向i节点的目录项，说不清。。。<br>
+<ol type="1" start="11">
+<li>link、unlink、remove和rename函数</li>
+</ol>
+</p>
+
+<p>
+一个文件可以有多个指向i节点，创建一个指向现有文件链接的函数
+</p>
+<div class="zim-object">
+<pre><code class="cpp">int link(const char *oldpath, const char *newpath);
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<br>
+
+<p>
+不能有指向一个目录的硬链接，因为这样可能在文件系统中存在循环，但是符号链接却可以，见为什么硬链接不能指向目录, 因此很多文件系统不允许对目录实现硬链接<br>
+删除一个现有的目录项函数
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+int unlink(const char *pathname);
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<br>
+
+<p>
+该函数删除目录项，并将由pathname所引用的文件链接计数减1；如果pathname是符号链接，那么unlink删除该符号链接，而不会删除由该链接所引用的文件。关闭一个文件时：内核先检查打开该文件的进程数，如果为0，接着检查其链接数，如果也为0，则删除该文件的内容。unlink这种性质经常被程序用来确保即使在该程序崩溃时，它所创建的临时文件也不会遗留下来，用open或create创建一个文件，然后立即调用unlink。因为该文件仍旧是打开的，所以不会对其内容删除，只有当进程关闭或终止时，该文件内容才会被删除。<br>
+例子，打开一个文件然后unlink它<br>
+这里写图片描述<br>
+同样可以用remove函数解除对一个文件或目录的链接，对于文件，remove功能和unlink相同，对于目录，remove功能和rmdir相同。
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;stdio.h&gt;
+int remove(const char *pathname);</code></pre>
+</div>
+
+<br>
+
+<p>
+文件或目录用rename更名
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;stdio.h&gt;
+int rename(const char *oldpath, const char *newpath);
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<br>
+
+<p>
+<div style='padding-left: 30pt'>
+如果oldname指的是一个文件而不是目录，那么为该文件或符号链接更名；如果newpath存在，则不能是一个目录；若newpath存在且不是目录，则会删除原newpath文件，并将oldpath的名更改为newpath<br>
+如果oldname指的是一个目录，那么为该目录更名；原理同2<br>
+如果oldname指的是一个符号链接，则为符号链接更名，而不是它所引用的文件；<br>
+如果oldname和newname相同，则不做任何处理
+</div>
+</p>
+
+<p>
+<ol type="1" start="12">
+<li>符号链接</li>
+</ol>
+</p>
+
+<p>
+符号链接是指向一个文件的间接指针，与硬链接不同<br>
+<ol type="1" start="1">
+<li>硬链接通常要求链接和文件位于同一文件系统汇总</li>
+<li>只有具有root权限的进程才能创建指向目录的硬链接</li>
+</ol>
+对于符号链接以及它所指向的对象无文件系统的限制，符号链接一般用于将一个文件或整个目录结构移到系统中的另一个位置。<br>
+注意
+</p>
+
+<p>
+<div style='padding-left: 30pt'>
+当使用以名字引用文件的函数时，应当了解该函数是否处理符号链接，即是对符号链接处理还是对符号链接指向的文件处理
+</div>
+</p>
+
+<p>
+符号链接引可能在文件系统中引入循环，如下操作
+</p>
+<div class="zim-object">
+<pre><code class="cpp">$ mkdir foo
+$ touch foo/a
+$ ln -s foo foo/foo.soft</code></pre>
+</div>
+
+<p>
+这样打不开该符号链接,即foo.soft文件
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#file并不存在,但可以创建成功
+$ ln -s file file.soft</code></pre>
+</div>
+
+<br>
+
+<p>
+<ol type="1" start="13">
+<li>symlink和readlink函数</li>
+</ol>
+</p>
+
+<p>
+创建符号链接
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+int symlink(const char *oldpath, const char *newpath);
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<br>
+
+<p>
+由于open函数是跟随符号链接(即指向符号链接的文件，而不是针对符号链接本身操作)，因此需要读取链接文件中的名字(并不是读符号链接指向的文件)
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+ssize_t readlink(const char *path, char *buf, size_t bufsiz);
+/*成功返回到读到的字节数，出错返回-1
+buf返回的符号链接内容不以null字符终止
+*/</code></pre>
+</div>
+
+<br>
+
+<p>
+<ol type="1" start="14">
+<li>文件的时间，utime函数</li>
+</ol>
+</p>
+
+<p>
+每个文件保持有三个时间字段，如图<br>
+这里写图片描述<br>
+注意修改时间(st_mtime)和更改时间(st_ctime)之间的区别，修改时间是文件内容最后一次被修改的时间，更新状态时间是该文件的i节点最后一次被修改的时间，由上可知，很多影响到i节点的操作，如更改文件的访问权限，uid，连接数，但并没有更改文件的实际内容。i节点中的信息和文件中的实际内容是分开存放的，注意系统并不保存对一个i节点的最后一次访问时间，所以access和stat函数并不更改这三个时间中任何一个
+</p>
+
+<p>
+一个文件的访问和修改时间可以用utime函数更改。<br>
+<ol type="1" start="15">
+<li>mkdir和rmdir函数</li>
+</ol>
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;sys/stat.h&gt;
+#include &lt;sys/types.h&gt;
+int mkdir(const char *pathname, mode_t mode);
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<br>
+
+<p>
+该函数创建一个新的空目录，所指定的文件权限mode由进程的文件模式创建屏蔽字修改
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+int rmdir(const char *pathname);
+/*成功返回0，失败返回-1*/</code></pre>
+</div>
+
+<p>
+该函数可以删除一个空目录(空目录是只包含.和..这两项的目录)<br>
+<ol type="1" start="16">
+<li>读目录</li>
+</ol>
+</p>
+<div class="zim-object">
+<pre><code class="cpp">
+#include &lt;sys/types.h&gt;
+#include &lt;dirent.h&gt;
+DIR *opendir(const char *name); //成功返回指针，失败返回NULL
+struct dirent *readdir(DIR *dirp); //成功返回指针，失败返回NULL
+void rewinddir(DIR *dirp); 
+int closedir(DIR *dirp); //成功返回0，失败返回-1
+long telldir(DIR *dirp); //返回值:与dp相关联的目录中的当前位置
+void seekdir(DIR *dirp, long offset); </code></pre>
+</div>
+
+<p>
+其中头文件
+</p>
+<div class="zim-object">
+<pre><code class="cpp">struct dirent
+{
+    ino_t  d_ino;       File serial number.
+    char   d_name[];    Name of entry.
+}
+</code></pre>
+</div>
+
+<br>
+
+<p>
+例子，递归遍历目录层次结构
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
+#include &lt;dirent.h&gt;
+
+#define ERR_EXIT(m) \
+    do \
+    { \
+        perror(m); \
+        exit(EXIT_FAILURE); \
+    } while(0)
+
+int main(int argc, char *argv[])
+{
+    DIR *dir;
+    struct dirent *de;
+    if (argc != 2)
+    {
+        fprintf(stderr,"a single argument is required\n");
+        exit(EXIT_FAILURE);
+    }
+    if ( (dir=opendir(argv[1])) == NULL)
+        ERR_EXIT("cant open dir");
+    while ( (de=readdir(dir)) != NULL)
+    {
+        fprintf(stdout,"%s\n",de-&gt;d_name);
+    }
+
+    closedir(dir);
+    exit(EXIT_SUCCESS);
+}</code></pre>
+</div>
+
+<p>
+<ol type="1" start="17">
+<li>chdir、fchdir和getcwd函数</li>
+</ol>
+</p>
+
+<p>
+以下函数可以更换当前目录
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+int chdir(const char *path);
+int fchdir(int fd);
+/*成功返回0,，失败返回-1*/</code></pre>
+</div>
+
+<p>
+由于当前目录是进程的一个属性，所以它只影响调用chdir的进程本身，而不影响其他进程，如下例子
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(void)
+{
+    if (chdir("/tmp") &lt; 0)
+    {   
+        perror("chdir");
+        exit(1);
+    }   
+    printf("chdir to /tmp succeeded\n");
+    exit(0);
+}</code></pre>
+</div>
+
+<br>
+
+<p>
+执行此程序，并没有切换到/tmp目录，但程序却显示“chdir to /tmp succeeded”；因为shell创建了一个子目录，由该子进程具体执行了次程序；可见若要改变shell进程的工作目录，需shell自己调用chdir函数。
+</p>
+
+<p>
+如果内核保持当前目录的信息，直接取出即可；可是内核为每个进程只保存指向该目录v节点的指针等目录本身信息，并不保存目录的完整路径名，因此需要getcwd函数
+</p>
+<div class="zim-object">
+<pre><code class="cpp">#include &lt;unistd.h&gt;
+char *getcwd(char *buf, size_t size);
+/*成功返回buf，失败返回NULL*/</code></pre>
+</div>
+
+<p>
+getcwd可以保存当前目录，然后当应用程序进入其他目录时，可返回到原目录；而fchdir则更容易，用open打开当前工作目录，然后保存文件描述符号，当希望返回到原工作目录时，只要将文件描述符传递给fchdir即可。
+</p>
+
+
+<!-- End wiki content -->
+
+</body>
+
+</html>
